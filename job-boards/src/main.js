@@ -6,9 +6,9 @@ app.innerHTML = `
   <div class="page-shell">
     <header class="site-header" role="banner">
       <div class="header-inner container">
-        <a class="brand" href="#main-content" aria-label="DataForge home">
+        <a class="brand" href="#main-content" aria-label="MRI Data home">
           <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-title">DataForge</span>
+          <span class="brand-title">MRI Data</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
           <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -55,7 +55,7 @@ app.innerHTML = `
             <p class="button-subtext">
               See your exact use case in 48 hours—no credit card required
             </p>
-            <ul class="trust-list" aria-label="DataForge trust signals" data-animate="fade-up" data-animate-delay="180">
+            <ul class="trust-list" aria-label="MRI Data trust signals" data-animate="fade-up" data-animate-delay="180">
               <li>
                 <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M8.3 14.2 4.5 10.5l1.4-1.4 2.4 2.4 5.8-5.8 1.4 1.4-7.2 7.1z" />
@@ -163,7 +163,7 @@ app.innerHTML = `
       <section class="case-studies" id="case-studies" aria-labelledby="case-studies-title">
         <div class="container case-studies-inner">
           <p class="section-badge">Proven outcomes</p>
-          <h2 id="case-studies-title">How DataForge powers job market intelligence</h2>
+          <h2 id="case-studies-title">How MRI Data powers job market intelligence</h2>
           <p class="section-intro">
             Real examples from recruiting, workforce planning, and analytics teams using our extraction infrastructure to stay ahead of hiring trends.
           </p>
@@ -190,7 +190,7 @@ app.innerHTML = `
               </div>
               <h3>Mapped competitor hiring to optimize regional staffing budgets</h3>
               <p>
-                DataForge monitored 30 competitors and surfaced salary shifts, allowing the finance team to reallocate headcount and avoid overpaying in saturated markets.
+                MRI Data monitored 30 competitors and surfaced salary shifts, allowing the finance team to reallocate headcount and avoid overpaying in saturated markets.
               </p>
               <ul>
                 <li><span class="point-dot"></span>30 competitor brands tracked weekly</li>
@@ -285,7 +285,7 @@ app.innerHTML = `
 
       <section class="solution" id="process" aria-labelledby="solution-title">
         <div class="container solution-inner">
-          <p class="section-badge">The DataForge approach</p>
+          <p class="section-badge">The MRI Data approach</p>
           <h2 id="solution-title">We handle the complexity, you keep the advantage</h2>
           <p class="section-intro">
             Our engineering team scopes, extracts, and maintains your job market data pipeline. You get flexible delivery, ongoing monitoring, and insights that stay current.
@@ -408,7 +408,7 @@ app.innerHTML = `
       <section class="faq" id="faq" aria-labelledby="faq-title">
         <div class="container faq-inner">
           <p class="section-badge">Questions, answered</p>
-          <h2 id="faq-title">FAQ about DataForge job data extraction</h2>
+          <h2 id="faq-title">FAQ about MRI Data job data extraction</h2>
           <div class="faq-grid">
             <div class="faq-copy" data-animate="fade-up">
               <p>
@@ -489,7 +489,7 @@ app.innerHTML = `
         <div>
           <div class="brand footer-brand">
             <span class="brand-mark" aria-hidden="true"></span>
-            <span class="brand-title">DataForge</span>
+            <span class="brand-title">MRI Data</span>
           </div>
           <p>High-fidelity job market intelligence for recruiting, analytics, and workforce planning teams.</p>
         </div>
@@ -514,7 +514,7 @@ app.innerHTML = `
       </div>
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
-          <span>© ${new Date().getFullYear()} DataForge. All rights reserved.</span>
+          <span>© ${new Date().getFullYear()} MRI Data. All rights reserved.</span>
           <a href="#">Privacy</a>
         </div>
       </div>
@@ -536,7 +536,7 @@ app.innerHTML = `
         </button>
         <div class="modal-header">
           <span class="modal-kicker">Contact our manager</span>
-          <h2 id="contact-modal-title">Book a discovery call with DataForge</h2>
+          <h2 id="contact-modal-title">Book a discovery call with MRI Data</h2>
           <p>Share a few details about your hiring intelligence needs and our manager will connect within one business day.</p>
         </div>
         <form class="contact-form" id="contact-form">
@@ -556,7 +556,7 @@ app.innerHTML = `
           </div>
           <label class="form-checkbox">
             <input type="checkbox" name="consent" required />
-            <span>I agree to be contacted by a DataForge specialist regarding this request.</span>
+            <span>I agree to be contacted by a MRI Data specialist regarding this request.</span>
           </label>
           <button class="button button-primary button-large" type="submit">
             Submit request

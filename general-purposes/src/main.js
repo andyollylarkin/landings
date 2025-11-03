@@ -75,6 +75,60 @@ const activateTab = (target) => {
 	});
 };
 
+
+const caseItems = document.querySelectorAll(".case-item");
+
+caseItems.forEach((item, index) => {
+	const toggle = item.querySelector(".case-toggle");
+	const content = item.querySelector(".case-content");
+	if (!toggle || !content) {
+		return;
+	}
+
+	const contentId = `case-panel-${index}`;
+	toggle.setAttribute("aria-controls", contentId);
+	content.setAttribute("id", contentId);
+
+	const openItem = () => {
+		toggle.setAttribute("aria-expanded", "true");
+		item.classList.add("is-open");
+		content.hidden = false;
+		content.style.maxHeight = `${content.scrollHeight}px`;
+	};
+
+	const closeItem = () => {
+		toggle.setAttribute("aria-expanded", "false");
+		item.classList.remove("is-open");
+		content.style.maxHeight = `${content.scrollHeight}px`;
+		requestAnimationFrame(() => {
+			content.style.maxHeight = "0";
+		});
+	};
+
+	toggle.addEventListener("click", () => {
+		const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+		if (isExpanded) {
+			closeItem();
+		} else {
+			openItem();
+		}
+	});
+
+	content.addEventListener("transitionend", (event) => {
+		if (event.propertyName !== "max-height") {
+			return;
+		}
+
+		const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+		if (isExpanded) {
+			content.style.maxHeight = "none";
+			return;
+		}
+
+		content.hidden = true;
+		content.style.maxHeight = "";
+	});
+});
 if (tabButtons.length > 0) {
 	tabPanels.forEach((panel) => {
 		panel.hidden = !panel.classList.contains("is-active");
@@ -154,7 +208,7 @@ if (ctaForm && ctaFeedback) {
 			return;
 		}
 
-		ctaFeedback.textContent = "Thank you! A DataForge specialist will reach out within one business day.";
+		ctaFeedback.textContent = "Thank you! A MRI Data specialist will reach out within one business day.";
 		ctaFeedback.classList.add("is-success");
 		ctaForm.reset();
 	});
@@ -175,5 +229,22 @@ window.addEventListener("resize", () => {
 		if (question.getAttribute("aria-expanded") === "true") {
 			answer.style.maxHeight = `${answer.scrollHeight}px`;
 		}
+	});
+
+	caseItems.forEach((item) => {
+		if (!item.classList.contains("is-open")) {
+			return;
+		}
+
+		const content = item.querySelector(".case-content");
+		if (!content) {
+			return;
+		}
+
+		content.hidden = false;
+		content.style.maxHeight = `${content.scrollHeight}px`;
+		requestAnimationFrame(() => {
+			content.style.maxHeight = "none";
+		});
 	});
 });
