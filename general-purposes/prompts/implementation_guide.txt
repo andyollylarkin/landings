@@ -1,0 +1,908 @@
+# DataForge Landing Page - Complete Design Mockup
+## Full Implementation Specification
+
+**Version**: 1.0  
+**Date**: November 2025  
+**Purpose**: Comprehensive design specification combining strategic landing page structure with HelpBot.tech-inspired visual style
+
+---
+
+## TABLE OF CONTENTS
+
+1. [Navigation Bar](#navigation-bar)
+2. [Hero Section](#hero-section)
+3. [Social Proof Section](#social-proof-section)
+4. [Problem Section](#problem-section)
+5. [Solution Section](#solution-section)
+6. [How It Works Section](#how-it-works-section)
+7. [Features Grid Section](#features-grid-section)
+8. [Use Cases Section](#use-cases-section)
+9. [Testimonials Section](#testimonials-section)
+10. [Stats/Results Section](#stats-results-section)
+11. [FAQ Section](#faq-section)
+12. [Final CTA Section](#final-cta-section)
+13. [Footer](#footer)
+14. [Mobile-Specific Elements](#mobile-specific-elements)
+15. [Global Design Elements](#global-design-elements)
+16. [Implementation Guidelines](#implementation-guidelines)
+
+---
+
+## 🎯 NAVIGATION BAR
+
+### Visual Layout
+```
+┌────────────────────────────────────────────────────────────────┐
+│ [DataForge Logo]  Features  How It Works  Pricing  Cases      │
+│                                         [Get Free Data Sample] │
+└────────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Container**
+- Background: `rgba(26, 26, 46, 0.95)` with `backdrop-filter: blur(20px)`
+- Height: `80px`
+- Position: `fixed` top with `z-index: 100`
+- Border-bottom: `1px solid rgba(108, 92, 231, 0.1)`
+- Box-shadow: `0 2px 16px rgba(0, 0, 0, 0.2)`
+- Max-width: `1280px` centered
+- Side padding: `80px` (desktop) / `20px` (mobile)
+
+**Logo (Left)**
+- Text: "DataForge"
+- Font-size: `24px`
+- Font-weight: `700`
+- Color: `#ccd6f6`
+- Letter-spacing: `-0.01em`
+
+**Navigation Menu Items (Center-Left)**
+- Layout: Horizontal flex with `32px` gap
+- Font-size: `16px`
+- Font-weight: `500`
+- Color: `#8892b0`
+- Hover color: `#ccd6f6`
+- Transition: `color 0.2s ease`
+- Items: "Features", "How It Works", "Pricing", "Case Studies"
+
+**Primary CTA Button (Right)**
+- Text: "Get Free Data Sample"
+- Background: `linear-gradient(135deg, #6c5ce7 0%, #5b4fff 100%)`
+- Color: `#ffffff`
+- Font-size: `16px`
+- Font-weight: `600`
+- Padding: `12px 28px`
+- Border-radius: `12px`
+- Box-shadow: `0 4px 16px rgba(108, 92, 231, 0.3)`
+- Hover: `translateY(-2px)` with `box-shadow: 0 8px 24px rgba(108, 92, 231, 0.4)`
+
+**Mobile Hamburger Menu**
+- Size: `40px × 40px`
+- Color: `#8892b0`
+- Three lines: `20px` width, `2px` height, `4px` gap
+
+---
+
+[File continues with all sections... Due to character limits, I'll create the file with bash]
+
+## 🚀 HERO SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│                                                               │
+│  [LEFT COLUMN]              [RIGHT COLUMN]                   │
+│                                                               │
+│  Get Accurate Data from     [Dashboard Mockup                │
+│  Any Website in Real-Time   with purple glow effect]         │
+│                                                               │
+│  Custom data scraping...    [Floating badge:                 │
+│                             "99.9% Accuracy"]                 │
+│  [Get Your Custom Sample]                                     │
+│  [Watch 2-Min Demo]                                           │
+│                                                               │
+│  Free consultation • No CC                                    │
+│  ✓ GDPR  ✓ 99.9%  ✓ 24/7                                    │
+│                                                               │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Section Container**
+- Background: `#1a1a2e` with mesh gradient:
+  ```
+  radial-gradient(at 0% 0%, rgba(108, 92, 231, 0.2) 0px, transparent 50%),
+  radial-gradient(at 100% 100%, rgba(91, 79, 255, 0.15) 0px, transparent 50%)
+  ```
+- Grid pattern overlay (subtle):
+  ```
+  linear-gradient(rgba(108, 92, 231, 0.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(108, 92, 231, 0.05) 1px, transparent 1px)
+  background-size: 40px 40px, opacity: 0.3
+  ```
+- Padding: `128px 0` (desktop) / `80px 0` (mobile)
+- Min-height: `80vh`
+- Grid: `1fr 1fr` (desktop) / single column (mobile)
+- Gap: `64px`
+
+**Main Headline**
+- Text: "Get Accurate Data from Any Website in Real-Time"
+- Font-size: `56px` (desktop) / `36px` (mobile)
+- Font-weight: `700`
+- Line-height: `1.1`
+- Letter-spacing: `-0.02em`
+- Color: `#ccd6f6`
+- Max-width: `600px`
+
+**Subheadline**
+- Text: "Custom data scraping solutions that extract, clean, and deliver structured data from any source—built for businesses who need accuracy, speed, and scalability without the technical complexity."
+- Font-size: `20px` (desktop) / `18px` (mobile)
+- Line-height: `1.6`
+- Color: `#8892b0`
+- Margin-top: `24px`
+- Max-width: `560px`
+
+**CTA Buttons (Horizontal flex, 16px gap)**
+- Primary: "Get Your Custom Data Sample"
+  - Gradient background, white text
+  - `16px 32px` padding, `12px` border-radius
+  - Shadow: `0 8px 24px rgba(108, 92, 231, 0.3)`
+- Secondary: "Watch 2-Min Demo"
+  - Transparent background, `#a78bfa` text
+  - `2px solid #6c5ce7` border
+  - Hover: `rgba(108, 92, 231, 0.1)` background
+
+**Trust Indicators**
+- Text: "✓ GDPR Compliant  ✓ 99.9% Data Accuracy  ✓ 24/7 Support"
+- Font-size: `14px`, Color: `#8892b0`
+- Checkmark color: `#10b981`
+
+**Hero Visual**
+- Dashboard mockup with 3D perspective
+- Border-radius: `20px`
+- Box-shadow: `0 20px 60px rgba(0, 0, 0, 0.3), 0 0 80px rgba(108, 92, 231, 0.2)`
+- Glow behind: `radial-gradient(circle, rgba(108, 92, 231, 0.3) 0%, transparent 70%)`
+- Floating badge: "99.9% Accuracy" in bottom-right
+
+---
+
+## 💼 SOCIAL PROOF SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│        Trusted by 500+ businesses worldwide                   │
+│  [Logo] [Logo] [Logo] [Logo] [Logo] [Logo] [Logo] [Logo]   │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Section**
+- Background: `rgba(22, 22, 31, 0.5)`
+- Padding: `64px 0` (desktop) / `48px 0` (mobile)
+- Border-top/bottom: `1px solid rgba(108, 92, 231, 0.05)`
+
+**Header**
+- Text: "Trusted by 500+ businesses worldwide"
+- Font-size: `16px`, Font-weight: `500`
+- Color: `#8892b0`, Uppercase, `0.08em` letter-spacing
+- Centered, margin-bottom: `40px`
+
+**Logos**
+- Grid/flex layout, `48px` gap
+- Max-width: `140px`, Max-height: `48px`
+- Grayscale: `100%`, Opacity: `0.5`
+- Hover: Grayscale `0%`, Opacity `1`, Scale `1.05`
+
+---
+
+## 😣 PROBLEM SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│    Why Businesses Struggle with Manual Data Collection       │
+│                                                               │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │ [Icon]       │  │ [Icon]       │  │ [Icon]       │      │
+│  │ Problem 1    │  │ Problem 2    │  │ Problem 3    │      │
+│  │ Description  │  │ Description  │  │ Description  │      │
+│  │ Impact stat  │  │ Impact stat  │  │ Impact stat  │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Section Header**
+- Text: "Why Businesses Struggle with Manual Data Collection"
+- Font-size: `42px` (desktop) / `28px` (mobile)
+- Font-weight: `700`, Color: `#ccd6f6`
+- Centered, margin-bottom: `64px`
+
+**Problem Cards Grid**
+- Grid: `repeat(auto-fit, minmax(320px, 1fr))`
+- Gap: `32px`
+
+**Individual Card**
+- Background: `linear-gradient(145deg, #2d2d3f 0%, #1a1a2e 100%)`
+- Border-radius: `16px`, Padding: `40px`
+- Border: `1px solid rgba(108, 92, 231, 0.1)`
+- Box-shadow: `0 4px 24px rgba(0, 0, 0, 0.2)`
+- Hover: `translateY(-8px)`, enhanced shadow
+
+**Problem Icon**
+- Size: `48px`, circular background `rgba(108, 92, 231, 0.1)`
+- Icon color: `#6c5ce7`, Margin-bottom: `24px`
+
+**Problem Title**
+- Font-size: `24px` (desktop) / `20px` (mobile)
+- Font-weight: `600`, Color: `#ccd6f6`
+
+**Problem Description**
+- Font-size: `16px`, Line-height: `1.7`
+- Color: `#8892b0`
+
+**Impact Stat**
+- Background: `rgba(239, 68, 68, 0.1)` (red tint)
+- Border-left: `3px solid #ef4444`
+- Padding: `12px 16px`, Border-radius: `8px`
+- Font-weight: `600`, Color: `#ccd6f6`
+
+**Content Examples:**
+1. **Hours Wasted on Manual Entry**
+   - "15+ hours per week copying data into spreadsheets"
+   - Impact: "Every hour wasted = 4-6 lost opportunities"
+
+2. **Errors That Cost You Deals**
+   - "Typos and outdated information mean missed opportunities"
+   - Impact: "28% of manual data becomes inaccurate in 30 days"
+
+3. **Blocked by Anti-Scraping Systems**
+   - "CAPTCHA, IP blocks, dynamic JavaScript blocking your tools"
+   - Impact: "Standard tools fail 40% of the time"
+
+---
+
+## 💡 SOLUTION SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│  [LEFT: Before/After]      [RIGHT: Content]                  │
+│  Comparison visual         Let DataForge Handle              │
+│  showing transformation    the Complexity                     │
+│                           ✓ Benefits list                     │
+│                           [See How It Works CTA]              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Layout Grid**
+- Grid: `1fr 1fr` (desktop) / single column (mobile)
+- Gap: `64px`, Align-items: center
+
+**Before/After Cards**
+- Two cards side-by-side with arrow between
+- Before: Red-tinted, chaotic appearance
+- After: Purple gradient, clean appearance
+- Arrow: `40px` circle with gradient background
+
+**Content Headline**
+- Text: "Let DataForge Handle the Complexity"
+- Font-size: `42px` (desktop) / `28px` (mobile)
+- Font-weight: `700`, Color: `#ccd6f6`
+
+**Benefits List**
+- Vertical stack, `16px` gap
+- Each item: Checkmark icon + text
+- Icon: `#10b981` green checkmark
+- Font-size: `16px`, Font-weight: `500`
+
+**Benefits:**
+- ✓ Extract data from any website, no matter how complex
+- ✓ Bypass CAPTCHAs and anti-scraping protections automatically
+- ✓ Get clean, structured data in your preferred format
+- ✓ Scale from 100 to 1 million data points seamlessly
+- ✓ Deploy in 48 hours, not months
+- ✓ 24/7 monitoring and automatic adjustments
+
+---
+
+## ⚙️ HOW IT WORKS SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│           Simple Process, Powerful Results                    │
+│                                                               │
+│  ┌─────────┐ ────▶  ┌─────────┐ ────▶  ┌─────────┐         │
+│  │ STEP 1  │        │ STEP 2  │        │ STEP 3  │         │
+│  │ [Icon]  │        │ [Icon]  │        │ [Icon]  │         │
+│  │ Title   │        │ Title   │        │ Title   │         │
+│  │ Details │        │ Details │        │ Details │         │
+│  └─────────┘        └─────────┘        └─────────┘         │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Section Header**
+- Text: "Simple Process, Powerful Results"
+- Font-size: `42px` (desktop) / `28px` (mobile)
+- Centered, margin-bottom: `64px`
+
+**Steps Grid**
+- Grid: `repeat(3, 1fr)` (desktop) / single column (mobile)
+- Gap: `40px`
+- Connection lines between steps (desktop only)
+
+**Step Card**
+- Background: `linear-gradient(145deg, #2d2d3f 0%, #1a1a2e 100%)`
+- Border-radius: `20px`, Padding: `40px`
+- Border: `1px solid rgba(108, 92, 231, 0.15)`
+- Text-align: center
+
+**Step Number Badge**
+- Position: Absolute top center
+- `40px` circle, gradient background
+- Font-size: `16px`, Font-weight: `700`
+- White text, purple gradient fill
+
+**Step Icon**
+- Size: `64px`, circular background
+- Border: `2px solid rgba(108, 92, 231, 0.3)`
+- Icon color: `#6c5ce7`
+- Margin: `32px auto 24px`
+
+**Step Title**
+- Font-size: `24px` (desktop) / `20px` (mobile)
+- Font-weight: `600`, Color: `#ccd6f6`
+
+**Step Description**
+- Font-size: `16px`, Line-height: `1.7`
+- Color: `#8892b0`
+
+**Steps Content:**
+1. **Tell Us What You Need**
+   - "30-minute consultation to understand your requirements"
+2. **We Build Your Solution**
+   - "Custom solution in 48 hours with quality assurance"
+3. **Get Your Data**
+   - "Clean data delivered automatically in your format"
+
+---
+
+## ✨ FEATURES GRID SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│        Everything You Need, Nothing You Don't                 │
+│                                                               │
+│  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐                       │
+│  │ Feat │ │ Feat │ │ Feat │ │ Feat │                       │
+│  └──────┘ └──────┘ └──────┘ └──────┘                       │
+│  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐                       │
+│  │ Feat │ │ Feat │ │ Feat │ │ Feat │                       │
+│  └──────┘ └──────┘ └──────┘ └──────┘                       │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Features Grid**
+- Grid: `repeat(4, 1fr)` (desktop) / `repeat(2, 1fr)` (tablet) / `1fr` (mobile)
+- Gap: `32px`
+
+**Feature Card**
+- Background: `rgba(45, 45, 63, 0.5)`
+- Border-radius: `16px`, Padding: `32px`
+- Border: `1px solid rgba(108, 92, 231, 0.15)`
+- Backdrop-filter: `blur(10px)`
+- Hover: Lift `-4px`
+
+**Feature Icon**
+- Size: `48px`, rounded square background
+- Icon color: `#6c5ce7`
+- Margin-bottom: `20px`
+
+**Feature Title**
+- Font-size: `20px` (desktop) / `18px` (mobile)
+- Font-weight: `600`, Color: `#ccd6f6`
+
+**Feature Description**
+- Font-size: `14px`, Line-height: `1.7`
+- Color: `#8892b0`
+
+**8 Features:**
+1. Universal Compatibility
+2. Anti-Bot Bypass
+3. Clean, Structured Output
+4. 24/7 Monitoring
+5. Infinite Scalability
+6. 48-Hour Deployment
+7. Seamless Integration
+8. Legal & Compliant
+
+---
+
+## 📊 USE CASES SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│               Built for Real Business Needs                   │
+│  [Tab: Lead Gen] [Tab: E-commerce] [Tab: Research]          │
+│                                                               │
+│  [LEFT: Use Case Card]         [RIGHT: Dashboard Visual]     │
+│  Industry Badge                 with floating stat cards      │
+│  Title                                                        │
+│  Description                                                  │
+│  ✓ Benefit 1                                                  │
+│  ✓ Benefit 2                                                  │
+│  See Case Study →                                             │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Tab Navigation**
+- Horizontal flex, `16px` gap, centered
+- Tabs: "Lead Generation", "E-commerce", "Market Research", etc.
+- Active tab: Purple background, enhanced border
+- Tab style: `12px 24px` padding, `24px` border-radius
+
+**Content Grid**
+- Grid: `1fr 1.2fr` (desktop) / single column (mobile)
+- Gap: `64px`
+
+**Use Case Card**
+- Background gradient, `48px` padding
+- Border: `1px solid rgba(108, 92, 231, 0.2)`
+- Icon: `56px` with rounded background
+- Title: `32px` (desktop) / `24px` (mobile)
+- Benefits list with green checkmarks
+
+**Visual Column**
+- Dashboard screenshot with purple border
+- Floating stat cards showing results
+- Border-radius: `16px`
+- Box-shadow: `0 12px 40px rgba(0, 0, 0, 0.3)`
+
+---
+
+## 💬 TESTIMONIALS SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│              Loved by Businesses Worldwide                    │
+│                                                               │
+│  ┌────────────┐  ┌────────────┐  ┌────────────┐            │
+│  │ ★★★★★      │  │ ★★★★★      │  │ ★★★★★      │            │
+│  │ Quote      │  │ Quote      │  │ Quote      │            │
+│  │ [Photo]    │  │ [Photo]    │  │ [Photo]    │            │
+│  │ Name       │  │ Name       │  │ Name       │            │
+│  │ Title, Co  │  │ Title, Co  │  │ Title, Co  │            │
+│  │ Result stat│  │ Result stat│  │ Result stat│            │
+│  └────────────┘  └────────────┘  └────────────┘            │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Testimonials Grid**
+- Grid: `repeat(3, 1fr)` (desktop) / single column (mobile)
+- Gap: `32px`
+
+**Testimonial Card**
+- Background gradient, `32px` padding
+- Border-radius: `16px`
+- Border: `1px solid rgba(108, 92, 231, 0.1)`
+- Hover: Lift `-8px`
+
+**Rating Stars**
+- 5 yellow stars, `16px` size
+- Color: `#fbbf24`
+- Gap: `4px`, Margin-bottom: `16px`
+
+**Quote Text**
+- Font-size: `16px`, Line-height: `1.7`
+- Color: `#ccd6f6`
+- Margin-bottom: `24px`
+
+**Author Section**
+- Border-top: `1px solid rgba(108, 92, 231, 0.1)`
+- Flex row, `48px` photo circle
+- Name: `15px`, Font-weight: `600`
+- Title: `14px`, Color: `#8892b0`
+
+**Result Stat**
+- Purple background tint
+- Border-left: `3px solid #6c5ce7`
+- Font-weight: `600`
+- Example: "15 hours/week saved", "+18% revenue"
+
+---
+
+## 📈 STATS/RESULTS SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│                DataForge in Numbers                           │
+│                                                               │
+│   ┌─────┐    ┌─────┐    ┌─────┐    ┌─────┐                │
+│   │500+ │    │99.9%│    │48hrs│    │24/7 │                │
+│   │Clnts│    │Accur│    │Dploy│    │Suprt│                │
+│   └─────┘    └─────┘    └─────┘    └─────┘                │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Stats Grid**
+- Grid: `repeat(4, 1fr)` (desktop) / `repeat(2, 1fr)` (mobile)
+- Gap: `32px`
+- Text-align: center
+
+**Stat Card**
+- Background: Transparent or subtle
+- Border: `2px solid rgba(108, 92, 231, 0.2)`
+- Border-radius: `12px`, Padding: `32px`
+- Hover: Purple background tint, lift `-4px`
+
+**Stat Number**
+- Font-size: `48px` (desktop) / `40px` (mobile)
+- Font-weight: `700`
+- Gradient text: Purple to blue
+- Margin-bottom: `12px`
+
+**Stat Label**
+- Font-size: `14px`, Uppercase
+- Color: `#8892b0`
+- Letter-spacing: `0.1em`
+
+**Stats:**
+- 500+ Happy Clients
+- 99.9% Data Accuracy
+- 48hrs Avg. Deployment
+- 24/7 Support
+
+---
+
+## ❓ FAQ SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│           Frequently Asked Questions                          │
+│                                                               │
+│  ┌────────────────────────────────────────────┐              │
+│  │ Question 1                              [+]│              │
+│  └────────────────────────────────────────────┘              │
+│  ┌────────────────────────────────────────────┐              │
+│  │ Question 2                              [-]│              │
+│  │ Answer text appears when expanded...       │              │
+│  └────────────────────────────────────────────┘              │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**FAQ Container**
+- Max-width: `900px`, Centered
+- Vertical stack, `16px` gap
+
+**Accordion Item**
+- Background gradient
+- Border-radius: `12px`
+- Border: `1px solid rgba(108, 92, 231, 0.1)`
+
+**Question Header**
+- Flex row, space-between
+- Padding: `24px`
+- Font-size: `18px` (desktop) / `16px` (mobile)
+- Font-weight: `600`, Color: `#ccd6f6`
+- Cursor: pointer
+
+**Expand Icon**
+- Size: `24px`, Color: `#6c5ce7`
+- Rotates 45deg when expanded
+
+**Answer Content**
+- Max-height: `0` collapsed / `auto` expanded
+- Padding: `0 24px 24px 24px` when open
+- Font-size: `16px`, Line-height: `1.7`
+- Color: `#8892b0`
+- Transition: `max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1)`
+
+**8-10 FAQ Questions covering:**
+- What websites can you scrape?
+- How long to deploy?
+- Is web scraping legal?
+- What data formats?
+- What if website changes?
+- How handle CAPTCHAs?
+- Can scrape behind logins?
+- Pricing structure?
+- Can I get a sample?
+- Still have questions? [Schedule Call CTA]
+
+---
+
+## 🚀 FINAL CTA SECTION
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│                     [LARGE CENTERED CARD]                     │
+│                                                               │
+│              Start Getting Clean, Accurate Data               │
+│                     in 48 Hours                               │
+│                                                               │
+│         Schedule a free consultation. No commitment,          │
+│           no credit card—just a conversation.                 │
+│                                                               │
+│              [Schedule Your Free Demo]                        │
+│         🗓️ Tomorrow 2pm • ⏱️ 30 min • 📊 Free sample        │
+│                                                               │
+│         [Security] [GDPR] [BBB] [G2 Badge]                   │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**CTA Card**
+- Background gradient with glow effect
+- Border-radius: `24px`, Padding: `64px`
+- Border: `1px solid rgba(108, 92, 231, 0.3)`
+- Box-shadow: `0 12px 48px rgba(0, 0, 0, 0.3)`
+- Max-width: `900px`, Centered
+- Text-align: center
+
+**Headline**
+- Text: "Start Getting Clean, Accurate Data in 48 Hours"
+- Font-size: `42px` (desktop) / `28px` (mobile)
+- Font-weight: `700`, Color: `#ccd6f6`
+- Margin-bottom: `20px`
+
+**Supporting Text**
+- Font-size: `18px`, Line-height: `1.6`
+- Color: `#8892b0`
+- Max-width: `600px`, Centered
+
+**Primary CTA**
+- Text: "Schedule Your Free Demo"
+- Larger padding: `18px 40px`
+- Box-shadow: `0 8px 32px rgba(108, 92, 231, 0.4)`
+- Hover: Enhanced lift and glow
+
+**Micro-copy**
+- Icons + text showing: Next available time, duration, free sample value
+- Font-size: `14px`, Color: `#8892b0`
+
+**Trust Badges**
+- Horizontal row, `32px` gap
+- Grayscale icons with labels
+- Examples: Security, GDPR, BBB, G2
+
+---
+
+## 📄 FOOTER
+
+### Visual Layout
+```
+┌──────────────────────────────────────────────────────────────┐
+│  [DataForge Logo]                                            │
+│  Tagline text                                                 │
+│                                                               │
+│  Company    Product     Resources    Contact                 │
+│  - About    - Features  - Blog       - Email                 │
+│  - Careers  - Pricing   - Cases      - Phone                 │
+│  - Press    - Demo      - Docs       - Address               │
+│                                                               │
+│  [LinkedIn] [Twitter] [Facebook]                             │
+│  ────────────────────────────────────────────                │
+│  © 2025 DataForge. All rights reserved.                      │
+│  Privacy Policy | Terms | GDPR Compliance                    │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### Design Specifications
+
+**Footer Container**
+- Background: `#16161f` (darker than main)
+- Padding: `64px 0 32px 0`
+- Border-top: `1px solid rgba(108, 92, 231, 0.1)`
+
+**Footer Grid**
+- Grid: `2fr 1fr 1fr 1fr 1fr` (desktop) / single column (mobile)
+- Gap: `48px`
+
+**Brand Column**
+- Logo: `24px`, Font-weight: `700`
+- Tagline: `14px`, Color: `#8892b0`
+- Max-width: `300px`
+
+**Navigation Columns**
+- Header: `14px`, Uppercase, `#ccd6f6`
+- Links: `14px`, Color: `#8892b0`
+- Hover: `#ccd6f6`
+- Vertical stack, `12px` gap
+
+**Social Icons**
+- `40px` circles with purple background tint
+- Icon size: `20px`, Color: `#8892b0`
+- Hover: Enhanced color and lift
+- Centered row, `16px` gap
+
+**Copyright & Legal**
+- Font-size: `14px`, Color: `#8892b0`
+- Centered
+- Links separated by "•" or "|"
+
+---
+
+## 📱 MOBILE-SPECIFIC ELEMENTS
+
+### Sticky Mobile CTA Bar
+**Container** (Mobile Only, Fixed Bottom)
+- Background: `rgba(26, 26, 46, 0.98)` with blur
+- Box-shadow: `0 -4px 16px rgba(0, 0, 0, 0.3)`
+- Padding: `12px 20px`
+- Z-index: `100`
+
+**CTA Button**
+- Text: "Get Free Demo"
+- Gradient background
+- Padding: `12px 24px`
+- Full touch-friendly size
+
+---
+
+## 🎨 GLOBAL DESIGN ELEMENTS
+
+### Scroll Progress Indicator
+- Fixed top, `3px` height
+- Gradient fill: `#6c5ce7` to `#5b4fff`
+- Width increases with scroll
+
+### Scroll-to-Top Button
+- Fixed bottom-right
+- `48px` circle, gradient background
+- Up arrow icon
+- Appears after scrolling
+
+### Loading States
+- Skeleton loaders with shimmer effect
+- Button loading: Spinner + disabled state
+- Smooth transitions
+
+### Animations
+- Page load: Fade + slide up (0.6s)
+- Hover: Standard 0.3s cubic-bezier
+- Scroll: Intersection observer triggers
+
+### Focus States
+- Outline: `2px solid #6c5ce7`
+- Box-shadow: `0 0 0 4px rgba(108, 92, 231, 0.2)`
+- Never remove without replacement
+
+---
+
+## 🎯 RESPONSIVE BREAKPOINTS
+
+**Desktop (1024px+)**
+- Full navigation
+- Multi-column grids
+- Side-by-side layouts
+- Full padding
+
+**Tablet (768px-1023px)**
+- May collapse nav
+- 2-column grids
+- Medium typography
+- Reduced spacing
+
+**Mobile (320px-767px)**
+- Hamburger menu
+- Single column
+- Smallest typography
+- Sticky CTA bar
+- Maximum touch targets
+
+---
+
+## 📊 PERFORMANCE TARGETS
+
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Total Blocking Time: < 200ms
+- Cumulative Layout Shift: < 0.1
+- Page Size: < 2MB
+
+---
+
+## ✅ IMPLEMENTATION CHECKLIST
+
+### Design
+- [ ] Color palette matches style guide
+- [ ] Typography hierarchy clear
+- [ ] 8pt grid spacing
+- [ ] All hover states designed
+- [ ] Focus states visible
+- [ ] Mobile layouts complete
+
+### Content
+- [ ] Headline clear value prop
+- [ ] Social proof present
+- [ ] FAQs address objections
+- [ ] All CTAs action-oriented
+- [ ] Alt text for images
+
+### Accessibility
+- [ ] 4.5:1 color contrast
+- [ ] Keyboard navigation
+- [ ] Focus indicators
+- [ ] Form labels
+- [ ] Semantic HTML
+- [ ] Screen reader tested
+
+### Performance
+- [ ] Images optimized
+- [ ] Lazy loading
+- [ ] Critical CSS inline
+- [ ] Fonts optimized
+- [ ] < 3s load time
+
+---
+
+## 🎨 COLOR USAGE GUIDE
+
+- **Deep Navy (#1a1a2e)**: Backgrounds
+- **Electric Purple (#6c5ce7)**: CTAs, highlights, icons
+- **Pale Gray (#ccd6f6)**: Headlines
+- **Light Gray (#8892b0)**: Body text
+- **Success Green (#10b981)**: Positive indicators
+- **Warning Yellow (#fbbf24)**: Attention elements
+
+---
+
+## 💡 FINAL DESIGN PHILOSOPHY
+
+**DataForge Landing Page Principles:**
+1. **Clarity Over Cleverness**
+2. **Speed Over Perfection**
+3. **Data Over Opinion**
+4. **Mobile First, Always**
+5. **Accessibility is Non-Negotiable**
+6. **Performance is a Feature**
+7. **Trust Before Features**
+8. **Simplicity Wins**
+
+---
+
+## 📄 DOCUMENT INFO
+
+**Version**: 1.0  
+**Date**: November 2025  
+**Purpose**: Complete design specification for implementation  
+**Audience**: Designers, Developers, Product Managers  
+
+**Next Steps:**
+1. Review and approve specifications
+2. Create high-fidelity mockups
+3. Build HTML/CSS prototype
+4. Implement tracking
+5. Test across devices
+6. Launch MVP
+7. Iterate based on data
+
+---
+
+**This mockup is ready for implementation. A designer can create pixel-perfect visuals, and a developer can build the landing page following these exact specifications.**

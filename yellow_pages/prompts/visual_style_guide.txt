@@ -1,0 +1,551 @@
+# DataForge Visual Style Guide
+## Landing Page Design System
+
+---
+
+## 1. COLOR PALETTE
+
+### Primary Colors
+- **Primary Blue**: `#0F172A` (Dark navy for headers and primary text)
+- **Primary Action**: `#3B82F6` (Bright blue for primary CTAs)
+- **Primary Hover**: `#2563EB` (Darker blue for hover states)
+
+### Secondary Colors
+- **Secondary Dark**: `#1E293B` (Section backgrounds, cards)
+- **Secondary Light**: `#F8FAFC` (Light backgrounds)
+- **Secondary Mid**: `#E2E8F0` (Borders, dividers)
+
+### Accent Colors
+- **Success Green**: `#10B981` (Success states, positive indicators)
+- **Alert Orange**: `#F59E0B` (Warnings, important highlights)
+- **Error Red**: `#EF4444` (Error states, critical alerts)
+- **Purple Accent**: `#8B5CF6` (Feature highlights, badges)
+
+### Neutral Grays
+- **Gray-900**: `#0F172A` (Primary text)
+- **Gray-700**: `#334155` (Secondary text)
+- **Gray-500**: `#64748B` (Tertiary text, placeholders)
+- **Gray-300**: `#CBD5E1` (Borders)
+- **Gray-100**: `#F1F5F9` (Subtle backgrounds)
+- **White**: `#FFFFFF` (Base background)
+
+### Gradient System
+```css
+/* Primary gradient for hero sections */
+background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+
+/* Subtle gradient for cards */
+background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+
+/* Dark gradient for sections */
+background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+```
+
+---
+
+## 2. TYPOGRAPHY
+
+### Font Stack
+```css
+/* Primary Font - Headlines & Body */
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+/* Monospace - Code, Data Examples */
+font-family: 'JetBrains Mono', 'SF Mono', Monaco, monospace;
+```
+
+### Type Scale (Desktop)
+- **H1 Hero**: 56px / line-height: 64px / weight: 700
+- **H1 Page**: 48px / line-height: 56px / weight: 700
+- **H2 Section**: 36px / line-height: 44px / weight: 600
+- **H3 Subsection**: 28px / line-height: 36px / weight: 600
+- **H4 Card Title**: 20px / line-height: 28px / weight: 600
+- **Body Large**: 18px / line-height: 28px / weight: 400
+- **Body Regular**: 16px / line-height: 24px / weight: 400
+- **Body Small**: 14px / line-height: 20px / weight: 400
+- **Caption**: 12px / line-height: 16px / weight: 500
+
+### Type Scale (Mobile)
+- **H1 Hero**: 36px / line-height: 44px
+- **H1 Page**: 32px / line-height: 40px
+- **H2 Section**: 28px / line-height: 36px
+- **H3 Subsection**: 24px / line-height: 32px
+- **H4 Card Title**: 18px / line-height: 24px
+- **Body sizes remain consistent**
+
+### Text Colors by Context
+- **Headlines on white**: `#0F172A`
+- **Headlines on dark**: `#FFFFFF`
+- **Body on white**: `#334155`
+- **Body on dark**: `#E2E8F0`
+- **Muted text**: `#64748B`
+- **Links**: `#3B82F6` (hover: `#2563EB`)
+
+---
+
+## 3. BUTTON STYLES
+
+### Primary Button
+```css
+.btn-primary {
+  background: #3B82F6;
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.25);
+}
+
+.btn-primary:hover {
+  background: #2563EB;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.35);
+}
+```
+
+### Secondary Button
+```css
+.btn-secondary {
+  background: transparent;
+  color: #3B82F6;
+  padding: 14px 28px;
+  border: 2px solid #3B82F6;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #3B82F6;
+  color: #FFFFFF;
+}
+```
+
+### Ghost Button
+```css
+.btn-ghost {
+  background: transparent;
+  color: #334155;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: #F1F5F9;
+  color: #0F172A;
+}
+```
+
+### Button Sizes
+- **Large**: padding: 16px 32px; font-size: 18px;
+- **Default**: padding: 14px 28px; font-size: 16px;
+- **Small**: padding: 10px 20px; font-size: 14px;
+
+---
+
+## 4. SPACING SYSTEM
+
+### Base Unit: 8px Grid
+All spacing should be multiples of 8px for consistency:
+
+- **4px**: Micro spacing (icon margins)
+- **8px**: Tight spacing
+- **16px**: Default element spacing
+- **24px**: Comfortable spacing
+- **32px**: Section internal spacing
+- **48px**: Component separation
+- **64px**: Section separation (mobile)
+- **96px**: Section separation (desktop)
+- **128px**: Hero section padding
+
+### Component Spacing Rules
+- **Cards**: 24px padding
+- **Form fields**: 12px vertical spacing
+- **Button groups**: 16px horizontal spacing
+- **List items**: 16px vertical spacing
+- **Paragraph spacing**: 24px
+- **Section padding mobile**: 48px vertical, 24px horizontal
+- **Section padding desktop**: 96px vertical, auto horizontal
+
+---
+
+## 5. LAYOUT & GRID SYSTEM
+
+### Container Widths
+```css
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px; /* Mobile */
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 32px; /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 48px; /* Desktop */
+  }
+}
+```
+
+### Grid System
+- **Desktop**: 12-column grid, 24px gutter
+- **Tablet**: 8-column grid, 20px gutter
+- **Mobile**: 4-column grid, 16px gutter
+
+### Common Layouts
+```css
+/* Two Column 50/50 */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+/* Three Column Cards */
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Feature Grid 60/40 */
+.grid-feature {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+```
+
+---
+
+## 6. COMPONENT PATTERNS
+
+### Cards
+```css
+.card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.card-dark {
+  background: #1E293B;
+  color: #FFFFFF;
+}
+```
+
+### Feature Blocks
+```css
+.feature-block {
+  text-align: center;
+  padding: 24px;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  color: #3B82F6;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #0F172A;
+}
+
+.feature-description {
+  font-size: 16px;
+  color: #64748B;
+  line-height: 1.6;
+}
+```
+
+### Form Elements
+```css
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: #3B82F6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+```
+
+---
+
+## 7. VISUAL ELEMENTS
+
+### Icons
+- **Style**: Outline icons for UI, filled for emphasis
+- **Size**: 20px (inline), 24px (buttons), 48px (features)
+- **Color**: Inherit from text or `#3B82F6` for accent
+- **Recommended Library**: Heroicons, Feather Icons, or Phosphor Icons
+
+### Images
+- **Hero Images**: 16:9 ratio, subtle gradient overlay
+- **Feature Images**: Square or 4:3 ratio
+- **Avatars**: Circular, 40px-80px depending on context
+- **Screenshots**: Add subtle shadow, rounded corners (8px)
+
+### Decorative Elements
+```css
+/* Gradient mesh background */
+.gradient-mesh {
+  background-image: 
+    radial-gradient(at 20% 80%, #3B82F6 0, transparent 50%),
+    radial-gradient(at 80% 20%, #8B5CF6 0, transparent 50%),
+    radial-gradient(at 40% 40%, #10B981 0, transparent 50%);
+  opacity: 0.05;
+}
+
+/* Dot pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, #CBD5E1 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+```
+
+---
+
+## 8. MOBILE OPTIMIZATION
+
+### Breakpoints
+- **Mobile**: < 640px
+- **Tablet**: 640px - 1023px
+- **Desktop**: 1024px - 1279px
+- **Large Desktop**: ≥ 1280px
+
+### Mobile-First Rules
+1. **Touch Targets**: Minimum 44x44px
+2. **Font Sizes**: Minimum 14px for body text
+3. **Padding**: Increase by 20% on mobile
+4. **Stack Elements**: Convert horizontal layouts to vertical
+5. **Simplify Navigation**: Use hamburger menu below 768px
+
+### Responsive Utilities
+```css
+/* Hide on mobile */
+@media (max-width: 639px) {
+  .hide-mobile { display: none; }
+}
+
+/* Stack on mobile */
+@media (max-width: 767px) {
+  .stack-mobile {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+```
+
+---
+
+## 9. CONVERSION OPTIMIZATION
+
+### Visual Hierarchy Principles
+1. **F-Pattern Layout**: Place key info in F-reading pattern
+2. **Z-Pattern for CTAs**: Guide eye from logo → benefit → CTA
+3. **Progressive Disclosure**: Show complexity gradually
+4. **White Space**: 40% minimum white space ratio
+
+### CTA Placement
+- **Above the fold**: Primary CTA within first viewport
+- **Sticky header CTA**: Show after 30% scroll
+- **End of sections**: Secondary CTAs after value props
+- **Footer CTA**: Final conversion opportunity
+
+### Trust Signals Styling
+```css
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 24px;
+  font-size: 14px;
+  color: #64748B;
+}
+
+.testimonial-card {
+  background: #FFFFFF;
+  padding: 32px;
+  border-radius: 16px;
+  border-left: 4px solid #3B82F6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+```
+
+---
+
+## 10. ANIMATION & INTERACTIONS
+
+### Micro-animations
+```css
+/* Default transition */
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+/* Hover lift */
+transform: translateY(-2px);
+
+/* Scale on click */
+transform: scale(0.98);
+
+/* Fade in on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+```
+
+### Loading States
+- **Skeleton screens**: Use `#F1F5F9` with shimmer effect
+- **Spinners**: 2px stroke, `#3B82F6` color
+- **Progress bars**: 4px height, rounded ends
+
+---
+
+## 11. ACCESSIBILITY
+
+### Color Contrast Requirements
+- **Normal text**: 4.5:1 ratio minimum
+- **Large text**: 3:1 ratio minimum
+- **Interactive elements**: 3:1 ratio minimum
+
+### Focus States
+```css
+*:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+```
+
+### ARIA Labels
+- All interactive elements must have descriptive labels
+- Use semantic HTML5 elements
+- Provide alt text for all images
+
+---
+
+## 12. IMPLEMENTATION CHECKLIST
+
+### Design Tokens for No-Code Tools
+```javascript
+const designTokens = {
+  colors: {
+    primary: '#3B82F6',
+    primaryDark: '#0F172A',
+    secondary: '#1E293B',
+    background: '#FFFFFF',
+    backgroundAlt: '#F8FAFC',
+    text: '#334155',
+    textMuted: '#64748B',
+    border: '#E2E8F0',
+    success: '#10B981',
+    warning: '#F59E0B',
+    error: '#EF4444'
+  },
+  spacing: {
+    xs: '4px',
+    sm: '8px',
+    md: '16px',
+    lg: '24px',
+    xl: '32px',
+    xxl: '48px',
+    xxxl: '64px'
+  },
+  borderRadius: {
+    sm: '4px',
+    md: '8px',
+    lg: '16px',
+    full: '9999px'
+  },
+  fontSize: {
+    xs: '12px',
+    sm: '14px',
+    base: '16px',
+    lg: '18px',
+    xl: '20px',
+    '2xl': '24px',
+    '3xl': '28px',
+    '4xl': '36px',
+    '5xl': '48px',
+    '6xl': '56px'
+  }
+};
+```
+
+### Page Section Order (Top to Bottom)
+1. **Navigation Bar**: Sticky, transparent → white on scroll
+2. **Hero Section**: Full viewport height, gradient background
+3. **Trust Badges**: Logo strip of clients
+4. **Problem Statement**: 3-column pain points
+5. **Solution Overview**: Alternating left/right features
+6. **Use Cases**: Card grid with icons
+7. **Benefits/ROI**: Statistics and metrics
+8. **Testimonials**: Carousel or grid
+9. **Pricing/CTA**: Final conversion section
+10. **Footer**: Links, legal, contact
+
+---
+
+## NOTES FOR IMPLEMENTATION
+
+### For Designers
+- Use 8px grid system consistently
+- Export assets at 2x for retina displays
+- Provide hover states for all interactive elements
+- Create component library in Figma/Sketch
+
+### For No-Code Tools (Webflow, Framer, etc.)
+- Set up global color swatches first
+- Create reusable components for cards, buttons
+- Use CSS Grid/Flexbox for responsive layouts
+- Enable smooth scrolling and micro-animations
+- Test on actual devices, not just browser preview
+
+### Performance Considerations
+- Optimize images (WebP format, lazy loading)
+- Limit font weights to 3 maximum
+- Use system fonts as fallbacks
+- Minimize animation on mobile devices
+- Implement progressive enhancement
+
+---
+
+This style guide provides a modern, conversion-focused design system that balances aesthetics with functionality, perfectly suited for DataForge's B2B data parsing services.

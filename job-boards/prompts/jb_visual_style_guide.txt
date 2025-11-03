@@ -1,0 +1,496 @@
+# DataForge Visual Style Guide for Landing Pages
+
+## Executive Summary
+This style guide creates a professional, data-driven aesthetic that balances technical credibility with approachability, optimized for B2B conversion while avoiding generic SaaS tropes.
+
+---
+
+## 1. Color Palette
+
+### Primary Colors
+- **Deep Slate** `#1A2332` - Main headings, navigation, footer
+- **Pure White** `#FFFFFF` - Backgrounds, cards, negative space
+- **Soft Gray** `#F8F9FB` - Alternate backgrounds, subtle sections
+
+### Accent Colors
+- **Electric Cyan** `#00D4FF` - Primary CTA, key highlights, active states
+- **Data Blue** `#0066FF` - Links, secondary elements, data visualization accents
+- **Success Green** `#00C896` - Success states, positive metrics, checkmarks
+
+### Supporting Colors
+- **Charcoal** `#4A5568` - Body text, descriptions
+- **Silver** `#E2E8F0` - Borders, dividers, inactive states
+- **Warning Amber** `#FFA726` - Alerts, emphasis points (use sparingly)
+
+### Gradient Applications
+- **Hero Gradient**: Linear gradient from `#1A2332` to `#2D3B52` (subtle, 10-15 degree angle)
+- **Card Hover Glow**: Radial gradient with `#00D4FF` at 5% opacity from hover point
+
+---
+
+## 2. Typography System
+
+### Typeface Selection
+- **Primary Font**: Inter (Google Fonts)
+  - Modern, geometric, excellent readability at all sizes
+  - Web-optimized with extensive weight options
+- **Secondary/Data Font**: JetBrains Mono (for code snippets, technical data)
+
+### Type Scale & Hierarchy
+
+**Desktop:**
+- **H1 (Hero)**: 64px / 700 weight / -1px letter-spacing / 72px line-height
+- **H2 (Section)**: 48px / 600 weight / -0.5px letter-spacing / 56px line-height
+- **H3 (Subsection)**: 32px / 600 weight / 0px letter-spacing / 40px line-height
+- **H4 (Card Titles)**: 24px / 600 weight / 0px letter-spacing / 32px line-height
+- **Body Large**: 20px / 400 weight / 0px letter-spacing / 32px line-height
+- **Body Regular**: 16px / 400 weight / 0px letter-spacing / 26px line-height
+- **Body Small**: 14px / 400 weight / 0px letter-spacing / 22px line-height
+- **Caption/Label**: 12px / 500 weight / 0.5px letter-spacing / 18px line-height (uppercase)
+
+**Mobile Adjustments:**
+- H1: 40px / 700 / 48px line-height
+- H2: 32px / 600 / 40px line-height
+- H3: 24px / 600 / 32px line-height
+- Body scales remain consistent
+
+### Typography Rules
+1. Maximum line length: 70 characters (approximately 680px)
+2. Headings in Deep Slate `#1A2332`, body in Charcoal `#4A5568`
+3. Never use pure black `#000000`
+4. Links: Data Blue `#0066FF` with 2px underline offset, 1px thickness
+
+---
+
+## 3. Button System
+
+### Primary CTA Button
+**Default State:**
+- Background: `#00D4FF`
+- Text: `#1A2332` / 16px / 600 weight
+- Padding: 16px horizontal, 48px vertical
+- Border-radius: 8px
+- Shadow: `0 4px 12px rgba(0, 212, 255, 0.25)`
+- Transition: all 0.3s ease
+
+**Hover State:**
+- Background: `#00BADD`
+- Shadow: `0 6px 20px rgba(0, 212, 255, 0.35)`
+- Transform: translateY(-2px)
+
+**Active State:**
+- Background: `#00A0C0`
+- Shadow: `0 2px 8px rgba(0, 212, 255, 0.2)`
+- Transform: translateY(0px)
+
+### Secondary Button
+**Default State:**
+- Background: Transparent
+- Border: 2px solid `#E2E8F0`
+- Text: `#1A2332` / 16px / 600 weight
+- Padding: 14px horizontal, 46px vertical (accounting for border)
+- Border-radius: 8px
+
+**Hover State:**
+- Border-color: `#00D4FF`
+- Text-color: `#0066FF`
+- Background: `rgba(0, 212, 255, 0.05)`
+
+### Tertiary/Text Button
+- Text: `#0066FF` / 16px / 600 weight
+- Underline on hover only
+- Icon arrow (→) appears on hover with 0.3s slide-in
+
+### Button Sizing
+- **Large**: 56px height (hero sections)
+- **Medium**: 48px height (standard CTAs)
+- **Small**: 40px height (forms, secondary actions)
+
+### Button Rules
+1. Minimum touch target: 44x44px on mobile
+2. Never more than one primary CTA per viewport section
+3. Icon spacing: 12px gap between icon and text
+
+---
+
+## 4. Spacing & Whitespace System
+
+### Base Unit: 8px
+All spacing derives from 8px increments for consistency.
+
+### Spacing Scale
+- **XXS**: 4px - Icon gaps, tight elements
+- **XS**: 8px - Element internal padding
+- **S**: 16px - Related element groups
+- **M**: 24px - Component spacing
+- **L**: 32px - Section internal spacing
+- **XL**: 48px - Subsection breaks
+- **XXL**: 64px - Major section breaks
+- **XXXL**: 96px - Hero/footer spacing
+- **XXXXL**: 128px - Page section separators
+
+### Whitespace Principles
+1. **Breathing Room**: Minimum 64px vertical spacing between major page sections
+2. **Content Width**: Maximum 1280px container width, centered
+3. **Reading Width**: Text blocks max 680px for optimal readability
+4. **Edge Margins**: 
+   - Desktop: 80px horizontal padding
+   - Tablet: 40px horizontal padding
+   - Mobile: 24px horizontal padding
+5. **Card Padding**: 32px all sides (desktop), 24px (mobile)
+
+### Visual Rhythm
+- Maintain consistent vertical rhythm using 8px baseline grid
+- Larger spacing before headings (1.5x) than after (1x) to create visual grouping
+
+---
+
+## 5. Layout & Grid System
+
+### Grid Structure
+**Desktop (1280px container):**
+- 12-column grid
+- Column width: 80px
+- Gutter: 24px
+- Margin: 80px each side
+
+**Tablet (768px - 1024px):**
+- 12-column grid (flexible)
+- Gutter: 20px
+- Margin: 40px each side
+
+**Mobile (< 768px):**
+- 4-column grid
+- Gutter: 16px
+- Margin: 24px each side
+
+### Layout Patterns
+
+**Hero Section:**
+- Full viewport height consideration (min 600px, max 900px)
+- Content: 6 columns (left), Visual: 5 columns (right), 1 column gutter
+- Mobile: Stacked, content first
+
+**Feature Grid:**
+- 3-column on desktop (4-4-4 grid columns)
+- 2-column on tablet
+- 1-column on mobile
+- Maintain consistent card heights within rows
+
+**Content + Sidebar:**
+- Main: 8 columns
+- Sidebar: 4 columns
+- Mobile: Stacked, main content first
+
+### Component Containers
+- **Cards**: Background `#FFFFFF`, border `1px solid #E2E8F0`, border-radius `12px`
+- **Card Hover**: Shadow `0 8px 24px rgba(26, 35, 50, 0.08)`, border-color `#00D4FF`
+- **Sections**: Alternating backgrounds (`#FFFFFF` / `#F8F9FB`) for visual separation
+
+---
+
+## 6. Imagery & Iconography
+
+### Image Principles
+1. **No Stock Photos**: Use custom illustrations, data visualizations, or actual product screenshots only
+2. **Aspect Ratios**: 
+   - Hero: 16:9 or 3:2
+   - Feature images: 4:3
+   - Icons/Thumbnails: 1:1
+3. **Image Treatment**: 8px border-radius for all images, 12px for hero images
+4. **Loading**: Use dominant color placeholder during load
+
+### Custom Illustration Style
+- **Line Art**: 2px stroke weight, `#0066FF` primary color
+- **Geometric Abstractions**: Overlapping circles, data nodes, connecting lines
+- **Data Visualization**: Clean charts with Electric Cyan and Data Blue accents
+- **Avoid**: Cutesy characters, overly corporate 3D renders, generic cloud illustrations
+
+### Icon System
+- **Style**: Outlined (2px stroke) with 24x24px base size
+- **Color**: Default `#4A5568`, Active `#00D4FF`, Positive `#00C896`
+- **Source**: Lucide Icons (React) or similar minimal icon set
+- **Spacing**: 12px between icon and label text
+- **Hover**: Subtle 5-degree rotation or scale(1.1) with 0.3s transition
+
+### Visual Accents
+- **Data Streams**: Animated dotted lines connecting elements (`#00D4FF` at 30% opacity)
+- **Gradient Orbs**: Large blurred circles in background (500px+, 5% opacity of accent colors)
+- **Grid Overlays**: Subtle 1px grid pattern in backgrounds (`#E2E8F0` at 20% opacity)
+
+---
+
+## 7. Mobile Optimization
+
+### Responsive Breakpoints
+- **Desktop**: 1280px+
+- **Laptop**: 1024px - 1279px
+- **Tablet**: 768px - 1023px
+- **Mobile Large**: 480px - 767px
+- **Mobile Small**: < 480px
+
+### Mobile-First Rules
+1. **Touch Targets**: Minimum 44x44px, 8px spacing between
+2. **Font Scaling**: Maximum 1.25x reduction from desktop sizes
+3. **Single Column**: All content stacks vertically below 768px
+4. **Navigation**: Hamburger menu below 1024px, slide-in drawer from right
+5. **Forms**: Full-width inputs with 16px font size (prevents iOS zoom)
+6. **CTAs**: Sticky bottom bar for primary action on mobile (56px height)
+
+### Mobile Performance
+- **Images**: Serve WebP format with JPG fallback
+- **Loading**: Progressive loading with skeleton screens
+- **Lazy Load**: Images below fold lazy load with intersection observer
+- **Optimization**: Maximum 2MB total page weight on initial load
+
+### Interaction Patterns
+- **Swipe**: Horizontal card scrolling (snap scroll)
+- **Accordion**: Expand/collapse for long content sections
+- **Tab Navigation**: Horizontal scroll with active indicator
+- **Modals**: Full-screen takeover on mobile (slide up animation)
+
+---
+
+## 8. Interactive Elements & Micro-interactions
+
+### Hover States (Desktop)
+- **Links**: Underline slides in from left (0.2s)
+- **Cards**: Lift 4px with shadow increase
+- **Buttons**: Lift 2px with glow enhancement
+- **Images**: Subtle 1.05x scale with 0.4s ease
+
+### Loading States
+- **Skeleton Screens**: `#E2E8F0` background with animated shimmer
+- **Spinners**: Circular with Electric Cyan `#00D4FF`, 2px stroke
+- **Progress Bars**: 4px height, rounded ends, Electric Cyan fill
+
+### Form Elements
+**Input Fields:**
+- Height: 48px
+- Border: 1px solid `#E2E8F0`
+- Border-radius: 8px
+- Padding: 12px 16px
+- Font: 16px Inter Regular
+- Focus: Border `#00D4FF`, shadow `0 0 0 3px rgba(0, 212, 255, 0.1)`
+- Error: Border `#FF4D4F`, error text `#FF4D4F` 14px below
+
+**Checkboxes/Radio:**
+- Size: 20x20px
+- Border: 2px solid `#E2E8F0`
+- Checked: Background `#00D4FF`, white checkmark
+- Border-radius: 4px (checkbox), 50% (radio)
+
+### Transitions
+- **Default**: 0.3s ease
+- **Fast**: 0.15s ease (small elements, hovers)
+- **Slow**: 0.5s ease (page transitions, modals)
+- **Easing**: cubic-bezier(0.4, 0, 0.2, 1) for natural feel
+
+---
+
+## 9. Accessibility & Inclusive Design
+
+### Color Contrast
+- All text meets WCAG 2.1 AA standards minimum (4.5:1 for normal text, 3:1 for large text)
+- Primary text on white: `#4A5568` = 8.5:1 ✓
+- Headings on white: `#1A2332` = 14.2:1 ✓
+- Links on white: `#0066FF` = 5.8:1 ✓
+
+### Focus States
+- Visible focus indicator: 2px solid `#00D4FF`, 2px offset
+- Skip to main content link (hidden until focused)
+- Tab order follows logical reading flow
+
+### Screen Reader Considerations
+- All interactive elements have descriptive labels
+- Images have descriptive alt text (decorative images: alt="")
+- ARIA labels for icon-only buttons
+
+### Motion Preferences
+- Respect `prefers-reduced-motion` media query
+- Disable animations and use instant transitions when requested
+
+---
+
+## 10. Component Library Samples
+
+### Navigation Bar
+```
+Height: 80px
+Background: rgba(255, 255, 255, 0.95) with backdrop-blur
+Shadow: 0 1px 0 #E2E8F0 (bottom border effect)
+Logo: 32px height, left-aligned
+Menu items: 16px / 500 weight / #1A2332 / 24px spacing
+CTA Button: Primary style (medium size)
+Sticky: Yes, with smooth fade-in shadow on scroll
+```
+
+### Hero Section Structure
+```
+Background: White or subtle gradient
+Headline: H1 style, max-width 680px
+Subheadline: Body Large, max-width 580px, 24px below headline
+CTA Group: Primary + Secondary button, 16px gap, 40px below subheadline
+Visual: Right-side illustration/screenshot with subtle shadow
+Height: min 600px, centered content vertically
+```
+
+### Feature Card
+```
+Background: White
+Border: 1px solid #E2E8F0
+Border-radius: 12px
+Padding: 32px
+Icon: 48x48px, Electric Cyan
+Title: H4 style, 16px below icon
+Description: Body Regular, 12px below title
+Hover: Shadow elevation, border color change to Electric Cyan
+```
+
+### Testimonial Card
+```
+Background: #F8F9FB
+Padding: 40px
+Border-left: 4px solid #00D4FF
+Quote: Body Large, italic
+Attribution: Body Small / 500 weight, 24px below quote
+Photo: 56x56px circle, grayscale with Electric Cyan overlay
+```
+
+### Footer
+```
+Background: #1A2332
+Text: #E2E8F0
+Padding: 64px vertical
+Columns: 4 (Desktop), stacked (Mobile)
+Column spacing: 48px
+Links: hover to #00D4FF
+Social icons: 24x24px, 16px spacing
+Copyright: Body Small, 48px top margin
+```
+
+---
+
+## 11. Animation Principles
+
+### Page Load Sequence
+1. Navigation fades in (0.3s)
+2. Hero content slides up + fades (0.5s, 0.1s delay)
+3. Hero visual fades in (0.5s, 0.3s delay)
+4. Sections appear on scroll (intersection observer)
+
+### Scroll Animations
+- **Fade Up**: Element starts 20px below, opacity 0, animates to natural position with opacity 1
+- **Stagger**: Multiple cards animate in sequence with 0.1s delays
+- **Parallax**: Subtle (0.3x speed) for background elements only
+- **Trigger**: Elements animate when 20% visible in viewport
+
+### Data Visualization Animations
+- Charts/graphs draw in over 1.2s with ease-out
+- Numbers count up to final value (0.8s duration)
+- Progress bars fill from left to right (1s duration)
+
+---
+
+## 12. Content Presentation Best Practices
+
+### Social Proof Section
+- Logos: Grayscale by default, color on hover
+- Logo height: 40px standardized
+- Grid: 6 columns desktop, 3 mobile
+- Spacing: 48px between rows
+
+### Stats/Metrics Display
+- Large number: 56px / 700 weight / Electric Cyan
+- Label: 16px / 500 weight / Charcoal / 8px below number
+- Card background: White with subtle shadow
+- Layout: 3-column grid, equal height cards
+
+### FAQ Accordion
+- Question: 18px / 600 weight / #1A2332
+- Expand icon: + (collapsed) / - (expanded), right-aligned
+- Answer: Body Regular, 16px padding-top when expanded
+- Divider: 1px solid #E2E8F0 between items
+- Animation: 0.3s height transition with ease
+
+### Call-to-Action Sections
+- Background: Electric Cyan `#00D4FF` or gradient
+- Text color: Deep Slate `#1A2332`
+- Padding: 80px vertical
+- Content max-width: 680px, centered
+- Button: Inverted style (white background, dark text)
+
+---
+
+## 13. Brand Voice & Visual Tone
+
+### Visual Personality
+- **Professional but Approachable**: Clean lines with human touches
+- **Data-Driven**: Geometric precision with visualization elements
+- **Confident**: Bold typography and decisive color choices
+- **Modern**: Contemporary design without trendy gimmicks
+- **Trustworthy**: Consistent system, reliable interactions
+
+### What to Avoid
+- ❌ Excessive gradients or shadows (flat design with strategic depth)
+- ❌ Cartoon illustrations or mascots
+- ❌ Overuse of animation (purposeful motion only)
+- ❌ Generic stock photography
+- ❌ Cluttered layouts or information overload
+- ❌ Neon or saturated color schemes
+- ❌ Decorative fonts or script typography
+- ❌ Transparent or glass-morphism effects (dated)
+
+---
+
+## 14. Implementation Checklist
+
+### Design Phase
+- [ ] Create component library in Figma/design tool
+- [ ] Design mobile, tablet, and desktop versions
+- [ ] Establish 8px grid system
+- [ ] Test color contrast ratios
+- [ ] Create interactive prototype
+
+### Development Phase
+- [ ] Set up CSS custom properties for colors and spacing
+- [ ] Implement responsive breakpoints
+- [ ] Add smooth scroll behavior
+- [ ] Create reusable component classes
+- [ ] Test across browsers (Chrome, Firefox, Safari, Edge)
+- [ ] Validate accessibility with automated tools
+- [ ] Test keyboard navigation
+- [ ] Optimize images and assets
+
+### Pre-Launch
+- [ ] Lighthouse performance audit (target: 90+ scores)
+- [ ] Cross-device testing (iOS, Android, various screen sizes)
+- [ ] A/B test CTA placements and colors
+- [ ] Heatmap analysis setup
+- [ ] Analytics event tracking implementation
+
+---
+
+## 15. Maintenance & Evolution
+
+### Quarterly Review
+- Analyze conversion rates by section
+- Review heatmaps and scroll depth
+- Test alternative CTA variations
+- Update imagery and content freshness
+- Check for accessibility updates
+
+### Style Guide Updates
+This guide should be versioned and updated when:
+- New components are created
+- Brand evolution requires adjustments
+- User testing reveals friction points
+- Technology changes enable better solutions
+
+**Version**: 1.0  
+**Last Updated**: November 2025  
+**Next Review**: February 2026
+
+---
+
+This comprehensive style guide provides everything needed to create high-converting, professional landing pages for DataForge that stand out in the B2B data services market while maintaining visual consistency and optimal user experience.

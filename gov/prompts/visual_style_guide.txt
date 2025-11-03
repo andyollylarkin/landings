@@ -1,0 +1,496 @@
+# DataForge Visual Style Guide
+
+## Design Philosophy
+
+The DataForge visual identity draws inspiration from institutional authority (whitehouse.gov aesthetic) while maintaining B2B SaaS conversion best practices. The design conveys **trust, precision, and governmental-level reliability** through a restrained, official aesthetic.
+
+---
+
+## 1. Color Palette
+
+### Primary Colors
+- **Navy Blue (Primary)**: `#112E51` - Deep, authoritative blue for headers and key elements
+- **White**: `#FFFFFF` - Primary background, representing clarity and transparency
+- **Charcoal**: `#212121` - Body text, conveying professionalism
+
+### Secondary Colors
+- **Medium Blue**: `#205493` - Secondary CTAs and accent elements
+- **Light Blue**: `#4A90E2` - Hover states and interactive elements
+- **Cool Gray**: `#5B616B` - Secondary text and borders
+
+### Accent Colors
+- **Red (CTA Primary)**: `#D83933` - Primary action buttons (inspired by WH.gov urgency)
+- **Gold**: `#FDB81E` - Success states and achievements
+- **Light Gray Background**: `#F1F1F1` - Section alternation
+
+### Usage Guidelines
+- Use Navy Blue (#112E51) for main navigation and primary headings
+- Reserve Red (#D83933) exclusively for primary CTAs to maximize impact
+- Employ Light Gray backgrounds to create visual rhythm between sections
+- Maintain 4.5:1 contrast ratio minimum for WCAG AA compliance
+
+---
+
+## 2. Typography
+
+### Font Stack
+**Primary**: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+**Alternative**: Open Sans (if Inter unavailable)
+
+### Hierarchy
+
+**H1 - Hero Heading**
+- Font: Inter Bold
+- Size: 48px (desktop) / 32px (mobile)
+- Line height: 1.2
+- Color: #112E51
+- Weight: 700
+- Letter spacing: -0.5px
+
+**H2 - Section Heading**
+- Font: Inter SemiBold
+- Size: 36px (desktop) / 28px (mobile)
+- Line height: 1.3
+- Color: #112E51
+- Weight: 600
+
+**H3 - Subsection Heading**
+- Font: Inter Medium
+- Size: 24px (desktop) / 20px (mobile)
+- Line height: 1.4
+- Color: #212121
+- Weight: 500
+
+**Body Text**
+- Font: Inter Regular
+- Size: 18px (desktop) / 16px (mobile)
+- Line height: 1.6
+- Color: #212121
+- Weight: 400
+- Max width: 65-75 characters per line
+
+**Caption/Small Text**
+- Font: Inter Regular
+- Size: 14px
+- Line height: 1.5
+- Color: #5B616B
+- Weight: 400
+
+---
+
+## 3. Button Styles
+
+### Primary CTA Button
+```
+Background: #D83933 (Red)
+Text: #FFFFFF, Inter SemiBold, 16px
+Padding: 16px 32px
+Border-radius: 2px (sharp, official appearance)
+Border: none
+Box-shadow: 0 2px 4px rgba(216, 57, 51, 0.2)
+
+Hover State:
+Background: #B82E28
+Box-shadow: 0 4px 8px rgba(216, 57, 51, 0.3)
+Transform: translateY(-1px)
+Transition: all 0.2s ease
+
+Active State:
+Background: #9A2621
+Transform: translateY(0)
+```
+
+### Secondary Button
+```
+Background: transparent
+Text: #205493, Inter SemiBold, 16px
+Padding: 16px 32px
+Border: 2px solid #205493
+Border-radius: 2px
+
+Hover State:
+Background: #205493
+Text: #FFFFFF
+Border: 2px solid #205493
+```
+
+### Text Link Button
+```
+Text: #205493, Inter Medium, 16px
+Text-decoration: none
+Border-bottom: 1px solid #205493
+
+Hover State:
+Color: #112E51
+Border-bottom: 2px solid #112E51
+```
+
+### Button Sizing
+- **Large (Hero)**: 18px text, 18px 40px padding
+- **Medium (Standard)**: 16px text, 16px 32px padding
+- **Small (Secondary)**: 14px text, 12px 24px padding
+
+---
+
+## 4. Whitespace & Spacing System
+
+### Base Unit: 8px
+
+**Spacing Scale**
+- XS: 8px (0.5rem)
+- S: 16px (1rem)
+- M: 24px (1.5rem)
+- L: 32px (2rem)
+- XL: 48px (3rem)
+- 2XL: 64px (4rem)
+- 3XL: 96px (6rem)
+- 4XL: 128px (8rem)
+
+### Section Spacing
+- **Between sections**: 96px (desktop) / 64px (mobile)
+- **Within sections**: 48px between content blocks
+- **Around headlines**: 32px bottom margin
+- **Paragraph spacing**: 24px between paragraphs
+
+### Container Padding
+- **Desktop**: 80px horizontal
+- **Tablet**: 40px horizontal
+- **Mobile**: 24px horizontal
+
+### Principles
+- Use generous whitespace (minimum 96px) between major sections
+- Maintain consistent rhythm using 8px base unit
+- Create "breathing room" around CTAs (minimum 48px margin)
+- Group related elements closely (8-16px), separate unrelated elements widely (48px+)
+
+---
+
+## 5. Images & Icons
+
+### Photography Style
+- **Tone**: Corporate, professional, subtly optimistic
+- **Style**: High-contrast, slightly desaturated (15-20% less saturation)
+- **Composition**: Clean, uncluttered, showing technology/data visualization
+- **Overlay**: Navy blue overlay at 20-30% opacity when text overlays image
+
+### Icon System
+- **Style**: Line icons, 2px stroke weight
+- **Size**: 24px, 32px, 48px standard sizes
+- **Color**: #205493 (primary), #5B616B (secondary)
+- **Set recommendation**: Heroicons, Feather Icons, or custom line icons
+- **Usage**: Support text, never replace it
+
+### Illustrations
+- **Style**: Minimal line illustrations with Navy Blue (#112E51) and Light Blue (#4A90E2)
+- **Complexity**: Simple, abstract representations of data/automation
+- **Background**: Always on white or light gray, never colored backgrounds
+
+### Data Visualization
+- **Colors**: Use primary palette (Navy, Medium Blue, Light Blue)
+- **Style**: Clean, minimalist charts with clear labels
+- **Grid lines**: Light gray (#E5E5E5), 1px
+
+---
+
+## 6. Layout & Grid System
+
+### Grid Structure
+**Desktop (1200px+ container)**
+- 12-column grid
+- Gutter: 32px
+- Max-width: 1200px
+- Centered alignment
+
+**Tablet (768-1199px)**
+- 8-column grid
+- Gutter: 24px
+- Max-width: 100%
+- Padding: 40px sides
+
+**Mobile (< 768px)**
+- 4-column grid (effectively single column for content)
+- Gutter: 16px
+- Padding: 24px sides
+
+### Layout Patterns
+
+**Hero Section**
+```
+Full-width background (Navy Blue #112E51 or light gray)
+Centered content, max-width 800px
+Vertical padding: 128px (desktop) / 80px (mobile)
+Single column layout
+CTA prominent, below headline
+```
+
+**Feature Sections**
+```
+Alternating backgrounds (white/light gray)
+Two-column layout (desktop): 60/40 or 50/50 split
+Single column (mobile): stack image/text vertically
+Image always full-width within column
+Vertical padding: 96px (desktop) / 64px (mobile)
+```
+
+**Card Grid**
+```
+3 cards (desktop) / 2 cards (tablet) / 1 card (mobile)
+Equal height cards
+White background on cards
+Subtle border: 1px solid #E5E5E5
+Padding inside cards: 32px
+Gap between cards: 32px
+```
+
+**Stats/Metrics Section**
+```
+4 metrics (desktop) / 2 metrics (tablet) / 1 metric (mobile)
+Navy blue background (#112E51)
+White text
+Centered alignment
+Large numbers: 48px Inter Bold
+Labels: 16px Inter Regular
+```
+
+---
+
+## 7. Mobile Optimization Principles
+
+### Responsive Breakpoints
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1199px
+- **Desktop**: 1200px+
+- **Large Desktop**: 1400px+
+
+### Mobile-First Rules
+1. **Touch targets**: Minimum 48x48px for all interactive elements
+2. **Font scaling**: Reduce heading sizes by 30-40% on mobile
+3. **Padding**: Reduce section padding to 64px vertical, 24px horizontal
+4. **Navigation**: Hamburger menu below 768px
+5. **Forms**: Full-width inputs, increased padding (16px)
+6. **CTAs**: Full-width or prominent centered positioning
+7. **Images**: Scale to 100% width, maintain aspect ratio
+8. **Cards**: Stack vertically, full width
+
+### Performance Optimization
+- Lazy load images below fold
+- Serve responsive images (srcset)
+- Minimize font weights (load only 400, 600, 700)
+- Critical CSS inline for above-fold content
+
+---
+
+## 8. Component Library
+
+### Navigation Bar
+```
+Background: #FFFFFF
+Border-bottom: 1px solid #E5E5E5
+Height: 80px
+Logo: Left-aligned
+Menu: Right-aligned
+Sticky: Yes
+Box-shadow on scroll: 0 2px 8px rgba(0,0,0,0.08)
+```
+
+### Form Inputs
+```
+Background: #FFFFFF
+Border: 1px solid #C7C7C7
+Border-radius: 2px
+Padding: 14px 16px
+Font: 16px Inter Regular
+Color: #212121
+
+Focus State:
+Border: 2px solid #205493
+Box-shadow: 0 0 0 3px rgba(32, 84, 147, 0.1)
+
+Error State:
+Border: 2px solid #D83933
+```
+
+### Cards
+```
+Background: #FFFFFF
+Border: 1px solid #E5E5E5
+Border-radius: 0px (sharp corners)
+Padding: 32px
+Box-shadow: none (default)
+
+Hover State (if interactive):
+Box-shadow: 0 4px 12px rgba(0,0,0,0.08)
+Transform: translateY(-2px)
+Transition: all 0.2s ease
+```
+
+### Section Dividers
+```
+Height: 1px
+Color: #E5E5E5
+Margin: 96px 0 (desktop) / 64px 0 (mobile)
+Width: 100%
+```
+
+---
+
+## 9. Animation & Interaction
+
+### Transition Speeds
+- **Fast**: 0.15s (hover states, small movements)
+- **Medium**: 0.25s (button interactions, color changes)
+- **Slow**: 0.4s (page transitions, large movements)
+
+### Animation Principles
+- **Easing**: ease-in-out (default), ease-out (entrances)
+- **Scroll animations**: Fade in + slight upward movement (16px)
+- **Delay**: Stagger multiple elements by 0.1s
+- **Hover effects**: Subtle (2-4px movements, slight shadows)
+
+### Micro-interactions
+- Form field focus: Border color change + subtle glow
+- Button hover: Background darken + slight lift
+- Card hover: Shadow increase + slight lift
+- Link hover: Underline thickens
+
+---
+
+## 10. Accessibility Standards
+
+### WCAG AA Compliance
+- Minimum contrast ratio: 4.5:1 for body text
+- Minimum contrast ratio: 3:1 for large text (18px+)
+- Focus indicators: 2px solid outline in #205493
+- Skip navigation link for keyboard users
+- Alt text for all images
+- ARIA labels for icon-only buttons
+
+### Keyboard Navigation
+- Logical tab order
+- Visible focus states
+- Escape key closes modals/menus
+- Enter/Space activates buttons
+
+---
+
+## 11. Content Guidelines
+
+### Writing Style
+- **Tone**: Professional, authoritative, direct
+- **Sentence length**: Short to medium (15-20 words)
+- **Paragraphs**: 3-4 sentences maximum
+- **Headlines**: Clear benefit statements, not clever wordplay
+- **CTAs**: Action-oriented verbs ("Get Started," "Request Demo")
+
+### Content Hierarchy
+1. **Headline**: What you do/problem you solve
+2. **Subheadline**: Who it's for or key benefit
+3. **Body**: How it works, 2-3 short paragraphs
+4. **Proof**: Stats, testimonials, logos
+5. **CTA**: Clear next step
+
+---
+
+## 12. Page Sections Recommendation
+
+### Optimal Landing Page Structure
+
+1. **Hero Section** (Navy background)
+   - Powerful headline
+   - Subheadline
+   - Primary CTA (red button)
+   - Hero image/illustration
+
+2. **Social Proof** (Light gray background)
+   - Client logos in grayscale
+   - Single line: "Trusted by [X] companies"
+
+3. **Problem Statement** (White background)
+   - 3-column layout
+   - Icons + headline + short description
+   - Pain points addressed
+
+4. **Solution Overview** (Light gray background)
+   - Two-column: Image left, text right
+   - 3-4 key benefits with checkmarks
+   - Secondary CTA
+
+5. **Use Cases** (White background)
+   - 3-card grid
+   - Icon + headline + description per card
+
+6. **Stats/Metrics** (Navy background, white text)
+   - 4 impressive numbers
+   - Format: Large number + small label
+
+7. **How It Works** (White background)
+   - 3-4 steps, numbered
+   - Icon + headline + description
+
+8. **Testimonial** (Light gray background)
+   - Single prominent testimonial
+   - Photo + name + company + role
+
+9. **Final CTA Section** (Navy background)
+   - Strong headline
+   - Single sentence
+   - Large red CTA button
+   - Small text: privacy assurance
+
+10. **Footer** (Charcoal #212121 background)
+    - Minimal links
+    - Contact info
+    - Legal links
+
+---
+
+## 13. Implementation Checklist
+
+### For Designers
+- [ ] Create component library with all button states
+- [ ] Design desktop, tablet, and mobile versions
+- [ ] Ensure all text meets contrast requirements
+- [ ] Provide hover state designs
+- [ ] Create style guide document with all hex codes
+- [ ] Design form field states (default, focus, error, success)
+
+### For Developers/No-Code
+- [ ] Set up 8px spacing system as CSS variables
+- [ ] Implement responsive breakpoints
+- [ ] Add smooth scroll behavior
+- [ ] Ensure keyboard navigation works
+- [ ] Test on mobile devices
+- [ ] Optimize images (WebP format)
+- [ ] Add focus indicators
+- [ ] Implement lazy loading for images
+
+### For Copywriters
+- [ ] Keep headlines under 10 words
+- [ ] Make CTAs action-oriented
+- [ ] Use benefit-focused language
+- [ ] Keep paragraphs short (3-4 sentences)
+- [ ] Add social proof throughout
+
+---
+
+## 14. Brand Voice Alignment
+
+To maintain the "White House" authoritative aesthetic while being approachable for B2B:
+
+**Do:**
+- Use official, institutional language
+- Present data and facts prominently
+- Maintain visual restraint and sophistication
+- Create sense of trust and stability
+- Use structured, logical content flow
+
+**Don't:**
+- Use playful or casual language
+- Employ trendy design elements
+- Use bright, vibrant colors
+- Create busy, cluttered layouts
+- Use informal icons or illustrations
+
+---
+
+This style guide ensures DataForge maintains a professional, authoritative presence that builds trust while optimizing for B2B conversion through clear CTAs, strong hierarchy, and user-focused design.

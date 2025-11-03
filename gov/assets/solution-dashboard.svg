@@ -1,0 +1,39 @@
+<svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="400" fill="#ffffff"/>
+  <rect x="0" y="0" width="500" height="60" fill="#112E51"/>
+  <text x="15" y="25" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold">DataForge Automation</text>
+  <rect x="15" y="80" width="470" height="30" fill="#f1f1f1" rx="4"/>
+  <text x="25" y="100" fill="#112E51" font-family="Arial" font-size="14">Automated data collection from 50+ sources</text>
+  <rect x="15" y="125" width="220" height="120" fill="#ffffff" stroke="#e5e5e5" rx="4"/>
+  <text x="25" y="145" fill="#112E51" font-family="Arial" font-size="16" font-weight="bold">Sources</text>
+  <circle cx="40" cy="165" r="6" fill="#0077b5"/>
+  <text x="55" y="170" fill="#212121" font-family="Arial" font-size="12">LinkedIn</text>
+  <circle cx="40" cy="185" r="6" fill="#2557a7"/>
+  <text x="55" y="190" fill="#212121" font-family="Arial" font-size="12">Indeed</text>
+  <circle cx="40" cy="205" r="6" fill="#0e76a8"/>
+  <text x="55" y="210" fill="#212121" font-family="Arial" font-size="12">Glassdoor</text>
+  <circle cx="40" cy="225" r="6" fill="#ea4335"/>
+  <text x="55" y="230" fill="#212121" font-family="Arial" font-size="12">AngelList</text>
+  <rect x="250" y="125" width="220" height="120" fill="#ffffff" stroke="#e5e5e5" rx="4"/>
+  <text x="260" y="145" fill="#112E51" font-family="Arial" font-size="16" font-weight="bold">Processing</text>
+  <rect x="260" y="155" width="180" height="20" fill="#fdb81e"/>
+  <text x="270" y="170" fill="#000000" font-family="Arial" font-size="12">AI Cleaning: 99.9%</text>
+  <rect x="260" y="180" width="180" height="20" fill="#d83933"/>
+  <text x="270" y="195" fill="#ffffff" font-family="Arial" font-size="12">Real-time sync</text>
+  <rect x="260" y="205" width="180" height="20" fill="#205493"/>
+  <text x="270" y="220" fill="#ffffff" font-family="Arial" font-size="12">Auto delivery</text>
+  <rect x="15" y="260" width="470" height="120" fill="#ffffff" stroke="#e5e5e5" rx="4"/>
+  <text x="25" y="280" fill="#112E51" font-family="Arial" font-size="16" font-weight="bold">Delivery Options</text>
+  <rect x="25" y="290" width="140" height="30" fill="#e8f2fd" rx="4"/>
+  <text x="35" y="310" fill="#205493" font-family="Arial" font-size="12">API Integration</text>
+  <rect x="175" y="290" width="140" height="30" fill="#e8f2fd" rx="4"/>
+  <text x="185" y="310" fill="#205493" font-family="Arial" font-size="12">CSV Export</text>
+  <rect x="325" y="290" width="140" height="30" fill="#e8f2fd" rx="4"/>
+  <text x="335" y="310" fill="#205493" font-family="Arial" font-size="12">CRM Sync</text>
+  <rect x="25" y="330" width="140" height="30" fill="#e8f2fd" rx="4"/>
+  <text x="35" y="350" fill="#205493" font-family="Arial" font-size="12">Email Alerts</text>
+  <rect x="175" y="330" width="140" height="30" fill="#e8f2fd" rx="4"/>
+  <text x="185" y="350" fill="#205493" font-family="Arial" font-size="12">Dashboard</text>
+  <rect x="325" y="330" width="140" height="30" fill="#e8f2fd" rx="4"/>
+  <text x="335" y="350" fill="#205493" font-family="Arial" font-size="12">Spreadsheet</text>
+</svg>

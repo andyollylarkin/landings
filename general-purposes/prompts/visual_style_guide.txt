@@ -1,0 +1,1159 @@
+# DataForge Visual Style Guide
+## Comprehensive Design System Based on HelpBot.tech Analysis
+
+---
+
+## 🎨 1. COLOR PALETTE
+
+### Primary Colors
+```
+Deep Purple/Navy: #1a1a2e (Main background)
+Electric Purple: #6c5ce7 (Primary accent)
+Bright Purple: #7c6aff (Hover states, highlights)
+Royal Blue: #5b4fff (Secondary accent)
+```
+
+### Secondary Colors
+```
+Dark Gray: #16161f (Secondary backgrounds)
+Medium Gray: #2d2d3f (Card backgrounds)
+Light Gray: #8892b0 (Body text)
+Pale Gray: #ccd6f6 (Headings, high contrast text)
+```
+
+### Accent Colors
+```
+Neon Purple: #a78bfa (CTAs, links, interactive elements)
+Soft Purple: #e9d5ff (Subtle highlights)
+Success Green: #10b981 (Positive indicators)
+Warning Yellow: #fbbf24 (Attention elements)
+```
+
+### Gradient Options
+```
+Primary Gradient: linear-gradient(135deg, #6c5ce7 0%, #5b4fff 100%)
+Hero Gradient: linear-gradient(180deg, rgba(26,26,46,0.8) 0%, rgba(22,22,31,1) 100%)
+Card Gradient: linear-gradient(145deg, #2d2d3f 0%, #1a1a2e 100%)
+Glow Effect: radial-gradient(circle at center, rgba(108,92,231,0.15) 0%, transparent 70%)
+```
+
+---
+
+## 📝 2. TYPOGRAPHY
+
+### Font Families
+```css
+Primary Font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
+Secondary Font: 'SF Pro Display', 'Inter', sans-serif
+Monospace: 'JetBrains Mono', 'Fira Code', monospace (for code snippets)
+```
+
+### Heading Styles
+
+**H1 - Hero Title**
+```css
+font-size: 56px (desktop) / 36px (mobile)
+font-weight: 700 (Bold)
+line-height: 1.1
+letter-spacing: -0.02em
+color: #ccd6f6
+text-transform: none
+margin-bottom: 24px
+```
+
+**H2 - Section Headers**
+```css
+font-size: 42px (desktop) / 28px (mobile)
+font-weight: 700
+line-height: 1.2
+letter-spacing: -0.01em
+color: #ccd6f6
+margin-bottom: 20px
+```
+
+**H3 - Subsection Headers**
+```css
+font-size: 32px (desktop) / 24px (mobile)
+font-weight: 600
+line-height: 1.3
+color: #ccd6f6
+margin-bottom: 16px
+```
+
+**H4 - Card Titles**
+```css
+font-size: 24px (desktop) / 20px (mobile)
+font-weight: 600
+line-height: 1.4
+color: #ccd6f6
+margin-bottom: 12px
+```
+
+### Body Text Styles
+
+**Large Body**
+```css
+font-size: 20px (desktop) / 18px (mobile)
+font-weight: 400
+line-height: 1.6
+color: #8892b0
+letter-spacing: 0.01em
+```
+
+**Regular Body**
+```css
+font-size: 16px
+font-weight: 400
+line-height: 1.7
+color: #8892b0
+letter-spacing: 0.01em
+```
+
+**Small Text**
+```css
+font-size: 14px
+font-weight: 400
+line-height: 1.6
+color: #8892b0
+opacity: 0.8
+```
+
+**Caption/Labels**
+```css
+font-size: 12px
+font-weight: 500
+line-height: 1.5
+color: #8892b0
+text-transform: uppercase
+letter-spacing: 0.08em
+```
+
+---
+
+## 🔘 3. BUTTON STYLES
+
+### Primary Button (CTA)
+```css
+Background: linear-gradient(135deg, #6c5ce7 0%, #5b4fff 100%)
+Color: #ffffff
+Font-size: 16px
+Font-weight: 600
+Padding: 16px 32px (desktop) / 14px 28px (mobile)
+Border-radius: 12px
+Border: none
+Box-shadow: 0 8px 24px rgba(108, 92, 231, 0.3)
+Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+
+Hover State:
+  Transform: translateY(-2px)
+  Box-shadow: 0 12px 32px rgba(108, 92, 231, 0.4)
+  Background: linear-gradient(135deg, #7c6aff 0%, #6b5aff 100%)
+
+Active State:
+  Transform: translateY(0)
+  Box-shadow: 0 4px 16px rgba(108, 92, 231, 0.3)
+```
+
+### Secondary Button
+```css
+Background: transparent
+Color: #a78bfa
+Font-size: 16px
+Font-weight: 600
+Padding: 16px 32px
+Border-radius: 12px
+Border: 2px solid #6c5ce7
+Transition: all 0.3s ease
+
+Hover State:
+  Background: rgba(108, 92, 231, 0.1)
+  Border-color: #7c6aff
+  Color: #ccd6f6
+  Transform: translateY(-2px)
+```
+
+### Ghost Button
+```css
+Background: transparent
+Color: #a78bfa
+Font-size: 16px
+Font-weight: 500
+Padding: 12px 24px
+Border-radius: 8px
+Border: none
+Transition: all 0.2s ease
+
+Hover State:
+  Color: #ccd6f6
+  Background: rgba(108, 92, 231, 0.15)
+```
+
+### Icon Button
+```css
+Width: 48px
+Height: 48px
+Background: rgba(108, 92, 231, 0.1)
+Border-radius: 50%
+Border: 1px solid rgba(108, 92, 231, 0.2)
+Transition: all 0.3s ease
+
+Hover State:
+  Background: rgba(108, 92, 231, 0.2)
+  Border-color: #6c5ce7
+  Transform: scale(1.05)
+```
+
+---
+
+## 📐 4. SPACING & LAYOUT SYSTEM
+
+### Spacing Scale (8pt Grid System)
+```
+4px   (0.25rem) - xs
+8px   (0.5rem)  - sm
+12px  (0.75rem) - md
+16px  (1rem)    - base
+24px  (1.5rem)  - lg
+32px  (2rem)    - xl
+48px  (3rem)    - 2xl
+64px  (4rem)    - 3xl
+96px  (6rem)    - 4xl
+128px (8rem)    - 5xl
+```
+
+### Section Spacing
+```css
+Hero Section Padding: 128px 0 (desktop) / 80px 0 (mobile)
+Section Padding: 96px 0 (desktop) / 64px 0 (mobile)
+Component Spacing: 64px vertical gap
+Card Internal Padding: 32px (desktop) / 24px (mobile)
+```
+
+### Container Widths
+```css
+Max-width: 1280px
+Content Width: 1120px
+Narrow Content: 800px
+Side Padding: 80px (desktop) / 20px (mobile)
+```
+
+### Grid System
+```css
+12-column grid
+Column Gap: 32px (desktop) / 16px (mobile)
+Row Gap: 48px (desktop) / 32px (mobile)
+
+Breakpoints:
+  Mobile: 320px - 767px
+  Tablet: 768px - 1023px
+  Desktop: 1024px - 1440px
+  Wide: 1441px+
+```
+
+---
+
+## 🖼️ 5. CARD COMPONENTS
+
+### Standard Card
+```css
+Background: linear-gradient(145deg, #2d2d3f 0%, #1a1a2e 100%)
+Border-radius: 16px
+Padding: 32px
+Border: 1px solid rgba(108, 92, 231, 0.1)
+Box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2)
+Backdrop-filter: blur(10px)
+Transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+
+Hover State:
+  Transform: translateY(-8px)
+  Border-color: rgba(108, 92, 231, 0.3)
+  Box-shadow: 0 12px 40px rgba(108, 92, 231, 0.2)
+```
+
+### Feature Card
+```css
+Background: rgba(45, 45, 63, 0.5)
+Border-radius: 20px
+Padding: 40px
+Border: 1px solid rgba(108, 92, 231, 0.15)
+Backdrop-filter: blur(20px)
+Position: relative
+Overflow: hidden
+
+::before {
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: radial-gradient(circle at top right, rgba(108, 92, 231, 0.1) 0%, transparent 50%)
+  pointer-events: none
+}
+```
+
+### Stats Card
+```css
+Background: transparent
+Border-radius: 12px
+Padding: 24px
+Border: 2px solid rgba(108, 92, 231, 0.2)
+Text-align: center
+
+Hover State:
+  Background: rgba(108, 92, 231, 0.05)
+  Border-color: #6c5ce7
+```
+
+---
+
+## 🎯 6. INTERACTIVE ELEMENTS
+
+### Links
+```css
+Color: #a78bfa
+Font-weight: 500
+Text-decoration: none
+Position: relative
+Transition: color 0.2s ease
+
+::after {
+  content: ''
+  position: absolute
+  bottom: -2px
+  left: 0
+  width: 0
+  height: 2px
+  background: linear-gradient(90deg, #6c5ce7, #5b4fff)
+  transition: width 0.3s ease
+}
+
+Hover State:
+  Color: #ccd6f6
+  
+  ::after {
+    width: 100%
+  }
+```
+
+### Input Fields
+```css
+Background: rgba(45, 45, 63, 0.5)
+Border: 2px solid rgba(108, 92, 231, 0.2)
+Border-radius: 12px
+Padding: 16px 20px
+Font-size: 16px
+Color: #ccd6f6
+Transition: all 0.3s ease
+
+Focus State:
+  Border-color: #6c5ce7
+  Background: rgba(45, 45, 63, 0.7)
+  Box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1)
+  Outline: none
+
+Placeholder:
+  Color: #8892b0
+  Opacity: 0.6
+```
+
+### Dropdown/Select
+```css
+Background: rgba(45, 45, 63, 0.5)
+Border: 2px solid rgba(108, 92, 231, 0.2)
+Border-radius: 12px
+Padding: 16px 20px
+Font-size: 16px
+Color: #ccd6f6
+Cursor: pointer
+Transition: all 0.3s ease
+
+Hover/Open State:
+  Border-color: #6c5ce7
+  Background: rgba(45, 45, 63, 0.7)
+```
+
+### Toggle/Switch
+```css
+Width: 48px
+Height: 24px
+Background: rgba(108, 92, 231, 0.2)
+Border-radius: 12px
+Position: relative
+Transition: background 0.3s ease
+
+Active State:
+  Background: linear-gradient(135deg, #6c5ce7 0%, #5b4fff 100%)
+
+Thumb:
+  Width: 20px
+  Height: 20px
+  Background: #ffffff
+  Border-radius: 50%
+  Box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2)
+  Transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+```
+
+---
+
+## 📊 7. DATA VISUALIZATION
+
+### Charts & Graphs
+```css
+Primary Line Color: #6c5ce7
+Secondary Line Color: #5b4fff
+Accent Line Color: #a78bfa
+Grid Lines: rgba(136, 146, 176, 0.1)
+Axis Labels: #8892b0
+Data Point: #ccd6f6
+Tooltip Background: rgba(45, 45, 63, 0.95)
+Tooltip Border: 1px solid rgba(108, 92, 231, 0.3)
+Tooltip Shadow: 0 8px 24px rgba(0, 0, 0, 0.3)
+```
+
+### Progress Bars
+```css
+Background: rgba(108, 92, 231, 0.1)
+Fill: linear-gradient(90deg, #6c5ce7 0%, #5b4fff 100%)
+Height: 8px
+Border-radius: 4px
+Box-shadow: 0 0 12px rgba(108, 92, 231, 0.3) (on fill)
+```
+
+### Badges/Tags
+```css
+Background: rgba(108, 92, 231, 0.15)
+Color: #a78bfa
+Padding: 6px 12px
+Border-radius: 6px
+Font-size: 12px
+Font-weight: 600
+Letter-spacing: 0.05em
+Border: 1px solid rgba(108, 92, 231, 0.2)
+```
+
+---
+
+## 🖼️ 8. IMAGES & ICONS
+
+### Image Treatment
+```css
+Border-radius: 16px
+Box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3)
+Filter: brightness(0.9) contrast(1.05)
+Transition: all 0.4s ease
+
+Hover State:
+  Transform: scale(1.02)
+  Filter: brightness(1) contrast(1.1)
+  Box-shadow: 0 12px 48px rgba(108, 92, 231, 0.2)
+```
+
+### Icon Styles
+```css
+Size Options:
+  Small: 16px
+  Medium: 24px
+  Large: 32px
+  XLarge: 48px
+
+Color: #a78bfa (default)
+Stroke-width: 2px
+Style: Outlined/Line icons preferred
+Accent Icons: Filled style with gradient
+
+Icon with Background:
+  Background: rgba(108, 92, 231, 0.1)
+  Padding: 12px
+  Border-radius: 12px
+  Border: 1px solid rgba(108, 92, 231, 0.2)
+```
+
+### Logo Treatment
+```css
+Primary Logo: Full color on dark background
+Secondary Logo: White/monochrome version
+Min-size: 120px width
+Clear-space: 24px minimum around logo
+Opacity: 100% (never reduce below 90%)
+```
+
+---
+
+## 🌐 9. NAVIGATION & HEADER
+
+### Main Navigation
+```css
+Background: rgba(26, 26, 46, 0.8)
+Backdrop-filter: blur(12px)
+Height: 80px (desktop) / 64px (mobile)
+Border-bottom: 1px solid rgba(108, 92, 231, 0.1)
+Position: fixed
+Top: 0
+Z-index: 1000
+Transition: all 0.3s ease
+
+Scrolled State:
+  Background: rgba(26, 26, 46, 0.95)
+  Box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2)
+```
+
+### Nav Links
+```css
+Font-size: 15px
+Font-weight: 500
+Color: #8892b0
+Padding: 8px 16px
+Border-radius: 8px
+Transition: all 0.2s ease
+
+Hover State:
+  Color: #ccd6f6
+  Background: rgba(108, 92, 231, 0.1)
+
+Active State:
+  Color: #a78bfa
+  Background: rgba(108, 92, 231, 0.15)
+```
+
+### Mobile Menu
+```css
+Background: rgba(26, 26, 46, 0.98)
+Backdrop-filter: blur(20px)
+Full-height overlay
+Padding: 80px 20px 40px
+Animation: Slide from right, 0.3s ease-out
+
+Menu Items:
+  Font-size: 24px
+  Padding: 16px 0
+  Border-bottom: 1px solid rgba(108, 92, 231, 0.1)
+```
+
+---
+
+## 📱 10. MOBILE OPTIMIZATION
+
+### Responsive Breakpoints
+```css
+/* Mobile First Approach */
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  Font-size: Scale to 90%
+  Padding: Reduce by 40%
+  Hero-title: 32px
+}
+
+/* Mobile */
+@media (min-width: 481px) and (max-width: 767px) {
+  Font-size: Scale to 95%
+  Padding: Reduce by 30%
+  Hero-title: 36px
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  Font-size: Scale to 100%
+  Padding: Reduce by 20%
+  Hero-title: 42px
+  Grid: 2 columns
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  Full specifications apply
+  Grid: 3-4 columns
+}
+```
+
+### Touch Targets
+```css
+Minimum Size: 44px × 44px
+Recommended: 48px × 48px
+Spacing: 8px minimum between targets
+Thumb Zone: Bottom 1/3 of screen for primary actions
+```
+
+### Mobile Typography
+```css
+Scale: 0.875rem base (14px)
+Line-height: Increase to 1.8 for readability
+Letter-spacing: Slightly increase for clarity
+Max-width: 65ch for optimal reading
+```
+
+---
+
+## ✨ 11. ANIMATIONS & TRANSITIONS
+
+### Standard Transitions
+```css
+Fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1)
+Medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+Slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+Bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+```
+
+### Hover Effects
+```css
+Lift Effect:
+  Transform: translateY(-4px)
+  Duration: 0.3s
+  Easing: ease-out
+
+Glow Effect:
+  Box-shadow: 0 0 24px rgba(108, 92, 231, 0.4)
+  Duration: 0.4s
+  Easing: ease-in-out
+
+Scale Effect:
+  Transform: scale(1.05)
+  Duration: 0.2s
+  Easing: ease-out
+```
+
+### Page Transitions
+```css
+Fade In:
+  Opacity: 0 → 1
+  Duration: 0.6s
+  Easing: ease-in
+
+Slide Up:
+  Transform: translateY(40px) → translateY(0)
+  Opacity: 0 → 1
+  Duration: 0.8s
+  Easing: cubic-bezier(0.4, 0, 0.2, 1)
+  Stagger: 0.1s between elements
+```
+
+### Loading States
+```css
+Skeleton Loading:
+  Background: linear-gradient(90deg, 
+    rgba(45, 45, 63, 0.5) 0%,
+    rgba(108, 92, 231, 0.1) 50%,
+    rgba(45, 45, 63, 0.5) 100%)
+  Animation: shimmer 1.5s infinite
+  Border-radius: Matches content
+
+Spinner:
+  Border: 3px solid rgba(108, 92, 231, 0.2)
+  Border-top: 3px solid #6c5ce7
+  Border-radius: 50%
+  Animation: spin 0.8s linear infinite
+```
+
+---
+
+## 🎭 12. SHADOWS & DEPTH
+
+### Shadow System
+```css
+/* Elevation Levels */
+
+Level 1 (Subtle):
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+
+Level 2 (Cards):
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2)
+
+Level 3 (Floating):
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25),
+              0 0 24px rgba(108, 92, 231, 0.1)
+
+Level 4 (Modal):
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3),
+              0 0 32px rgba(108, 92, 231, 0.15)
+
+Level 5 (Maximum):
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4),
+              0 0 48px rgba(108, 92, 231, 0.2)
+```
+
+### Glow Effects
+```css
+Purple Glow:
+  box-shadow: 0 0 24px rgba(108, 92, 231, 0.4),
+              0 0 48px rgba(108, 92, 231, 0.2),
+              0 0 80px rgba(108, 92, 231, 0.1)
+
+Subtle Glow:
+  box-shadow: 0 0 16px rgba(108, 92, 231, 0.2)
+
+Text Glow:
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.5),
+               0 0 40px rgba(167, 139, 250, 0.2)
+```
+
+---
+
+## 📋 13. FORMS & INPUT VALIDATION
+
+### Form Layout
+```css
+Field Spacing: 24px vertical gap
+Label Above Input: 8px margin-bottom
+Helper Text: 6px margin-top
+Error Message: 6px margin-top
+Max-width: 600px (optimal form width)
+```
+
+### Validation States
+
+**Success State**
+```css
+Border-color: #10b981
+Background: rgba(16, 185, 129, 0.05)
+Icon: Check mark (green)
+Message color: #10b981
+```
+
+**Error State**
+```css
+Border-color: #ef4444
+Background: rgba(239, 68, 68, 0.05)
+Icon: X mark or alert (red)
+Message color: #ef4444
+Animation: Shake (0.3s)
+```
+
+**Warning State**
+```css
+Border-color: #fbbf24
+Background: rgba(251, 191, 36, 0.05)
+Icon: Alert triangle (yellow)
+Message color: #fbbf24
+```
+
+### Checkbox & Radio
+```css
+Size: 20px
+Border: 2px solid rgba(108, 92, 231, 0.3)
+Border-radius: 4px (checkbox) / 50% (radio)
+Transition: all 0.2s ease
+
+Checked State:
+  Background: linear-gradient(135deg, #6c5ce7, #5b4fff)
+  Border-color: #6c5ce7
+  Check Icon: White
+```
+
+---
+
+## 🎬 14. MODALS & OVERLAYS
+
+### Modal Container
+```css
+Background: rgba(26, 26, 46, 0.95)
+Backdrop-filter: blur(8px)
+Border-radius: 20px
+Padding: 40px
+Max-width: 600px
+Border: 1px solid rgba(108, 92, 231, 0.2)
+Box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4)
+Animation: Fade + Scale in (0.3s)
+
+Close Button:
+  Position: Top-right
+  Size: 40px
+  Color: #8892b0
+  Hover: #ccd6f6
+```
+
+### Overlay/Backdrop
+```css
+Background: rgba(0, 0, 0, 0.75)
+Backdrop-filter: blur(4px)
+Animation: Fade in (0.2s)
+```
+
+### Tooltip
+```css
+Background: rgba(45, 45, 63, 0.95)
+Backdrop-filter: blur(12px)
+Padding: 8px 12px
+Border-radius: 8px
+Font-size: 13px
+Color: #ccd6f6
+Box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3)
+Border: 1px solid rgba(108, 92, 231, 0.2)
+Max-width: 240px
+Animation: Fade + Slide (0.2s)
+
+Arrow:
+  Width: 8px
+  Height: 8px
+  Transform: rotate(45deg)
+  Same background as tooltip
+```
+
+---
+
+## 🔔 15. NOTIFICATIONS & ALERTS
+
+### Toast Notification
+```css
+Background: rgba(45, 45, 63, 0.95)
+Backdrop-filter: blur(12px)
+Border-radius: 12px
+Padding: 16px 20px
+Min-width: 300px
+Max-width: 400px
+Box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3)
+Border-left: 4px solid #6c5ce7 (info)
+Animation: Slide in from right (0.3s)
+Duration: 5s auto-dismiss
+
+Types:
+  Info: Border-left #6c5ce7
+  Success: Border-left #10b981
+  Warning: Border-left #fbbf24
+  Error: Border-left #ef4444
+```
+
+### Banner Alert
+```css
+Background: rgba(108, 92, 231, 0.1)
+Border: 1px solid rgba(108, 92, 231, 0.3)
+Border-radius: 12px
+Padding: 16px 24px
+Margin: 16px 0
+Font-size: 14px
+
+Types:
+  Info: Purple theme
+  Success: Green theme (#10b981)
+  Warning: Yellow theme (#fbbf24)
+  Error: Red theme (#ef4444)
+```
+
+---
+
+## 📐 16. GRID & LAYOUT PATTERNS
+
+### Hero Section Layout
+```css
+Display: Grid
+Grid-template-columns: 1fr 1fr (desktop) / 1fr (mobile)
+Gap: 64px
+Align-items: center
+Min-height: 80vh
+Padding: 128px 0
+
+Text Column:
+  Max-width: 600px
+  
+Visual Column:
+  Position: relative
+  Z-index: 1
+```
+
+### Feature Grid
+```css
+Display: Grid
+Grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+Gap: 32px
+Padding: 96px 0
+
+Card:
+  Display: flex
+  Flex-direction: column
+  Gap: 16px
+```
+
+### Stats Section
+```css
+Display: Grid
+Grid-template-columns: repeat(4, 1fr) (desktop) / repeat(2, 1fr) (mobile)
+Gap: 32px
+Padding: 64px 0
+Text-align: center
+
+Stat Item:
+  Display: flex
+  Flex-direction: column
+  Gap: 8px
+  
+  Number:
+    Font-size: 48px
+    Font-weight: 700
+    Color: #6c5ce7
+    
+  Label:
+    Font-size: 14px
+    Color: #8892b0
+    Text-transform: uppercase
+    Letter-spacing: 0.1em
+```
+
+### Content + Sidebar
+```css
+Display: Grid
+Grid-template-columns: 2fr 1fr (desktop) / 1fr (mobile)
+Gap: 48px
+
+Main Content:
+  Max-width: 800px
+  
+Sidebar:
+  Position: sticky
+  Top: 100px
+  Height: fit-content
+```
+
+---
+
+## 🎨 17. SPECIAL EFFECTS & DECORATIONS
+
+### Background Patterns
+```css
+Mesh Gradient:
+  background: radial-gradient(at 0% 0%, rgba(108, 92, 231, 0.2) 0px, transparent 50%),
+              radial-gradient(at 100% 0%, rgba(91, 79, 255, 0.15) 0px, transparent 50%),
+              radial-gradient(at 100% 100%, rgba(108, 92, 231, 0.2) 0px, transparent 50%),
+              radial-gradient(at 0% 100%, rgba(91, 79, 255, 0.15) 0px, transparent 50%)
+
+Grid Pattern:
+  background-image: 
+    linear-gradient(rgba(108, 92, 231, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 92, 231, 0.05) 1px, transparent 1px)
+  background-size: 40px 40px
+```
+
+### Decorative Elements
+```css
+Accent Lines:
+  Width: 60px
+  Height: 4px
+  Background: linear-gradient(90deg, #6c5ce7, transparent)
+  Border-radius: 2px
+  Margin: 16px 0
+
+Divider:
+  Height: 1px
+  Background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(108, 92, 231, 0.3) 50%,
+    transparent 100%)
+  Margin: 48px 0
+
+Section Marker:
+  Font-size: 48px
+  Font-weight: 300
+  Color: rgba(108, 92, 231, 0.2)
+  Line-height: 1
+  User-select: none
+```
+
+### Blur Effects
+```css
+Glass Morphism:
+  Background: rgba(45, 45, 63, 0.3)
+  Backdrop-filter: blur(20px) saturate(180%)
+  Border: 1px solid rgba(255, 255, 255, 0.1)
+  Border-radius: 16px
+
+Light Blur:
+  Backdrop-filter: blur(8px)
+
+Heavy Blur:
+  Backdrop-filter: blur(40px)
+```
+
+---
+
+## 🎯 18. CONVERSION OPTIMIZATION PRINCIPLES
+
+### CTA Placement
+```
+Above the fold: Primary CTA in hero section
+Sticky CTA: Mobile bottom bar (48px height)
+Section CTAs: End of each major section
+Exit Intent: Modal with special offer
+Floating Button: Bottom-right corner (desktop)
+```
+
+### Visual Hierarchy Rules
+```
+1. Hero headline: Largest, boldest, highest contrast
+2. Sub-headline: 60% size of headline
+3. Body text: Clear contrast, comfortable reading size
+4. CTAs: High contrast, prominent placement
+5. Supporting info: Subdued but readable
+```
+
+### White Space Guidelines
+```
+Around Headlines: 2x the line-height above, 1x below
+Around Paragraphs: 1.5em between paragraphs
+Around CTAs: Minimum 32px clear space all sides
+Section Breathing Room: 96px vertical padding minimum
+Card Internal Space: 32px padding minimum
+```
+
+### Accessibility Checklist
+```
+✓ Color Contrast: Minimum 4.5:1 for text
+✓ Focus Indicators: 2px solid outline, visible
+✓ Alt Text: All images and icons
+✓ Keyboard Navigation: Tab order logical
+✓ Touch Targets: Minimum 44px × 44px
+✓ Form Labels: Always visible, properly associated
+✓ Error Messages: Clear, actionable
+✓ Loading States: Visible indicators
+```
+
+---
+
+## 📱 19. MOBILE-SPECIFIC GUIDELINES
+
+### Mobile Typography
+```css
+/* Reduce desktop sizes by 20-30% */
+H1: 36px (from 56px)
+H2: 28px (from 42px)
+H3: 24px (from 32px)
+Body: 16px (maintain)
+Button Text: 15px (from 16px)
+
+Line-height: Increase by 10% for readability
+Letter-spacing: Slightly increase for clarity
+```
+
+### Mobile Navigation Patterns
+```css
+Hamburger Menu:
+  Size: 40px × 40px
+  Position: Top-right
+  Icon: 3 lines, 20px width, 2px height
+  Color: #8892b0
+  
+Mobile Menu Overlay:
+  Full-screen
+  Slide from right
+  Duration: 0.3s
+  Background: rgba(26, 26, 46, 0.98)
+  Backdrop-filter: blur(20px)
+```
+
+### Mobile Card Layout
+```css
+Single Column: All cards stack vertically
+Padding: 24px (reduced from 32px)
+Font-size: Scale down 10%
+Spacing: 24px between cards
+Tap Area: Entire card clickable
+```
+
+### Mobile Forms
+```css
+Input Height: 48px (increased from 44px)
+Font-size: 16px (prevent zoom on iOS)
+Spacing: 24px between fields
+Keyboard Type: Appropriate for field
+Autocomplete: Enabled
+Label Position: Above input, always visible
+```
+
+---
+
+## 🎨 20. IMPLEMENTATION GUIDELINES
+
+### CSS Architecture
+```
+Use CSS Custom Properties (variables)
+Mobile-first media queries
+BEM naming convention
+Utility classes for common patterns
+Component-based structure
+```
+
+### Performance Optimization
+```
+Lazy load images below fold
+Preload critical assets
+Minimize animation on page load
+Use CSS transforms over position
+Debounce scroll events
+Optimize font loading
+```
+
+### Browser Support
+```
+Modern browsers (last 2 versions)
+Chrome 90+
+Firefox 88+
+Safari 14+
+Edge 90+
+Mobile Safari iOS 14+
+Chrome Android 90+
+```
+
+### Design Tool Setup (Figma/Adobe XD)
+```
+Create color style library
+Define text styles for all variants
+Component library for buttons, cards, inputs
+Grid and layout templates
+Icon system with consistent sizing
+Spacing tokens as design system
+```
+
+---
+
+## 📝 QUICK REFERENCE CARD
+
+### Most Used Colors
+```
+Background: #1a1a2e
+Cards: #2d2d3f
+Primary: #6c5ce7
+Text: #8892b0
+Headings: #ccd6f6
+Links: #a78bfa
+```
+
+### Most Used Spacing
+```
+Small: 8px
+Medium: 16px
+Large: 32px
+Section: 96px
+```
+
+### Most Used Shadows
+```
+Card: 0 4px 24px rgba(0,0,0,0.2)
+Hover: 0 12px 40px rgba(108,92,231,0.2)
+```
+
+### Most Used Animations
+```
+Standard: 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+Hover: transform 0.3s ease
+```
+
+---
+
+## 🚀 FINAL IMPLEMENTATION NOTES
+
+1. **Start with Mobile**: Design and code mobile-first, then enhance for larger screens
+
+2. **Consistency is Key**: Use the defined tokens throughout - don't introduce new values arbitrarily
+
+3. **Test Performance**: Ensure animations run at 60fps, images are optimized, and page loads < 3s
+
+4. **Accessibility First**: Always consider keyboard navigation, screen readers, and color contrast
+
+5. **Iterate Based on Data**: Use heatmaps, analytics, and A/B testing to refine the design
+
+6. **Maintain the System**: Document any deviations or additions to keep the design system consistent
+
+---
+
+**Document Version**: 1.0  
+**Last Updated**: November 2025  
+**Based on Analysis of**: HelpBot.tech Landing Page  
+**For**: DataForge Landing Pages
