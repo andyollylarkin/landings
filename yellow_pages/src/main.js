@@ -3,6 +3,32 @@ const mobileBtn = document.getElementById('mobileMenuBtn');
 const mainNav = document.getElementById('mainNav');
 const yearSpan = document.getElementById('year');
 
+const form = document.querySelector('.contact-grid');
+
+form.addEventListener('submit', async (e) => {
+	e.preventDefault();
+
+	const data = new FormData(form);
+
+	try {
+		const response = await fetch('https://yp.mridata.pro/contact', {
+			method: 'POST',
+			body: data,
+		});
+
+		if (response.ok) {
+			alert('Message sent successfully!');
+			form.reset();
+		} else {
+			alert('Failed to send message. Please try again.');
+		}
+	} catch (error) {
+		console.error('Error sending form:', error);
+	}
+	alert("Thank you! Our manager will contact you shortly.")
+});
+
+
 // Sticky header background change
 function onScroll() {
 	if (window.scrollY > 40) header.classList.add('scrolled');

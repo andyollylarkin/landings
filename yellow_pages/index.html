@@ -168,9 +168,8 @@
           <div>
             <h2 class="section-title section-title-white">Solution overview</h2>
             <p class="lead-light">
-              MRI Data Yellow Pages combines fresh data, AI-driven matching,
-              and verified reviews to connect users with trusted local
-              businesses.
+              MRI Data Yellow Pages combines fresh data, AI-driven matching, and
+              verified reviews to connect users with trusted local businesses.
             </p>
             <ul class="feature-list">
               <li>
@@ -369,15 +368,33 @@
         <div class="container">
           <h2 class="section-title section-title-white">Get in touch</h2>
           <form class="contact-grid card" aria-label="Contact form">
-            <input class="input" type="text" placeholder="Name" required />
-            <input class="input" type="email" placeholder="Email" required />
-            <input class="input" type="text" placeholder="Company" />
+            <input
+              class="input"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <input
+              class="input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <input
+              class="input"
+              type="text"
+              name="company"
+              placeholder="Company"
+            />
             <textarea
               class="input"
+              name="message"
               rows="4"
               placeholder="How can we help?"
             ></textarea>
-            <button class="btn btn-primary">Send message</button>
+            <button class="btn btn-primary" type="submit">Send message</button>
           </form>
         </div>
       </section>
