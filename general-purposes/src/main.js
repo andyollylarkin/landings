@@ -1,8 +1,16 @@
 import "./style.css";
+import { trackFieldInteraction } from "../../ga/useful_ga.js";
 
 const nav = document.querySelector("[data-nav]");
 const toggle = document.querySelector("[data-menu-toggle]");
 const header = document.querySelector("[data-header]");
+
+const inputs = document.querySelectorAll("input, textarea, select");
+inputs.forEach((input) => {
+	input.addEventListener("focus", () => {
+		trackFieldInteraction(input.name || input.id || "unknown", "focus");
+	})
+})
 
 const closeMobileMenu = () => {
 	if (!nav) {
