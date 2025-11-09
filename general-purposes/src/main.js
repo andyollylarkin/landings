@@ -12,6 +12,31 @@ inputs.forEach((input) => {
 	})
 })
 
+const form = document.querySelector('.cta-form');
+
+form.addEventListener('submit', async (e) => {
+	e.preventDefault();
+
+	const data = new FormData(form);
+
+	try {
+		const response = await fetch('https://yp.mridata.pro/contact', {
+			method: 'POST',
+			body: data,
+		});
+
+		if (response.ok) {
+			alert('Message sent successfully!');
+			form.reset();
+		} else {
+			alert('Failed to send message. Please try again.');
+		}
+	} catch (error) {
+		console.error('Error sending form:', error);
+	}
+	alert("Thank you! Our manager will contact you shortly.")
+});
+
 
 document.querySelectorAll(".cta-path-button").forEach((element) => {
 	element.addEventListener("click", () => {
