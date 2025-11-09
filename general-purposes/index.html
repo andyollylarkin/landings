@@ -8,7 +8,7 @@
       name="description"
       content="MRI Data delivers accurate, compliant, and scalable web data extraction and analytics solutions for teams that need clean datasets in record time."
     />
-    <link rel="icon" type="image/svg+xml" href="/dataforge-favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -28,14 +28,25 @@
     <div class="page-shell">
       <header class="site-header" data-header>
         <div class="nav-wrapper">
-          <a class="logo" href="#hero" aria-label="MRI Data home">MRI Data</a>
+          <a class="logo" href="#hero" aria-label="MRI Data home">
+            <img
+              src="/company-logo.svg"
+              alt="MRI Data"
+              width="120"
+              height="40"
+            />
+            <span>MRI Data</span>
+          </a>
           <nav class="primary-nav" data-nav>
             <a href="#features">Why Choose Us?</a>
             <a href="#process">How We Work</a>
-            <a href="#pricing">F.A.Q.</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">F.A.Q.</a>
             <a href="#cases">Case Studies</a>
           </nav>
-          <a class="primary-cta" href="#cta" data-cta>Contact Us Now!</a>
+          <a class="primary-cta cta-path-button" href="#cta" data-cta
+            >Contact Us Now!</a
+          >
           <button
             class="mobile-toggle"
             type="button"
@@ -66,44 +77,11 @@
               YOU GET DATA - the clear picture to make informed decisions.<br /><br />
               Leave web scraping to us. It's that easy.
             </p>
-            <div class="hero-ctas">
+            <div class="hero-ctas cta-path-button">
               <a class="button button-primary" href="#cta"
                 >How We Can Help You?</a
               >
-              <!--
-              <a class="button button-secondary" href="#demo"
-                >Кнопка не нужна</a
-              >
-			  -->
             </div>
-            <!--
-            <ul class="trust-indicators" role="list">
-              <li>
-                <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
-                  <path
-                    d="M8.5 13.2 5.4 10l1.4-1.4 1.7 1.7 4.7-4.7 1.4 1.4-6.1 6.2z"
-                  />
-                </svg>
-                GDPR Compliant - Текст не нужен
-              </li>
-              <li>
-                <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
-                  <path
-                    d="M8.5 13.2 5.4 10l1.4-1.4 1.7 1.7 4.7-4.7 1.4 1.4-6.1 6.2z"
-                  />
-                </svg>
-                99.9% Data Accuracy - Текст не нужен
-              </li>
-              <li>
-                <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
-                  <path
-                    d="M8.5 13.2 5.4 10l1.4-1.4 1.7 1.7 4.7-4.7 1.4 1.4-6.1 6.2z"
-                  />
-                </svg>
-                24/7 Support- Текст не нужен
-              </li>
-            </ul>
-			-->
             <div id="demo" class="hero-microcopy">
               Сonsultation is FREE - let's discuss your ideas, your problems,
               your pain points.<br />
@@ -139,60 +117,24 @@
 
         <section class="social-proof" aria-labelledby="social-proof-heading">
           <div class="container">
-            <h2 id="social-proof-heading">
-              Trusted by Visionaries to Reveal the Truth Beneath the Data
-            </h2>
-            <div class="logo-grid">
-              <div
-                class="logo-item"
-                role="img"
-                aria-label="Atlas Analytics logo"
-              >
-                FINANCIAL
-              </div>
-              <div
-                class="logo-item"
-                role="img"
-                aria-label="Northwind Labs logo"
-              >
-                MEDIA
-              </div>
-              <div class="logo-item" role="img" aria-label="Flux Retail logo">
-                RETAIL
-              </div>
-              <div
-                class="logo-item"
-                role="img"
-                aria-label="Beacon Research logo"
-              >
-                CONSULTING
-              </div>
-              <div
-                class="logo-item"
-                role="img"
-                aria-label="Summit Intelligence logo"
-              >
-                RESEARCH
-              </div>
-              <div
-                class="logo-item"
-                role="img"
-                aria-label="Aurora Capital logo"
-              >
-                MARKETING
-              </div>
-              <!--
-			  <div
-                class="logo-item"
-                role="img"
-                aria-label="Vertex Systems logo"
-              >
-                Vertex Systems
-              </div>
-              <div class="logo-item" role="img" aria-label="Pioneer Labs logo">
-                Pioneer Labs
-              </div>
-			  -->
+            <h2 id="social-proof-heading">Discuss your project with us!</h2>
+            <div class="stats-grid">
+              <article class="stat-card">
+                <span class="stat-value">1,250+</span>
+                <p class="stat-label">Happy Clients</p>
+              </article>
+              <article class="stat-card">
+                <span class="stat-value">99.9%</span>
+                <p class="stat-label">Data Accuracy</p>
+              </article>
+              <article class="stat-card">
+                <span class="stat-value">48 hrs</span>
+                <p class="stat-label">Average Deployment</p>
+              </article>
+              <article class="stat-card">
+                <span class="stat-value">24/7</span>
+                <p class="stat-label">Dedicated Support</p>
+              </article>
             </div>
           </div>
         </section>
@@ -251,55 +193,58 @@
           aria-labelledby="solution-heading"
           id="solution"
         >
-          <div class="container solution-grid">
-            <div class="before-after" aria-hidden="true">
-              <div class="before-card">
-                <p class="label">Before</p>
-                <p>
-                  Manual data collection, inaccurate data with errors, blocking,
-                  etc.
-                </p>
+          <div class="container">
+            <h2 id="solution-heading">
+              LET US TAKE CARE OF ALL THE COMPLEXITIES
+            </h2>
+            <div class="solution-grid">
+              <div class="before-after" aria-hidden="true">
+                <div class="before-card">
+                  <p class="label">Before</p>
+                  <p>
+                    Manual data collection, inaccurate data with errors,
+                    blocking, etc.
+                  </p>
+                </div>
+                <div class="arrow"></div>
+                <div class="after-card">
+                  <p class="label">After</p>
+                  <p>
+                    Automated pipelines, unified data mesh, validated
+                    dashboards.
+                  </p>
+                </div>
               </div>
-              <div class="arrow"></div>
-              <div class="after-card">
-                <p class="label">After</p>
-                <p>
-                  Automated pipelines, unified data mesh, validated dashboards.
-                </p>
-              </div>
-            </div>
-            <div class="solution-content">
-              <h2 id="solution-heading">
-                Let us take care of all the complexities, namely:
-              </h2>
-              <ul class="benefits" role="list">
-                <li>
-                  Extract accurate datasets from any public or gated site
-                  without rework
-                </li>
-                <li>
-                  Bypass CAPTCHAs, rotating proxies, and anti-bot barriers
-                  automatically
-                </li>
-                <li>
-                  Receive clean, normalized datasets in CSV, JSON, or via API
-                </li>
-                <li>
-                  Scale from pilot projects to millions of records with zero
-                  downtime
-                </li>
-                <li>
-                  Deploy bespoke pipelines in 48 hours with ongoing tuning
-                </li>
-                <li>
-                  Round-the-clock monitoring and incident response from the MRI
-                  Data team
-                </li>
-              </ul>
-              <div class="hero-ctas">
-                <a class="button button-primary" href="#cta"
-                  >Discuss your project with us!</a
-                >
+              <div class="solution-content">
+                <ul class="benefits" role="list">
+                  <li>
+                    Extract accurate datasets from any public or gated site
+                    without rework
+                  </li>
+                  <li>
+                    Bypass CAPTCHAs, rotating proxies, and anti-bot barriers
+                    automatically
+                  </li>
+                  <li>
+                    Receive clean, normalized datasets in CSV, JSON, or via API
+                  </li>
+                  <li>
+                    Scale from pilot projects to millions of records with zero
+                    downtime
+                  </li>
+                  <li>
+                    Deploy bespoke pipelines in 48 hours with ongoing tuning
+                  </li>
+                  <li>
+                    Round-the-clock monitoring and incident response from the
+                    MRI Data team
+                  </li>
+                </ul>
+                <div class="hero-ctas">
+                  <a class="button button-primary cta-path-button" href="#cta"
+                    >Discuss your project with us!</a
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -315,7 +260,32 @@
             <div class="steps-grid">
               <article class="step-card">
                 <div class="step-number">1</div>
-                <div class="step-icon" aria-hidden="true"></div>
+                <div class="step-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <rect
+                      x="4"
+                      y="8"
+                      width="10"
+                      height="10"
+                      rx="2"
+                      fill="#6c5ce7"
+                    />
+                    <rect
+                      x="18"
+                      y="14"
+                      width="10"
+                      height="10"
+                      rx="2"
+                      fill="#5b4fff"
+                    />
+                  </svg>
+                </div>
                 <h3>Tell Us What You Need</h3>
                 <p>
                   Press the button in the upper-right. Describe your task
@@ -326,7 +296,18 @@
               </article>
               <article class="step-card">
                 <div class="step-number">2</div>
-                <div class="step-icon" aria-hidden="true"></div>
+                <div class="step-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <circle cx="10" cy="16" r="8" fill="#6c5ce7" />
+                    <circle cx="22" cy="16" r="8" fill="#5b4fff" />
+                  </svg>
+                </div>
                 <h3>We Build Test Solution</h3>
                 <p>
                   Engineers design and test your scraping infrastructure
@@ -335,7 +316,18 @@
               </article>
               <article class="step-card">
                 <div class="step-number">3</div>
-                <div class="step-icon" aria-hidden="true"></div>
+                <div class="step-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <polygon points="10,8 18,22 2,22" fill="#6c5ce7" />
+                    <polygon points="22,8 30,22 14,22" fill="#5b4fff" />
+                  </svg>
+                </div>
                 <h3>Get Your Sample</h3>
                 <p>
                   Receive clean sample dataset based on your requirements. Take
@@ -357,7 +349,25 @@
             <h2 id="features-heading">WHY WE ARE DIFFERENT?</h2>
             <div class="features-grid">
               <article class="feature-card">
-                <div class="feature-icon" aria-hidden="true"></div>
+                <div class="feature-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle cx="8" cy="12" r="4" fill="#6c5ce7" />
+                    <rect
+                      x="14"
+                      y="8"
+                      width="6"
+                      height="8"
+                      rx="1"
+                      fill="#5b4fff"
+                    />
+                  </svg>
+                </div>
                 <h3>HONESTY</h3>
                 <p>
                   We operate on a principle of honesty. We don't just hand you
@@ -368,7 +378,18 @@
                 </p>
               </article>
               <article class="feature-card">
-                <div class="feature-icon" aria-hidden="true"></div>
+                <div class="feature-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <polygon points="8,4 12,12 4,12" fill="#6c5ce7" />
+                    <circle cx="16" cy="12" r="4" fill="#5b4fff" />
+                  </svg>
+                </div>
                 <h3>QUALITY</h3>
                 <p>
                   Our industry is filled with low-quality freelancers for whom
@@ -379,7 +400,25 @@
                 </p>
               </article>
               <article class="feature-card">
-                <div class="feature-icon" aria-hidden="true"></div>
+                <div class="feature-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect
+                      x="4"
+                      y="8"
+                      width="6"
+                      height="8"
+                      rx="2"
+                      fill="#6c5ce7"
+                    />
+                    <polygon points="16,4 20,12 12,12" fill="#5b4fff" />
+                  </svg>
+                </div>
                 <h3>PARTNERSHIP</h3>
                 <p>
                   We value our clients as partners, respecting their goals,
@@ -389,7 +428,25 @@
                 </p>
               </article>
               <article class="feature-card">
-                <div class="feature-icon" aria-hidden="true"></div>
+                <div class="feature-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <ellipse cx="8" cy="12" rx="3" ry="5" fill="#6c5ce7" />
+                    <rect
+                      x="14"
+                      y="8"
+                      width="6"
+                      height="8"
+                      rx="3"
+                      fill="#5b4fff"
+                    />
+                  </svg>
+                </div>
                 <h3>PRICING</h3>
                 <p>
                   Our pricing is very competitive and yet very honest. We use
@@ -398,7 +455,18 @@
                 </p>
               </article>
               <article class="feature-card">
-                <div class="feature-icon" aria-hidden="true"></div>
+                <div class="feature-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle cx="8" cy="8" r="3" fill="#6c5ce7" />
+                    <polygon points="16,12 20,20 12,20" fill="#5b4fff" />
+                  </svg>
+                </div>
                 <h3>PRIVACY</h3>
                 <p>
                   We value privacy highly. We always ask your permission to
@@ -407,7 +475,18 @@
                 </p>
               </article>
               <article class="feature-card">
-                <div class="feature-icon" aria-hidden="true"></div>
+                <div class="feature-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <polygon points="8,4 12,8 8,12 4,8" fill="#6c5ce7" />
+                    <ellipse cx="16" cy="12" rx="3" ry="6" fill="#5b4fff" />
+                  </svg>
+                </div>
                 <h3>TEAM</h3>
                 <p>
                   We do not use subcontractors or freelancers - all members of
@@ -416,7 +495,25 @@
                 </p>
               </article>
               <article class="feature-card">
-                <div class="feature-icon" aria-hidden="true"></div>
+                <div class="feature-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <rect
+                      x="4"
+                      y="4"
+                      width="6"
+                      height="6"
+                      rx="1"
+                      fill="#6c5ce7"
+                    />
+                    <circle cx="16" cy="16" r="4" fill="#5b4fff" />
+                  </svg>
+                </div>
                 <h3>TECHNOLOGY</h3>
                 <p>
                   Through the years of hard work, we have built some amazing
@@ -427,7 +524,25 @@
                 </p>
               </article>
               <article class="feature-card">
-                <div class="feature-icon" aria-hidden="true"></div>
+                <div class="feature-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <polygon points="8,4 12,12 4,12" fill="#6c5ce7" />
+                    <rect
+                      x="14"
+                      y="14"
+                      width="6"
+                      height="6"
+                      rx="3"
+                      fill="#5b4fff"
+                    />
+                  </svg>
+                </div>
                 <h3>SUPPORT</h3>
                 <p>
                   We constantly monitor your project. We adapt to changes fast.
@@ -440,191 +555,10 @@
           </div>
         </section>
 
-        <!--
-		<section
-          class="use-cases"
-          aria-labelledby="industries-heading"
-          id="industries"
-        >
-          <div class="container">
-            <h2 id="industries-heading">WE PROVIDE SOLUTIONS FOR REAL WORLD CASES</h2>
-            <div class="tabs" role="tablist">
-              <button
-                class="tab-button is-active"
-                role="tab"
-                aria-selected="true"
-                data-tab="lead"
-              >
-                Lead Generation
-              </button>
-              <button
-                class="tab-button"
-                role="tab"
-                aria-selected="false"
-                data-tab="commerce"
-              >
-                E-commerce
-              </button>
-              <button
-                class="tab-button"
-                role="tab"
-                aria-selected="false"
-                data-tab="research"
-              >
-                Market Research
-              </button>
-              <button
-                class="tab-button"
-                role="tab"
-                aria-selected="false"
-                data-tab="finance"
-              >
-                Investment Intelligence
-              </button>
-            </div>
-            <div class="tab-panels">
-              <article
-                class="tab-panel is-active"
-                role="tabpanel"
-                data-tab-panel="lead"
-              >
-                <div class="use-case-grid">
-                  <div class="use-case-card">
-                    <span class="badge">B2B Growth</span>
-                    <h3>Outreach Lists That Close Deals</h3>
-                    <p>
-                      Enrich your CRM with verified contacts, firmographics, and
-                      buying signals from across the web.
-                    </p>
-                    <ul class="use-case-benefits" role="list">
-                      <li>✓ 35% faster prospecting cycles</li>
-                      <li>✓ Intent signals mapped to active buying windows</li>
-                      <li>Discuss Your Project →</li>
-                    </ul>
-                  </div>
-                  <div class="use-case-visual" aria-hidden="true">
-                    <div class="dashboard-card">
-                      <div class="stat-pill">
-                        <span>+128%</span>
-                        <p>Reply Rate</p>
-                      </div>
-                      <div class="stat-pill">
-                        <span>4.8x</span>
-                        <p>Pipeline Growth</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article
-                class="tab-panel"
-                role="tabpanel"
-                data-tab-panel="commerce"
-              >
-                <div class="use-case-grid">
-                  <div class="use-case-card">
-                    <span class="badge">Retail Intelligence</span>
-                    <h3>Monitor Competitors in Real-Time</h3>
-                    <p>
-                      Track pricing, assortment, and inventory changes across
-                      marketplaces with automated alerts.
-                    </p>
-                    <ul class="use-case-benefits" role="list">
-                      <li>✓ Sub-60 minute update frequency</li>
-                      <li>✓ Price change alerts delivered to Slack</li>
-                      <li>Discuss Your Project →</li>
-                    </ul>
-                  </div>
-                  <div class="use-case-visual" aria-hidden="true">
-                    <div class="dashboard-card">
-                      <div class="stat-pill">
-                        <span>92%</span>
-                        <p>Stock Coverage</p>
-                      </div>
-                      <div class="stat-pill">
-                        <span>-14%</span>
-                        <p>Price Leakage</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article
-                class="tab-panel"
-                role="tabpanel"
-                data-tab-panel="research"
-              >
-                <div class="use-case-grid">
-                  <div class="use-case-card">
-                    <span class="badge">Insights Teams</span>
-                    <h3>Accelerate Market Sizing</h3>
-                    <p>
-                      Synthesize product reviews, sentiment, and macro trends in
-                      days instead of weeks.
-                    </p>
-                    <ul class="use-case-benefits" role="list">
-                      <li>✓ NLP-ready datasets with sentiment scoring</li>
-                      <li>✓ Analyst-ready dashboards refreshed nightly</li>
-                      <li>Discuss Your Project →</li>
-                    </ul>
-                  </div>
-                  <div class="use-case-visual" aria-hidden="true">
-                    <div class="dashboard-card">
-                      <div class="stat-pill">
-                        <span>48 hrs</span>
-                        <p>Insight Turnaround</p>
-                      </div>
-                      <div class="stat-pill">
-                        <span>3.5x</span>
-                        <p>Report Velocity</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article
-                class="tab-panel"
-                role="tabpanel"
-                data-tab-panel="finance"
-              >
-                <div class="use-case-grid">
-                  <div class="use-case-card">
-                    <span class="badge">Capital Markets</span>
-                    <h3>Source Alternative Data at Scale</h3>
-                    <p>
-                      Capture consumer demand, supply chain signals, and ESG
-                      indicators for smarter investment decisions.
-                    </p>
-                    <ul class="use-case-benefits" role="list">
-                      <li>✓ Compliant sourcing with legal review</li>
-                      <li>✓ Streaming feeds for production models</li>
-                      <li>Discuss Your Project →</li>
-                    </ul>
-                  </div>
-                  <div class="use-case-visual" aria-hidden="true">
-                    <div class="dashboard-card">
-                      <div class="stat-pill">
-                        <span>+19%</span>
-                        <p>Alpha Capture</p>
-                      </div>
-                      <div class="stat-pill">
-                        <span>99.9%</span>
-                        <p>Signal Uptime</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-		-->
-
         <section class="cases" aria-labelledby="cases-heading" id="cases">
           <div class="container">
             <div class="cases-header">
-              <!--<p class="section-kicker">Proven Impact</p>-->
-              <h1 id="cases-heading">REAL WORLD CASES WE'RE PROUD OF</h1>
+              <h2 id="cases-heading">REAL WORLD CASES WE'RE PROUD OF</h2>
 
               <p class="cases-subtitle">
                 Maybe your task is just the same or very alike. Maybe your task
@@ -849,7 +783,9 @@
                   demos in a single quarter.”
                 </p>
                 <div class="author">
-                  <div class="avatar" aria-hidden="true"></div>
+                  <div class="avatar" aria-hidden="true">
+                    <img src="/alyssa.png" alt="Alyssa" />
+                  </div>
                   <div>
                     <p class="name">Alyssa</p>
                     <p class="title">VP Growth</p>
@@ -890,7 +826,9 @@
                   MRI Data feeds power dashboards that alert us instantly.”
                 </p>
                 <div class="author">
-                  <div class="avatar" aria-hidden="true"></div>
+                  <div class="avatar" aria-hidden="true">
+                    <img src="/miguel.png" alt="Miguel" />
+                  </div>
                   <div>
                     <p class="name">Miguel</p>
                     <p class="title">Director of Pricing</p>
@@ -932,7 +870,9 @@
                   compliance-first.”
                 </p>
                 <div class="author">
-                  <div class="avatar" aria-hidden="true"></div>
+                  <div class="avatar" aria-hidden="true">
+                    <img src="/priya.png" alt="Priya" />
+                  </div>
                   <div>
                     <p class="name">Priya</p>
                     <p class="title">Principal Analyst</p>
@@ -944,31 +884,360 @@
           </div>
         </section>
 
-        <section class="stats" aria-labelledby="stats-heading">
-          <div class="container">
-            <h2 id="stats-heading">NUMBERS</h2>
-            <div class="stats-grid">
-              <article class="stat-card">
-                <span class="stat-value">1,250+</span>
-                <p class="stat-label">Happy Clients</p>
-              </article>
-              <article class="stat-card">
-                <span class="stat-value">99.9%</span>
-                <p class="stat-label">Data Accuracy</p>
-              </article>
-              <article class="stat-card">
-                <span class="stat-value">48 hrs</span>
-                <p class="stat-label">Average Deployment</p>
-              </article>
-              <article class="stat-card">
-                <span class="stat-value">24/7</span>
-                <p class="stat-label">Dedicated Support</p>
-              </article>
+        <section class="pricing" aria-labelledby="pricing-heading" id="pricing">
+          <div class="container pricing-container">
+            <div class="pricing-header">
+              <h2 id="pricing-heading">Choose Your Plan</h2>
+              <p class="pricing-subtitle">
+                Get started with the perfect plan for your business needs
+              </p>
+            </div>
+
+            <div class="pricing-grid">
+              <!-- Starter Plan -->
+              <div class="pricing-card">
+                <div class="pricing-header-card">
+                  <h3>Starter</h3>
+                  <div class="pricing-price">
+                    <span class="price">$199</span>
+                    <span class="period">/month</span>
+                  </div>
+                  <p class="pricing-description">
+                    Perfect for small businesses getting started
+                  </p>
+                </div>
+
+                <div class="pricing-features">
+                  <ul>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Up to 10,000 pages per month
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Basic data extraction
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Email support
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      CSV/JSON export
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      7-day data retention
+                    </li>
+                  </ul>
+                </div>
+
+                <a href="#cta" class="pricing-cta cta-path-button"
+                  >Get Started</a
+                >
+              </div>
+
+              <!-- Business Plan (Popular) -->
+              <div class="pricing-card pricing-card-popular">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header-card">
+                  <h3>Business</h3>
+                  <div class="pricing-price">
+                    <span class="price">$499</span>
+                    <span class="period">/month</span>
+                  </div>
+                  <p class="pricing-description">
+                    Best for growing businesses with moderate data needs
+                  </p>
+                </div>
+
+                <div class="pricing-features">
+                  <ul>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Up to 50,000 pages per month
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Advanced data extraction
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Priority support
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Multiple export formats
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      30-day data retention
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      API access
+                    </li>
+                  </ul>
+                </div>
+
+                <a
+                  href="#cta"
+                  class="pricing-cta pricing-cta-primary cta-path-button"
+                >
+                  Start Free Trial
+                </a>
+              </div>
+
+              <!-- Enterprise Plan -->
+              <div class="pricing-card">
+                <div class="pricing-header-card">
+                  <h3>Enterprise</h3>
+                  <div class="pricing-price">
+                    <span class="price">$1,299</span>
+                    <span class="period">/month</span>
+                  </div>
+                  <p class="pricing-description">
+                    For large organizations with extensive data requirements
+                  </p>
+                </div>
+
+                <div class="pricing-features">
+                  <ul>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Unlimited pages per month
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Enterprise-grade extraction
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      24/7 dedicated support
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Custom integrations
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      Unlimited data retention
+                    </li>
+                    <li>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+                          fill="#10b981"
+                        />
+                      </svg>
+                      SLA guarantee
+                    </li>
+                  </ul>
+                </div>
+
+                <a href="#cta" class="pricing-cta cta-path-button"
+                  >Contact Sales</a
+                >
+              </div>
+            </div>
+
+            <div class="pricing-footer">
+              <p>
+                All plans include free setup and onboarding support. No hidden
+                fees.
+              </p>
+              <p>
+                <strong>Need something custom?</strong>
+                <a href="#contact">Contact our sales team</a> for a tailored
+                solution.
+              </p>
             </div>
           </div>
         </section>
 
-        <section class="faq" aria-labelledby="faq-heading" id="pricing">
+        <section class="faq" aria-labelledby="faq-heading" id="faq">
           <div class="container faq-container">
             <h2 id="faq-heading">FREQUENTLY ASKED QUESTIONS</h2>
             <div class="faq-list" data-accordion>
@@ -1160,27 +1429,13 @@
                       required
                     />
                   </label>
-                  <!--
-                  <label class="form-field">
-                    <span>Company</span>
-                    <input
-                      type="text"
-                      name="company"
-                      autocomplete="organization"
-                    />
-                  </label>
-                  <label class="form-field">
-                    <span>Website or Source</span>
-                    <input type="url" name="website" placeholder="https://" />
-                  </label>
-				  -->
                 </div>
                 <label class="form-field">
                   <span>TELL US ABOUT YOUR TASK</span>
                   <textarea name="message" rows="4" required></textarea>
                 </label>
                 <button class="button button-primary" type="submit">
-                  SUBMIT
+                  Discuss your project with us!
                 </button>
                 <div
                   class="form-feedback"
@@ -1189,21 +1444,6 @@
                   aria-live="polite"
                 ></div>
               </form>
-              <!--
-              <div class="micro-info">
-                <span class="info-item">Tomorrow 2:00 PM</span>
-                <span class="info-item">30-minute session</span>
-                <span class="info-item">Includes free data sample</span>
-              </div>
-              <div class="trust-badges">
-                <div class="badge" aria-label="Security badge">Security</div>
-                <div class="badge" aria-label="GDPR compliant badge">GDPR</div>
-                <div class="badge" aria-label="Better Business Bureau badge">
-                  BBB
-                </div>
-                <div class="badge" aria-label="G2 badge">G2</div>
-              </div>
-			  -->
             </div>
           </div>
         </section>

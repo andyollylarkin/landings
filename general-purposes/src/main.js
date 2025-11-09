@@ -1,5 +1,5 @@
 import "./style.css";
-import { trackFieldInteraction } from "../../ga/useful_ga.js";
+import { trackFieldInteraction, trackScrollDepth, buttonClick } from "../../ga/useful_ga.js";
 
 const nav = document.querySelector("[data-nav]");
 const toggle = document.querySelector("[data-menu-toggle]");
@@ -11,6 +11,31 @@ inputs.forEach((input) => {
 		trackFieldInteraction(input.name || input.id || "unknown", "focus");
 	})
 })
+
+
+document.querySelectorAll(".cta-path-button").forEach((element) => {
+	element.addEventListener("click", () => {
+		const name =
+			element.getAttribute("aria-label") ||
+			element.textContent.trim().slice(0, 100) ||
+			element.id ||
+			"unknown";
+		buttonClick(name);
+	});
+});
+
+window.addEventListener('scroll', () => {
+	const scrollPercent = Math.round(
+		(window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+	);
+
+	[25, 50, 75, 100].forEach(threshold => {
+		if (scrollPercent >= threshold) {
+			trackScrollDepth(threshold);
+		}
+	});
+});
+
 
 const closeMobileMenu = () => {
 	if (!nav) {
@@ -254,5 +279,20 @@ window.addEventListener("resize", () => {
 		requestAnimationFrame(() => {
 			content.style.maxHeight = "none";
 		});
+	});
+});
+
+// Pricing section button handlers
+document.querySelectorAll(".pricing-cta").forEach((link) => {
+	link.addEventListener("click", (e) => {
+		const planCard = link.closest(".pricing-card");
+		const planName = planCard ? planCard.querySelector("h3")?.textContent || "Unknown" : "Unknown";
+		const linkText = link.textContent.trim();
+
+		// Track the pricing button click
+		buttonClick(`pricing-${planName.toLowerCase()}-${linkText.toLowerCase().replace(/\s+/g, '-')}`);
+
+		// Let the link navigate naturally to #cta
+		// No need to prevent default or handle scrolling manually
 	});
 });
