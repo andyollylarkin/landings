@@ -5,6 +5,32 @@ const burgerButton = document.querySelector(".header__burger");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
 
+const form = document.querySelector('.cta__form');
+console.log(form)
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch('https://mridata.pro/contact', {
+      method: 'POST',
+      body: data,
+    });
+
+    if (response.ok) {
+      alert('Message sent successfully!');
+      form.reset();
+    } else {
+      alert('Failed to send message. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error sending form:', error);
+  }
+  alert("Thank you! Our manager will contact you shortly.")
+});
+
 document.querySelectorAll(".icon").forEach((svg) => {
   svg.setAttribute("aria-hidden", "true");
   svg.setAttribute("focusable", "false");
