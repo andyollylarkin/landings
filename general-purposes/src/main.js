@@ -12,32 +12,6 @@ inputs.forEach((input) => {
 	})
 })
 
-const form = document.querySelector('.cta-form');
-
-form.addEventListener('submit', async (e) => {
-	e.preventDefault();
-
-	const data = new FormData(form);
-
-	try {
-		const response = await fetch('https://yp.mridata.pro/contact', {
-			method: 'POST',
-			body: data,
-		});
-
-		if (response.ok) {
-			alert('Message sent successfully!');
-			form.reset();
-		} else {
-			alert('Failed to send message. Please try again.');
-		}
-	} catch (error) {
-		console.error('Error sending form:', error);
-	}
-	alert("Thank you! Our manager will contact you shortly.")
-});
-
-
 document.querySelectorAll(".cta-path-button").forEach((element) => {
 	element.addEventListener("click", () => {
 		const name =
@@ -224,17 +198,18 @@ if (tabButtons.length > 0) {
 const ctaForm = document.querySelector("#cta-form");
 const ctaFeedback = document.querySelector("#cta-feedback");
 
-if (ctaForm && ctaFeedback) {
-	ctaForm.addEventListener("submit", (event) => {
+if (ctaForm) {
+	ctaForm.addEventListener("submit", async (event) => {
 		event.preventDefault();
 
-		ctaFeedback.textContent = "";
-		ctaFeedback.classList.remove("is-success", "is-error");
+		if (ctaFeedback) {
+			ctaFeedback.textContent = "";
+			ctaFeedback.classList.remove("is-success", "is-error");
+		}
 
 		const formData = new FormData(ctaForm);
 		const name = String(formData.get("name") || "").trim();
 		const email = String(formData.get("email") || "").trim();
-		const website = String(formData.get("website") || "").trim();
 		const message = String(formData.get("message") || "").trim();
 
 		const errors = [];
@@ -252,23 +227,37 @@ if (ctaForm && ctaFeedback) {
 			errors.push("Tell us more about your data goals.");
 		}
 
-		if (website) {
-			try {
-				new URL(website);
-			} catch (error) {
-				errors.push("Provide a valid URL or leave the field empty.");
-			}
-		}
-
 		if (errors.length > 0) {
-			ctaFeedback.textContent = errors.join(" ");
-			ctaFeedback.classList.add("is-error");
+			if (ctaFeedback) {
+				ctaFeedback.textContent = errors.join(" ");
+				ctaFeedback.classList.add("is-error");
+			}
+			ctaForm.reportValidity();
 			return;
 		}
 
-		ctaFeedback.textContent = "Thank you! A MRI Data specialist will reach out within one business day.";
-		ctaFeedback.classList.add("is-success");
-		ctaForm.reset();
+		try {
+			const response = await fetch("https://scraping.mridata.pro/contact", {
+				method: "POST",
+				body: formData,
+			});
+
+			if (!response.ok) {
+				throw new Error(`Request failed with status ${response.status}`);
+			}
+
+			if (ctaFeedback) {
+				ctaFeedback.textContent = "Thank you! A MRI Data specialist will reach out within one business day.";
+				ctaFeedback.classList.add("is-success");
+			}
+			ctaForm.reset();
+		} catch (error) {
+			console.error("Error sending form:", error);
+			if (ctaFeedback) {
+				ctaFeedback.textContent = "We could not send your message right now. Please try again.";
+				ctaFeedback.classList.add("is-error");
+			}
+		}
 	});
 }
 
