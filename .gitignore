@@ -1,5 +1,10 @@
 certs/*
 node_modules/
+e-com/node_modules/
+general-purpose/node_modules/
+gov/node_modules/
+job-boards/node_modules/
+yellow_pages/node_modules/
 .DS_Store
 *.log
 dist/
