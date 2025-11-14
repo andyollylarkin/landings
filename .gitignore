@@ -14,3 +14,6 @@ dist/
 *.swp
 *tar.gz
 *.zip
+/e-com/node_modules
+/e-com/node_modules
+/general-purposes/node_modules
