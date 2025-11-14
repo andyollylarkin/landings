@@ -6,7 +6,7 @@ import './style.css'
 
 const navTrigger = document.querySelector('.nav__trigger')
 const navMenu = document.querySelector('.nav__menu')
-const navLinks = document.querySelectorAll('.nav__link')
+const navTargets = document.querySelectorAll('.nav__link, .nav__schedule')
 const header = document.querySelector('[data-header]')
 const animatedItems = document.querySelectorAll('[data-animate]')
 const detailsItems = document.querySelectorAll('.faq__item')
@@ -14,23 +14,76 @@ const yearTarget = document.querySelector('[data-year]')
 const ctaForm = document.querySelector('.final-cta__form')
 const formStatus = document.querySelector('.final-cta__form-status')
 
+const openNavigation = () => {
+  if (!navTrigger || !navMenu) return
+  navTrigger.setAttribute('aria-expanded', 'true')
+  navTrigger.classList.add('is-active')
+  navMenu.classList.add('is-open')
+  document.body.classList.add('no-scroll')
+}
+
+const closeNavigation = () => {
+  if (!navTrigger || !navMenu) return
+  navTrigger.setAttribute('aria-expanded', 'false')
+  navTrigger.classList.remove('is-active')
+  navMenu.classList.remove('is-open')
+  document.body.classList.remove('no-scroll')
+}
+
 const toggleNavigation = () => {
   if (!navTrigger || !navMenu) return
-  const expanded = navTrigger.getAttribute('aria-expanded') === 'true'
-  navTrigger.setAttribute('aria-expanded', String(!expanded))
-  navTrigger.classList.toggle('is-active')
-  navMenu.classList.toggle('is-open')
-  document.body.classList.toggle('no-scroll', !expanded)
+  if (navMenu.classList.contains('is-open')) {
+    closeNavigation()
+  } else {
+    openNavigation()
+  }
+}
+
+const scrollToSection = (selector) => {
+  if (!selector || selector === '#') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    return
+  }
+
+  const target = document.querySelector(selector)
+  if (!target) return
+
+  const headerOffset = header ? header.offsetHeight : 0
+  const elementPosition = target.getBoundingClientRect().top + window.pageYOffset
+  const offsetPosition = elementPosition - headerOffset + 1
+
+  window.scrollTo({ top: Math.max(offsetPosition, 0), behavior: 'smooth' })
+}
+
+const handleNavTargetClick = (event) => {
+  const target = event.currentTarget
+  if (!target) return
+
+  const href = target.getAttribute('href')
+  const isAnchorLink = href && href.startsWith('#')
+  const wasMenuOpen = navMenu?.classList.contains('is-open')
+
+  if (isAnchorLink) {
+    event.preventDefault()
+    if (wasMenuOpen) {
+      closeNavigation()
+    }
+    const delay = wasMenuOpen && window.matchMedia('(max-width: 1024px)').matches ? 260 : 0
+    window.setTimeout(() => {
+      scrollToSection(href)
+    }, delay)
+  } else if (wasMenuOpen) {
+    closeNavigation()
+  }
 }
 
 if (navTrigger && navMenu) {
   navTrigger.addEventListener('click', toggleNavigation)
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      if (navMenu.classList.contains('is-open')) {
-        toggleNavigation()
-      }
-    })
+}
+
+if (navTargets.length) {
+  navTargets.forEach((target) => {
+    target.addEventListener('click', handleNavTargetClick)
   })
 }
 
@@ -83,13 +136,13 @@ if (yearTarget) {
 window.addEventListener('resize', () => {
   if (!navMenu || !navTrigger) return
   if (window.innerWidth > 1024 && navMenu.classList.contains('is-open')) {
-    toggleNavigation()
+    closeNavigation()
   }
 })
 
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && navMenu?.classList.contains('is-open')) {
-    toggleNavigation()
+    closeNavigation()
   }
 })
 
