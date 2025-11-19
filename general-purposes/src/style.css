@@ -1,3 +1,24 @@
+/* CTA below middle problem card */
+.problem-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.problem-cta {
+  font-size: 18px;
+  padding: 16px 32px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.problem-cta:hover {
+  background: var(--color-primary-dark);
+  color: #fff;
+}
 :root {
   --page-max-width: 1280px;
   --color-background: #0f172a;
@@ -73,8 +94,8 @@ main {
 .section-kicker {
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(108, 92, 231, 0.8);
   font-weight: 600;
+  margin-top: 0px;
   margin-bottom: 16px;
 }
 
@@ -317,6 +338,7 @@ ul {
 
 .hero-subheadline {
   margin-top: 24px;
+  text-align: left;
   color: var(--color-text-subtle);
   font-size: 20px;
   max-width: 560px;
@@ -345,6 +367,7 @@ ul {
 
 .hero-microcopy {
   margin-top: 16px;
+  text-align: left;
   font-size: 14px;
   color: var(--color-text-subtle);
 }
@@ -542,6 +565,11 @@ ul {
   position: relative;
 }
 
+.text-primary {
+  color: white;
+  font-weight: 600;
+}
+
 .card-icon::after {
   content: "";
   position: absolute;
@@ -562,8 +590,30 @@ ul {
 }
 
 .impact {
-  background: rgba(239, 68, 68, 0.1);
-  border-left: 3px solid var(--color-danger);
+  background: linear-gradient(
+    135deg,
+    rgba(108, 92, 231, 0.18) 0%,
+    rgba(45, 197, 253, 0.15) 100%
+  );
+  backdrop-filter: blur(8px);
+  opacity: 0.85;
+  border-left: 3px solid rgba(108, 92, 231, 0.35);
+  border-radius: 16px;
+  padding: 14px 20px;
+  font-weight: 600;
+  margin-top: 14px;
+  box-shadow: 0 4px 24px rgba(108, 92, 231, 0.1);
+  color: #fff;
+}
+
+.impact-text {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.impact-primary {
+  background: #222348;
+  border-left: 3px solid var(--color-primary);
   border-radius: 8px;
   padding: 12px 16px;
   font-weight: 600;
@@ -755,6 +805,12 @@ ul {
   margin-bottom: 16px;
 }
 
+.features-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 .step-card p {
   color: var(--color-text-subtle);
 }
@@ -901,7 +957,8 @@ ul {
 .case-right {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
+  max-height: 100px;
 }
 
 .case-graphic {
@@ -1523,7 +1580,7 @@ ul {
   }
 
   .hero-content {
-    order: 2;
+    order: 1;
   }
 
   .hero-content h1 {
@@ -1545,7 +1602,7 @@ ul {
   }
 
   .hero-visual {
-    order: 1;
+    order: 2;
   }
 
   .solution-grid,
@@ -1616,7 +1673,7 @@ ul {
   }
 
   .hero-section {
-    padding-top: 96px;
+    padding-top: 56px;
     gap: 48px;
   }
 
@@ -1660,6 +1717,7 @@ ul {
 
   .case-right {
     width: 100%;
+    max-height: 50px;
     justify-content: flex-end;
     gap: 16px;
   }
