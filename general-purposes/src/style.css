@@ -95,7 +95,7 @@ main {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
-  margin-top: 0px;
+  margin-top: 50px;
   margin-bottom: 16px;
 }
 
@@ -1578,6 +1578,13 @@ ul {
     grid-template-columns: 1fr;
     text-align: center;
   }
+  .section-kicker {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 16px;
+  }
 
   .hero-content {
     order: 1;
@@ -1647,7 +1654,6 @@ ul {
 
   .primary-nav {
     position: fixed;
-    top: var(--header-height);
     right: 0;
     left: 0;
     flex-direction: column;
