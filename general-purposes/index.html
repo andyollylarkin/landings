@@ -192,7 +192,6 @@
                 </div>
               </article>
             </div>
-          </div>
             <div class="problem-cta-wrapper">
               <a class="button button-primary problem-cta" href="#cta">Leave Web Scraping to Us</a>
             </div>
@@ -1236,9 +1235,9 @@
               <p>
                 All plans include free setup and onboarding support. No hidden fees.
               </p>
-              <p>
+              <p style="white-space: wrap; max-width: 600px; margin: 0 auto;">
                 <strong>Still Unsure?</strong>
-                Let our experts <a href="#contact">recommend the right model</a> for you.
+                Let our experts <a href="#cta">recommend the right model</a> for you.
               </p>
             </div>
           </div>
@@ -1544,11 +1543,11 @@
 			  The Client acknowledges that MRI Data is a data processor, not the data controller. 
 			  The Client is solely responsible for determining the legality and appropriateness of its use of the collected data.
 			  The Client warrants that they will use the data obtained from MRI Data solely for lawful purposes and in compliance with all applicable local, 
-			  state, national, and international laws and regulations, including but not limited to data protection laws (e.g., GDPR, CCPA), copyright laws, 
+			  state, national, and international laws and regulations, including but not limited to data protection laws (e.g. GDPR, CCPA), copyright laws, 
 			  and the Computer Fraud and Abuse Act (CFAA).
 			  </span>
 			  
-			  <span>© 2025 MRI Data. All rights reserved.</span>
+        <span>© <span id="year"></span> MRI Data. All rights reserved.</span>
 			  <!--
               <a href="#faq-heading">Privacy Policy</a>
               <a href="#faq-heading">Terms</a>
@@ -1560,5 +1559,8 @@
       </footer>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
