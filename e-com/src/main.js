@@ -1,12 +1,10 @@
 import handleKeydown from "../../libs/keydown_handler.js";
+import handleNoPageAction from "../../libs/handle_mouse_drag.js";
 
-// Modal CTA logic
-window.addEventListener('DOMContentLoaded', function () {
-  setTimeout(function () {
-    var modal = document.getElementById('modal-cta');
-    if (modal) modal.style.display = 'flex';
-    document.body.classList.add('modal-open');
-  }, 30000);
+handleNoPageAction(() => {
+  var modal = document.getElementById('modal-cta');
+  if (modal) modal.style.display = 'flex';
+  document.body.classList.add('modal-open');
 
   document.addEventListener('click', function (e) {
     var modal = document.getElementById('modal-cta');
@@ -16,8 +14,19 @@ window.addEventListener('DOMContentLoaded', function () {
       document.body.classList.remove('modal-open');
     }
   });
-});
+})
 
+let modalShown = false;
+
+document.addEventListener('mouseout', (event) => {
+  // Если курсор вышел за пределы страницы сверху
+  if (!modalShown && event.clientY <= 0) {
+    var modal = document.getElementById('modal-cta');
+    if (modal) modal.style.display = 'flex';
+    document.body.classList.add('modal-open');
+    modalShown = true;
+  }
+});
 
 handleKeydown('modal-cta', 'modal-open');
 
