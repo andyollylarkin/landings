@@ -1450,6 +1450,10 @@ ul {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.full-width {
+  grid-column: span 2;
+}
+
 .form-field {
   display: grid;
   gap: 10px;
