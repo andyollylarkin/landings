@@ -73,7 +73,7 @@
         <section class="section hero" id="hero">
           <div class="container hero__layout">
             <!-- HERO BLOCK -->
-            <div class="hero__copy" data-animate>
+            <div class="hero__copy hero-left" data-animate>
               <p class="eyebrow">
                 See Through Data Clearly<br />Decide Confidently
               </p>
@@ -134,7 +134,11 @@
                 </li>
               </ul>
             </div>
-            <div class="hero__visual" data-animate aria-hidden="true">
+            <div
+              class="hero__visual hero-right-top"
+              data-animate
+              aria-hidden="true"
+            >
               <div class="data-flow">
                 <div class="data-flow__stage data-flow__stage--sources">
                   <p class="stage-label">Data Sources</p>
@@ -263,6 +267,65 @@
                 </div>
               </div>
             </div>
+            <div class="hero-right-bottom">
+              <div class="second-cta">
+                <form class="final-cta__form__second" action="#" method="post">
+                  <div class="second-cta__inner">
+                    <div style="width: 100%; text-align: center">
+                      <h3>What is your project?</h3>
+                      <p class="final-cta__form-note">
+                        Share a few details and our engineers will respond!
+                      </p>
+                    </div>
+                    <div style="width: 100%; height: 100%">
+                      <div class="final-cta__form-grid">
+                        <label class="form-field">
+                          <span class="form-field__label">NAME</span>
+                          <input
+                            class="form-field__input"
+                            type="text"
+                            name="name"
+                            autocomplete="name"
+                            required
+                          />
+                        </label>
+                        <label class="form-field">
+                          <span class="form-field__label">E-MAIL</span>
+                          <input
+                            class="form-field__input"
+                            type="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                          />
+                        </label>
+                      </div>
+                      <div class="first-cta-btn">
+                        <button type="submit" class="btn btn--primary btn--lg">
+                          SEND REQUEST
+                        </button>
+                        <div class="no-credit-card">
+                          <p>No credit card required</p>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="30"
+                            viewBox="0 0 254 108"
+                            fill="none"
+                          >
+                            <path
+                              id="Vector"
+                              d="M253.063 90.6375L253.063 58.9536C253.063 57.1564 252.349 55.4328 251.079 54.1619C249.808 52.891 248.084 52.177 246.287 52.177L214.603 52.177C213.287 52.1769 212.024 52.6999 211.093 53.6307C210.162 54.5616 209.639 55.8241 209.639 57.1406C209.639 58.4571 210.162 59.7196 211.093 60.6506C212.024 61.5815 213.286 62.1045 214.603 62.1045L236.176 62.1642C190.78 106.662 154.158 100.39 136.269 92.597C134.981 92.0355 133.713 91.4318 132.466 90.7858C137.108 88.1293 141.562 85.1551 145.794 81.8845C159.819 71.0092 168.335 58.902 169.768 47.7897C171.947 30.8976 166.466 16.8134 154.34 8.13503C148.11 3.73949 140.795 1.13583 133.189 0.607099C125.583 -0.00663525 117.951 1.42644 111.086 4.7576C97.7212 11.326 89.7155 24.4895 89.1234 40.8751C88.5545 56.585 96.1709 72.9908 108.785 85.6039C110.068 86.8871 111.401 88.1285 112.785 89.3284C106.968 91.6614 100.97 93.5161 94.8505 94.8742C73.8396 99.5096 34.852 101.349 9.7887 61.5983C9.07995 60.5044 7.96862 59.7338 6.69559 59.4537C5.42256 59.1735 4.09041 59.4064 2.9879 60.1018C1.8854 60.7972 1.10136 61.899 0.805748 63.1686C0.510135 64.4381 0.726765 65.773 1.40868 66.8839C5.14404 72.8657 9.53591 78.4115 14.5026 83.4182C23.2426 92.2353 33.9357 98.871 45.7164 102.788C61.1466 107.936 78.8743 108.546 96.9835 104.551C105.58 102.638 113.952 99.8298 121.963 96.1728C125.265 98.2749 128.726 100.117 132.314 101.682C148.141 108.575 165.936 109.842 183.773 105.342C203.893 100.268 223.857 88.1163 243.138 69.2197L243.138 90.6383C243.138 91.2901 243.266 91.9356 243.515 92.5378C243.765 93.1401 244.131 93.6873 244.592 94.1482C245.052 94.6091 245.6 94.9747 246.202 95.2241C246.804 95.4736 247.45 95.602 248.102 95.6019C248.753 95.6019 249.399 95.4735 250.001 95.224C250.603 94.9746 251.15 94.6089 251.611 94.148C252.072 93.687 252.438 93.1398 252.687 92.5376C252.937 91.9353 253.065 91.2899 253.065 90.638L253.063 90.6375ZM139.723 74.0551C134.449 78.1193 128.813 81.6904 122.886 84.7234C108.144 73.5318 98.4658 56.6596 99.0236 41.2321C99.4867 28.4242 105.321 18.6293 115.455 13.6488C125.941 8.49614 139.25 9.51816 148.573 16.191C149.81 17.0746 150.972 18.0585 152.048 19.1327C158.607 25.6911 161.396 35.2429 159.941 46.5209C158.861 54.8946 151.491 64.9299 139.723 74.0545L139.723 74.0551Z"
+                              fill="white"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -287,57 +350,6 @@
                   <span class="social-proof__metric">24/7</span>
                   <p class="social-proof__label">Dedicated Support</p>
                 </article>
-              </div>
-              <div class="second-cta">
-                <form class="final-cta__form__second" action="#" method="post">
-                  <h3>What is your project?</h3>
-                  <p class="final-cta__form-note">
-                    Share a few details and our engineers will respond!
-                  </p>
-                  <div class="final-cta__form-grid">
-                    <label class="form-field">
-                      <span class="form-field__label">NAME</span>
-                      <input
-                        class="form-field__input"
-                        type="text"
-                        name="name"
-                        autocomplete="name"
-                        required
-                      />
-                    </label>
-                    <label class="form-field">
-                      <span class="form-field__label">E-MAIL</span>
-                      <input
-                        class="form-field__input"
-                        type="email"
-                        name="email"
-                        autocomplete="email"
-                        required
-                      />
-                    </label>
-                  </div>
-                  <div class="first-cta-btn">
-                    <button type="submit" class="btn btn--primary btn--lg">
-                      SEND REQUEST
-                    </button>
-                    <div class="no-credit-card">
-                      <p>No credit card required</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
-                        viewBox="0 0 254 108"
-                        fill="none"
-                      >
-                        <path
-                          id="Vector"
-                          d="M253.063 90.6375L253.063 58.9536C253.063 57.1564 252.349 55.4328 251.079 54.1619C249.808 52.891 248.084 52.177 246.287 52.177L214.603 52.177C213.287 52.1769 212.024 52.6999 211.093 53.6307C210.162 54.5616 209.639 55.8241 209.639 57.1406C209.639 58.4571 210.162 59.7196 211.093 60.6506C212.024 61.5815 213.286 62.1045 214.603 62.1045L236.176 62.1642C190.78 106.662 154.158 100.39 136.269 92.597C134.981 92.0355 133.713 91.4318 132.466 90.7858C137.108 88.1293 141.562 85.1551 145.794 81.8845C159.819 71.0092 168.335 58.902 169.768 47.7897C171.947 30.8976 166.466 16.8134 154.34 8.13503C148.11 3.73949 140.795 1.13583 133.189 0.607099C125.583 -0.00663525 117.951 1.42644 111.086 4.7576C97.7212 11.326 89.7155 24.4895 89.1234 40.8751C88.5545 56.585 96.1709 72.9908 108.785 85.6039C110.068 86.8871 111.401 88.1285 112.785 89.3284C106.968 91.6614 100.97 93.5161 94.8505 94.8742C73.8396 99.5096 34.852 101.349 9.7887 61.5983C9.07995 60.5044 7.96862 59.7338 6.69559 59.4537C5.42256 59.1735 4.09041 59.4064 2.9879 60.1018C1.8854 60.7972 1.10136 61.899 0.805748 63.1686C0.510135 64.4381 0.726765 65.773 1.40868 66.8839C5.14404 72.8657 9.53591 78.4115 14.5026 83.4182C23.2426 92.2353 33.9357 98.871 45.7164 102.788C61.1466 107.936 78.8743 108.546 96.9835 104.551C105.58 102.638 113.952 99.8298 121.963 96.1728C125.265 98.2749 128.726 100.117 132.314 101.682C148.141 108.575 165.936 109.842 183.773 105.342C203.893 100.268 223.857 88.1163 243.138 69.2197L243.138 90.6383C243.138 91.2901 243.266 91.9356 243.515 92.5378C243.765 93.1401 244.131 93.6873 244.592 94.1482C245.052 94.6091 245.6 94.9747 246.202 95.2241C246.804 95.4736 247.45 95.602 248.102 95.6019C248.753 95.6019 249.399 95.4735 250.001 95.224C250.603 94.9746 251.15 94.6089 251.611 94.148C252.072 93.687 252.438 93.1398 252.687 92.5376C252.937 91.9353 253.065 91.2899 253.065 90.638L253.063 90.6375ZM139.723 74.0551C134.449 78.1193 128.813 81.6904 122.886 84.7234C108.144 73.5318 98.4658 56.6596 99.0236 41.2321C99.4867 28.4242 105.321 18.6293 115.455 13.6488C125.941 8.49614 139.25 9.51816 148.573 16.191C149.81 17.0746 150.972 18.0585 152.048 19.1327C158.607 25.6911 161.396 35.2429 159.941 46.5209C158.861 54.8946 151.491 64.9299 139.723 74.0545L139.723 74.0551Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
@@ -908,11 +920,6 @@
                   >
                   <span class="pricing-card__tag">Monitoring</span>
                   <p class="pricing-card__price">BUSINESS</p>
-                  <!--
-                  <span class="pricing-card__note"
-                    >per month, per managed site</span
-                  >
-                  -->
                 </div>
                 <p class="pricing-card__lede">
                   Continuous data delivery to track your market, competitors,
@@ -928,13 +935,17 @@
                       Building historical datasets<br />
                     </dd>
                   </div>
+                  <div>
+                    <dt>Pages Included</dt>
+                    <dd>Unlimited</dd>
+                  </div>
 
                   <div>
                     <dt>Support</dt>
                     <dd>Dedicated team - <br />24/7 monitoring</dd>
                   </div>
                 </dl>
-                <a class="btn btn--ghost" href="#final-cta"
+                <a class="btn btn--primary" href="#final-cta"
                   >Schedule a Strategic Consultation</a
                 >
               </article>
@@ -1046,34 +1057,23 @@
                   operations.<br />
                   We ensure this by:<br />
                   <span class="faq-list-category"
-                    ><strong
-                      >Strictly adhering to a website's robots.txt file</strong
-                    ></span
+                    >Strictly adhering to a website's robots.txt file</span
                   ><br />
                   <span class="faq-list-category"
-                    ><strong
-                      >Respecting rate limits to avoid overloading
-                      servers</strong
-                    ></span
+                    >Respecting rate limits to avoid overloading servers</span
                   ><br />
                   <span class="faq-list-category"
-                    ><strong
-                      >Never attempting to breach authentication or access
-                      private data</strong
-                    ></span
+                    >Never attempting to breach authentication or access private
+                    data</span
                   ><br />
                   <span class="faq-list-category"
-                    ><strong
-                      >Complying with relevant data protection regulations like
-                      GDPR and CCPA</strong
-                    ></span
+                    >Complying with relevant data protection regulations like
+                    GDPR and CCPA</span
                   ><br />
                   <span class="faq-list-category"
-                    ><strong
-                      >Providing data for lawful purposes only - we believe in
-                      not just seeing the data, but seeing the ethical path to
-                      acquiring it!</strong
-                    ></span
+                    >Providing data for lawful purposes only - we believe in not
+                    just seeing the data, but seeing the ethical path to
+                    acquiring it!</span
                   >
                 </p>
               </details>
@@ -1096,17 +1096,13 @@
                   You will receive clean, structured, and analysis-ready data in
                   your preferred format.<br />
                   We routinely deliver data as:<br />
+                  <span class="faq-list-category">CSV/Excel files</span><br />
                   <span class="faq-list-category"
-                    ><strong>CSV/Excel files</strong></span
+                    >JSON or XML for API integration</span
                   ><br />
                   <span class="faq-list-category"
-                    ><strong>JSON or XML for API integration</strong></span
-                  ><br />
-                  <span class="faq-list-category"
-                    ><strong
-                      >Direct feeds to your database or cloud storage (e.g., AWS
-                      S3, Google Cloud)</strong
-                    ></span
+                    >Direct feeds to your database or cloud storage (e.g., AWS
+                    S3, Google Cloud)</span
                   ><br /><br />
                   We transform the raw, unstructured data from the web into a
                   format your team can immediately use.
@@ -1260,6 +1256,15 @@
                     required
                   />
                 </label>
+                <label class="form-field">
+                  <span>JOB TITLE</span>
+                  <input
+                    type="text"
+                    name="job-title"
+                    autocomplete="organization-title"
+                    required
+                  />
+                </label>
               </div>
               <label class="form-field">
                 <span>TELL US ABOUT YOUR PROJECT</span>
@@ -1344,6 +1349,15 @@
             <label class="form-field">
               <span>E-MAIL</span>
               <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label class="form-field">
+              <span>JOB TITLE</span>
+              <input
+                type="text"
+                name="job-title"
+                autocomplete="organization-title"
+                required
+              />
             </label>
           </div>
           <label class="form-field">

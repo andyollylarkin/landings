@@ -1,25 +1,24 @@
 import handleKeydown from "../../libs/keydown_handler.js";
 import handleNoPageAction from "../../libs/handle_mouse_drag.js";
 
+document.addEventListener('click', function (e) {
+  var modal = document.getElementById('modal-cta');
+  if (!modal || modal.style.display !== 'flex') return;
+  if (e.target.classList.contains('modal-cta__close') || e.target.classList.contains('modal-cta__overlay')) {
+    modal.style.display = 'none';
+    document.body.classList.remove('modal-open');
+  }
+});
+
 handleNoPageAction(() => {
   var modal = document.getElementById('modal-cta');
   if (modal) modal.style.display = 'flex';
   document.body.classList.add('modal-open');
-
-  document.addEventListener('click', function (e) {
-    var modal = document.getElementById('modal-cta');
-    if (!modal || modal.style.display !== 'flex') return;
-    if (e.target.classList.contains('modal-cta__close') || e.target.classList.contains('modal-cta__overlay')) {
-      modal.style.display = 'none';
-      document.body.classList.remove('modal-open');
-    }
-  });
 })
 
 let modalShown = false;
 
 document.addEventListener('mouseout', (event) => {
-  // Если курсор вышел за пределы страницы сверху
   if (!modalShown && event.clientY <= 0) {
     var modal = document.getElementById('modal-cta');
     if (modal) modal.style.display = 'flex';
