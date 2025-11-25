@@ -1,3 +1,28 @@
+import handleKeydown from "../../libs/keydown_handler.js";
+
+// Modal CTA logic
+window.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function () {
+    var modal = document.getElementById('modal-cta');
+    if (modal) modal.style.display = 'flex';
+    document.body.classList.add('modal-open');
+  }, 30000);
+
+  document.addEventListener('click', function (e) {
+    var modal = document.getElementById('modal-cta');
+    if (!modal || modal.style.display !== 'flex') return;
+    if (e.target.classList.contains('modal-cta__close') || e.target.classList.contains('modal-cta__overlay')) {
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+  });
+});
+
+
+handleKeydown('modal-cta', 'modal-open');
+
+
+
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
 import '@fontsource/inter/600.css'
