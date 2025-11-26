@@ -1,5 +1,6 @@
 import handleKeydown from "../../libs/keydown_handler.js";
 import handleNoPageAction from "../../libs/handle_mouse_drag.js";
+import { saveField, getSavedField, clearSavedField } from "../../libs/save-field.js";
 
 document.addEventListener('click', function (e) {
   var modal = document.getElementById('modal-cta');
@@ -10,7 +11,11 @@ document.addEventListener('click', function (e) {
   }
 });
 
+let alreadySubmitted = getSavedField('form-field-already_submitted') === 'true';
+
 handleNoPageAction(() => {
+  alreadySubmitted = getSavedField('form-field-already_submitted') === 'true';
+  if (alreadySubmitted) return;
   var modal = document.getElementById('modal-cta');
   if (modal) modal.style.display = 'flex';
   document.body.classList.add('modal-open');
@@ -19,6 +24,9 @@ handleNoPageAction(() => {
 let modalShown = false;
 
 document.addEventListener('mouseout', (event) => {
+  alreadySubmitted = getSavedField('form-field-already_submitted') === 'true';
+
+  if (alreadySubmitted) return;
   if (!modalShown && event.clientY <= 0) {
     var modal = document.getElementById('modal-cta');
     if (modal) modal.style.display = 'flex';
@@ -199,4 +207,77 @@ if (ctaForm) {
       formStatus.textContent = ''
     }
   })
+}
+
+const emailInput = document.querySelectorAll('input[name="email"]');
+const jobTitleInput = document.querySelectorAll('input[name="job-title"]');
+const nameInput = document.querySelectorAll('input[name="name"]');
+const infoInput = document.querySelectorAll('textarea[name="project"]');
+
+document.addEventListener('DOMContentLoaded', function () {
+  const savedEmail = getSavedField('email');
+  if (savedEmail && emailInput.length) {
+    emailInput.forEach(input => { input.value = savedEmail; });
+  }
+  const savedJobTitle = getSavedField('job-title');
+  if (savedJobTitle && jobTitleInput.length) {
+    jobTitleInput.forEach(input => { input.value = savedJobTitle; });
+  }
+  const savedName = getSavedField('name');
+  if (savedName && nameInput.length) {
+    nameInput.forEach(input => { input.value = savedName; });
+  }
+  const savedInfo = getSavedField('project');
+  if (savedInfo && infoInput.length) {
+    infoInput.forEach(input => { input.value = savedInfo; });
+  }
+
+  alreadySubmitted = getSavedField('form-field-already_submitted');
+});
+
+if (emailInput.length) {
+  emailInput.forEach(input => {
+    input.addEventListener('input', (e) => {
+      saveField('email', e.target.value);
+      emailInput.forEach(other => { if (other !== input) other.value = e.target.value; });
+    });
+  });
+}
+if (jobTitleInput.length) {
+  jobTitleInput.forEach(input => {
+    input.addEventListener('input', (e) => {
+      saveField('job-title', e.target.value);
+      jobTitleInput.forEach(other => { if (other !== input) other.value = e.target.value; });
+    });
+  });
+}
+if (nameInput.length) {
+  nameInput.forEach(input => {
+    input.addEventListener('input', (e) => {
+      saveField('name', e.target.value);
+      nameInput.forEach(other => { if (other !== input) other.value = e.target.value; });
+    });
+  });
+}
+if (infoInput.length) {
+  infoInput.forEach(input => {
+    input.addEventListener('input', (e) => {
+      saveField('project', e.target.value);
+      infoInput.forEach(other => { if (other !== input) other.value = e.target.value; });
+    });
+  });
+}
+
+const submitBtns = document.querySelectorAll('button[type="submit"]')
+
+if (submitBtns.length) {
+  submitBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      clearSavedField('email');
+      clearSavedField('job-title');
+      clearSavedField('name');
+      clearSavedField('project');
+      saveField('form-field-already_submitted', 'true');
+    });
+  });
 }
