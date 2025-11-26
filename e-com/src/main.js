@@ -52,8 +52,8 @@ const header = document.querySelector('[data-header]')
 const animatedItems = document.querySelectorAll('[data-animate]')
 const detailsItems = document.querySelectorAll('.faq__item')
 const yearTarget = document.querySelector('[data-year]')
-const ctaForm = document.querySelector('.final-cta__form')
-const formStatus = document.querySelector('.final-cta__form-status')
+const ctaForms = document.querySelectorAll('.final-cta__form');
+const formStatus = document.querySelector('.final-cta__form-status');
 
 const openNavigation = () => {
   if (!navTrigger || !navMenu) return
@@ -187,39 +187,81 @@ window.addEventListener('keydown', (event) => {
   }
 })
 
-if (ctaForm) {
-  ctaForm.addEventListener('submit', (event) => {
-    event.preventDefault()
-    if (!ctaForm.checkValidity()) {
-      ctaForm.reportValidity()
-      return
-    }
-
-    if (formStatus) {
-      formStatus.textContent = 'Thanks! We will reach out within one business day.'
-    }
-
-    ctaForm.reset()
+if (ctaForms) {
+  ctaForms.forEach(form => {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (formStatus) {
+        formStatus.textContent = '';
+        formStatus.classList.remove('is-success', 'is-error');
+      }
+      const formData = new FormData(form);
+      const name = String(formData.get('name') || '').trim();
+      const email = String(formData.get('email') || '').trim();
+      const message = String(formData.get('message') || '').trim();
+      const errors = [];
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!name) errors.push('Please share your name.');
+      if (!email || !emailPattern.test(email)) errors.push('Enter a valid work email.');
+      if (!message) errors.push('Type your message.');
+      if (errors.length > 0) {
+        console.log("errors", errors);
+        if (formStatus) {
+          formStatus.textContent = errors.join(' ');
+          formStatus.classList.add('is-error');
+        }
+        form.reportValidity();
+        return;
+      }
+      try {
+        const response = await fetch('https://e-com.mridata.pro/contact', {
+          method: 'POST',
+          body: formData,
+        });
+        if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
+        if (formStatus) {
+          formStatus.textContent = 'Thank you! A MRI Data specialist will reach out within one business day.';
+          formStatus.classList.add('is-success');
+        }
+        form.reset();
+        // Explicitly clear all input and textarea fields with matching names across the document
+        // Clear saved fields and set already_submitted
+        clearSavedField('email');
+        clearSavedField('jobtitle');
+        clearSavedField('name');
+        clearSavedField('message');
+        saveField('form-field-already_submitted', 'true');
+      } catch (error) {
+        if (formStatus) {
+          formStatus.textContent = 'We could not send your message right now. Please try again.';
+          formStatus.classList.add('is-error');
+        }
+      }
+      document.querySelectorAll('input[name="email"], input[name="jobtitle"], input[name="name"], textarea[name="message"], input[name="message"], textarea[name="project"], input[name="project"]').forEach(field => {
+        field.value = '';
+      });
+    });
+    form.addEventListener('input', () => {
+      if (formStatus) {
+        formStatus.textContent = '';
+        formStatus.classList.remove('is-success', 'is-error');
+      }
+    });
   })
 
-  ctaForm.addEventListener('input', () => {
-    if (formStatus) {
-      formStatus.textContent = ''
-    }
-  })
 }
 
 const emailInput = document.querySelectorAll('input[name="email"]');
-const jobTitleInput = document.querySelectorAll('input[name="job-title"]');
+const jobTitleInput = document.querySelectorAll('input[name="jobtitle"]');
 const nameInput = document.querySelectorAll('input[name="name"]');
-const infoInput = document.querySelectorAll('textarea[name="project"]');
+const infoInput = document.querySelectorAll('textarea[name="message"]');
 
 document.addEventListener('DOMContentLoaded', function () {
   const savedEmail = getSavedField('email');
   if (savedEmail && emailInput.length) {
     emailInput.forEach(input => { input.value = savedEmail; });
   }
-  const savedJobTitle = getSavedField('job-title');
+  const savedJobTitle = getSavedField('jobtitle');
   if (savedJobTitle && jobTitleInput.length) {
     jobTitleInput.forEach(input => { input.value = savedJobTitle; });
   }
@@ -227,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (savedName && nameInput.length) {
     nameInput.forEach(input => { input.value = savedName; });
   }
-  const savedInfo = getSavedField('project');
+  const savedInfo = getSavedField('message');
   if (savedInfo && infoInput.length) {
     infoInput.forEach(input => { input.value = savedInfo; });
   }
@@ -246,7 +288,7 @@ if (emailInput.length) {
 if (jobTitleInput.length) {
   jobTitleInput.forEach(input => {
     input.addEventListener('input', (e) => {
-      saveField('job-title', e.target.value);
+      saveField('jobtitle', e.target.value);
       jobTitleInput.forEach(other => { if (other !== input) other.value = e.target.value; });
     });
   });
@@ -262,7 +304,7 @@ if (nameInput.length) {
 if (infoInput.length) {
   infoInput.forEach(input => {
     input.addEventListener('input', (e) => {
-      saveField('project', e.target.value);
+      saveField('message', e.target.value);
       infoInput.forEach(other => { if (other !== input) other.value = e.target.value; });
     });
   });
@@ -274,9 +316,9 @@ if (submitBtns.length) {
   submitBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       clearSavedField('email');
-      clearSavedField('job-title');
+      clearSavedField('jobtitle');
       clearSavedField('name');
-      clearSavedField('project');
+      clearSavedField('message');
       saveField('form-field-already_submitted', 'true');
     });
   });
