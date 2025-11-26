@@ -646,8 +646,6 @@ h3 {
   align-items: center;
 }
 
-
-
 .data-flow__stage {
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
@@ -2537,7 +2535,7 @@ h3 {
   }
 
   .footer__columns {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .footer__bottom-content {
@@ -2563,5 +2561,132 @@ h3 {
   .btn--lg {
     width: 100%;
     justify-content: center;
+  }
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.97rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(35, 47, 62, 0.07);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.product-table th,
+.product-table td {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.product-table th {
+  background: var(--color-muted);
+  color: var(--color-blue);
+  font-weight: 600;
+}
+.product-table--csv td {
+  color: var(--color-charcoal);
+}
+.product-table--json td {
+  color: var(--color-blue-dark);
+}
+.product-sql {
+  background: #232f3e;
+  color: #fff;
+  font-family: "Fira Mono", "Menlo", "Monaco", "Consolas", monospace;
+  font-size: 0.97rem;
+  border-radius: 0px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(35, 47, 62, 0.12);
+}
+.sql-keyword {
+  color: #ff9900;
+  font-weight: bold;
+}
+.sql-string {
+  color: #4ad991;
+}
+.sql-comment {
+  color: #8ca0b1;
+  font-style: italic;
+}
+.product-json {
+  background: #232f3e;
+  color: #fff;
+  font-family: "Fira Mono", "Menlo", "Monaco", "Consolas", monospace;
+  font-size: 0.97rem;
+  border-radius: 0px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(35, 47, 62, 0.12);
+  white-space: pre-wrap;
+}
+.json-key {
+  color: #ff9900;
+}
+.json-string {
+  color: #4ad991;
+}
+.json-number {
+  color: #ffd700;
+}
+.json-boolean {
+  color: #00bfff;
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  .product-json {
+    font-size: 0.89rem;
+    padding: 0.6rem;
+  }
+}
+
+.product-csv {
+  background: #232f3e;
+  color: #fff;
+  font-family: "Fira Mono", "Menlo", "Monaco", "Consolas", monospace;
+  font-size: 0.97rem;
+  border-radius: 0px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(35, 47, 62, 0.12);
+  white-space: pre-wrap;
+}
+@media (max-width: 600px) {
+  .product-csv {
+    font-size: 0.89rem;
+    padding: 0.6rem;
+  }
+}
+.line-num {
+  display: inline;
+  width: 2.2em;
+  color: #8ca0b1;
+  text-align: right;
+  margin-right: 0.7em;
+  user-select: none;
+  opacity: 0.7;
+}
+.line-content {
+  display: inline;
+  width: 90%;
+  vertical-align: top;
+  white-space: pre;
+}
+.product-csv .line-num,
+.product-json .line-num,
+.product-sql .line-num {
+  color: #8ca0b1;
+}
+@media (max-width: 600px) {
+  .line-num {
+    width: 1.5em;
+    margin-right: 0.4em;
+    font-size: 0.89em;
   }
 }

@@ -281,3 +281,104 @@ if (submitBtns.length) {
     });
   });
 }
+
+// --- Product file reading and rendering ---
+async function fetchText(url) {
+  const response = await fetch(url);
+  return await response.text();
+}
+async function fetchJSON(url) {
+  const response = await fetch(url);
+  return await response.json();
+}
+
+function addLineNumbers(text, isCode = false) {
+  const lines = text.split(/\r?\n/);
+  return lines.map((line, i) => {
+    if (isCode) {
+      return `<span class='line-num'>${i + 1}</span> ${line}`;
+    }
+    return `<span class='line-num'>${i + 1}</span> <span class='line-content'>${line}</span>`;
+  }).join('\n');
+}
+
+function renderCSVBlock(csv) {
+  // Escape HTML and show as pre block with line numbers
+  const html = addLineNumbers(csv.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
+  return `<pre class="product-csv">${html}</pre>`;
+}
+
+function renderJSONPretty(json) {
+  // Pretty print JSON with syntax highlighting and line numbers
+  const jsonString = JSON.stringify(json, null, 2);
+  const escaped = jsonString.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  let html = escaped.replace(/("[^"]*")(?=:)/g, '<span class="json-key">$1</span>')
+    .replace(/("[^"]*")/g, '<span class="json-string">$1</span>')
+    .replace(/\b(true|false|null)\b/g, '<span class="json-boolean">$1</span>')
+    .replace(/(\d+\.?\d*)/g, '<span class="json-number">$1</span>');
+  html = addLineNumbers(html);
+  return `<pre class="product-json">${html}</pre>`;
+}
+
+function renderSQLBlock(sql) {
+  // Highlight SQL keywords and add line numbers, but keep code formatting
+  const keywords = [
+    'INSERT', 'INTO', 'VALUES', 'CREATE', 'TABLE', 'PRIMARY', 'KEY', 'NOT NULL', 'VARCHAR', 'SERIAL'
+  ];
+  // Escape HTML first
+  let html = sql.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // Now highlight keywords, strings, comments
+  html = html.replace(/(--.*)/g, '<span class="sql-comment">$1</span>');
+  html = html.replace(/(\b(?:' + keywords.join('|') + ')\b)/gi, '<span class="sql-keyword">$1</span>');
+  html = html.replace(/('[^']*')/g, '<span class="sql-string">$1</span>');
+  html = addLineNumbers(html, true);
+  return `<pre class="product-sql">${html}</pre>`;
+}
+
+async function injectProductData() {
+  // CSV
+  try {
+    const csv = await fetchText('/public/products.csv');
+    const tab1 = document.getElementById('tab-content1');
+    if (tab1) tab1.innerHTML = renderCSVBlock(csv);
+  } catch (e) { }
+  // JSON
+  try {
+    const json = await fetchJSON('/public/products.json');
+    const tab2 = document.getElementById('tab-content2');
+    if (tab2) tab2.innerHTML = renderJSONPretty(json);
+  } catch (e) { }
+  // SQL
+  try {
+    const sql = await fetchText('/public/products.sql');
+    const tab3 = document.getElementById('tab-content3');
+    if (tab3) tab3.innerHTML = renderSQLBlock(sql);
+  } catch (e) { }
+}
+
+document.addEventListener('DOMContentLoaded', injectProductData);
+
+
+const dataFetchBtn = document.getElementById('extract-btn')
+const overlay = document.getElementById('demo-overlay')
+const fetchLoadText = document.getElementById('fetch-load-text')
+
+dataFetchBtn?.addEventListener('click', () => {
+  if (overlay) {
+    overlay.classList.remove('hidden');
+    let intervalId;
+    if (fetchLoadText) {
+      intervalId = setInterval(() => {
+        if (fetchLoadText.textContent.endsWith('...')) {
+          fetchLoadText.textContent = 'Fetching data';
+        } else {
+          fetchLoadText.textContent += '.';
+        }
+      }, 500);
+    }
+    setTimeout(() => {
+      if (intervalId) clearInterval(intervalId);
+      overlay.classList.add('hidden');
+    }, 3000);
+  }
+})
