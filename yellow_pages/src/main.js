@@ -146,3 +146,316 @@ window.addEventListener('scroll', () => {
 		heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
 	}
 });
+
+const TOKEN = 'pk.eyJ1IjoibXJpZGF0YXRlYW0iLCJhIjoiY21pZ2h6OHp6MDZuZTNlc2VocjJ4c2phayJ9.IZi32931QDWqMOsPcON70A';
+
+mapboxgl.accessToken = TOKEN;
+const map = new mapboxgl.Map({
+	container: 'map',
+	style: 'mapbox://styles/mapbox/streets-v12',
+	center: [-73.938317, 40.692339],
+	zoom: 1
+});
+
+async function geocodeCity(city) {
+	const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(city)}.json?access_token=${TOKEN}`;
+	const res = await fetch(url);
+	if (!res.ok) throw new Error("Geocoding error");
+	const json = await res.json();
+	if (!json.features.length) throw new Error("City not found");
+	return json.features[0].center; // [lon, lat]
+}
+
+const BUSINESS_TYPES = {
+	// Amenities (удобства)
+	'bank': { tag: 'amenity', value: 'bank' },
+	'banks': { tag: 'amenity', value: 'bank' },
+	'atm': { tag: 'amenity', value: 'atm' },
+	'restaurant': { tag: 'amenity', value: 'restaurant' },
+	'restaurants': { tag: 'amenity', value: 'restaurant' },
+	'cafe': { tag: 'amenity', value: 'cafe' },
+	'cafes': { tag: 'amenity', value: 'cafe' },
+	'bar': { tag: 'amenity', value: 'bar' },
+	'bars': { tag: 'amenity', value: 'bar' },
+	'pub': { tag: 'amenity', value: 'pub' },
+	'pubs': { tag: 'amenity', value: 'pub' },
+	'fast food': { tag: 'amenity', value: 'fast_food' },
+	'pharmacy': { tag: 'amenity', value: 'pharmacy' },
+	'pharmacies': { tag: 'amenity', value: 'pharmacy' },
+	'hospital': { tag: 'amenity', value: 'hospital' },
+	'hospitals': { tag: 'amenity', value: 'hospital' },
+	'clinic': { tag: 'amenity', value: 'clinic' },
+	'clinics': { tag: 'amenity', value: 'clinic' },
+	'dentist': { tag: 'amenity', value: 'dentist' },
+	'dentists': { tag: 'amenity', value: 'dentist' },
+	'doctor': { tag: 'amenity', value: 'doctors' },
+	'doctors': { tag: 'amenity', value: 'doctors' },
+	'veterinary': { tag: 'amenity', value: 'veterinary' },
+	'school': { tag: 'amenity', value: 'school' },
+	'schools': { tag: 'amenity', value: 'school' },
+	'kindergarten': { tag: 'amenity', value: 'kindergarten' },
+	'kindergartens': { tag: 'amenity', value: 'kindergarten' },
+	'university': { tag: 'amenity', value: 'university' },
+	'universities': { tag: 'amenity', value: 'university' },
+	'college': { tag: 'amenity', value: 'college' },
+	'colleges': { tag: 'amenity', value: 'college' },
+	'library': { tag: 'amenity', value: 'library' },
+	'libraries': { tag: 'amenity', value: 'library' },
+	'police': { tag: 'amenity', value: 'police' },
+	'fire station': { tag: 'amenity', value: 'fire_station' },
+	'post office': { tag: 'amenity', value: 'post_office' },
+	'fuel': { tag: 'amenity', value: 'fuel' },
+	'gas station': { tag: 'amenity', value: 'fuel' },
+	'parking': { tag: 'amenity', value: 'parking' },
+	'gym': { tag: 'amenity', value: 'gym' },
+	'gyms': { tag: 'amenity', value: 'gym' },
+	'cinema': { tag: 'amenity', value: 'cinema' },
+	'cinemas': { tag: 'amenity', value: 'cinema' },
+	'theatre': { tag: 'amenity', value: 'theatre' },
+	'theatres': { tag: 'amenity', value: 'theatre' },
+	'nightclub': { tag: 'amenity', value: 'nightclub' },
+	'nightclubs': { tag: 'amenity', value: 'nightclub' },
+
+	// Shops (магазины)
+	'supermarket': { tag: 'shop', value: 'supermarket' },
+	'supermarkets': { tag: 'shop', value: 'supermarket' },
+	'convenience': { tag: 'shop', value: 'convenience' },
+	'bakery': { tag: 'shop', value: 'bakery' },
+	'bakeries': { tag: 'shop', value: 'bakery' },
+	'bakers': { tag: 'shop', value: 'bakery' },
+	'butcher': { tag: 'shop', value: 'butcher' },
+	'butchers': { tag: 'shop', value: 'butcher' },
+	'clothes': { tag: 'shop', value: 'clothes' },
+	'clothing': { tag: 'shop', value: 'clothes' },
+	'shoes': { tag: 'shop', value: 'shoes' },
+	'bookshop': { tag: 'shop', value: 'books' },
+	'bookshops': { tag: 'shop', value: 'books' },
+	'bookstore': { tag: 'shop', value: 'books' },
+	'bookstores': { tag: 'shop', value: 'books' },
+	'florist': { tag: 'shop', value: 'florist' },
+	'florists': { tag: 'shop', value: 'florist' },
+	'furniture': { tag: 'shop', value: 'furniture' },
+	'hardware': { tag: 'shop', value: 'hardware' },
+	'jewelry': { tag: 'shop', value: 'jewelry' },
+	'jewellery': { tag: 'shop', value: 'jewelry' },
+	'mall': { tag: 'shop', value: 'mall' },
+	'shopping mall': { tag: 'shop', value: 'mall' },
+	'electronics': { tag: 'shop', value: 'electronics' },
+	'mobile phone': { tag: 'shop', value: 'mobile_phone' },
+	'computer': { tag: 'shop', value: 'computer' },
+	'bicycle': { tag: 'shop', value: 'bicycle' },
+	'car': { tag: 'shop', value: 'car' },
+	'car dealer': { tag: 'shop', value: 'car' },
+	'hairdresser': { tag: 'shop', value: 'hairdresser' },
+	'hairdressers': { tag: 'shop', value: 'hairdresser' },
+	'beauty': { tag: 'shop', value: 'beauty' },
+	'beauty salon': { tag: 'shop', value: 'beauty' },
+	'tattoo': { tag: 'shop', value: 'tattoo' },
+	'laundry': { tag: 'shop', value: 'laundry' },
+	'dry cleaning': { tag: 'shop', value: 'dry_cleaning' },
+	'pet': { tag: 'shop', value: 'pet' },
+	'pet shop': { tag: 'shop', value: 'pet' },
+	'alcohol': { tag: 'shop', value: 'alcohol' },
+	'liquor': { tag: 'shop', value: 'alcohol' },
+
+	// Offices (офисы)
+	'lawyer': { tag: 'office', value: 'lawyer' },
+	'lawyers': { tag: 'office', value: 'lawyer' },
+	'accountant': { tag: 'office', value: 'accountant' },
+	'accountants': { tag: 'office', value: 'accountant' },
+	'insurance': { tag: 'office', value: 'insurance' },
+	'estate agent': { tag: 'office', value: 'estate_agent' },
+	'real estate': { tag: 'office', value: 'estate_agent' },
+	'architect': { tag: 'office', value: 'architect' },
+	'architects': { tag: 'office', value: 'architect' },
+	'company': { tag: 'office', value: 'company' },
+	'government': { tag: 'office', value: 'government' },
+
+	// Tourism (туризм)
+	'hotel': { tag: 'tourism', value: 'hotel' },
+	'hotels': { tag: 'tourism', value: 'hotel' },
+	'hostel': { tag: 'tourism', value: 'hostel' },
+	'hostels': { tag: 'tourism', value: 'hostel' },
+	'motel': { tag: 'tourism', value: 'motel' },
+	'motels': { tag: 'tourism', value: 'motel' },
+	'museum': { tag: 'tourism', value: 'museum' },
+	'museums': { tag: 'tourism', value: 'museum' },
+	'attraction': { tag: 'tourism', value: 'attraction' },
+	'attractions': { tag: 'tourism', value: 'attraction' },
+	'viewpoint': { tag: 'tourism', value: 'viewpoint' },
+	'zoo': { tag: 'tourism', value: 'zoo' },
+	'aquarium': { tag: 'tourism', value: 'aquarium' },
+
+	// Leisure (досуг)
+	'park': { tag: 'leisure', value: 'park' },
+	'parks': { tag: 'leisure', value: 'park' },
+	'playground': { tag: 'leisure', value: 'playground' },
+	'playgrounds': { tag: 'leisure', value: 'playground' },
+	'sports centre': { tag: 'leisure', value: 'sports_centre' },
+	'sports center': { tag: 'leisure', value: 'sports_centre' },
+	'stadium': { tag: 'leisure', value: 'stadium' },
+	'stadiums': { tag: 'leisure', value: 'stadium' },
+	'swimming pool': { tag: 'leisure', value: 'swimming_pool' },
+	'golf course': { tag: 'leisure', value: 'golf_course' },
+
+	// Craft (ремесла)
+	'carpenter': { tag: 'craft', value: 'carpenter' },
+	'carpenters': { tag: 'craft', value: 'carpenter' },
+	'electrician': { tag: 'craft', value: 'electrician' },
+	'electricians': { tag: 'craft', value: 'electrician' },
+	'plumber': { tag: 'craft', value: 'plumber' },
+	'plumbers': { tag: 'craft', value: 'plumber' },
+	'painter': { tag: 'craft', value: 'painter' },
+	'painters': { tag: 'craft', value: 'painter' },
+	'photographer': { tag: 'craft', value: 'photographer' },
+	'photographers': { tag: 'craft', value: 'photographer' }
+};
+
+async function searchBusiness(city, business) {
+	const [lon, lat] = await geocodeCity(city);
+	const businessLower = business.toLowerCase().trim();
+
+	// Ищем в словаре
+	const businessType = BUSINESS_TYPES[businessLower];
+
+	if (!businessType) {
+		throw new Error(`Business type "${business}" not supported. Please use one of the predefined types.`);
+	}
+
+	console.log(`Searching ${businessLower} (${businessType.tag}=${businessType.value}) near ${lat}, ${lon}`);
+
+	const query = `
+		[out:json][timeout:25];
+		(
+			node["${businessType.tag}"="${businessType.value}"](around:10000,${lat},${lon});
+			way["${businessType.tag}"="${businessType.value}"](around:10000,${lat},${lon});
+		);
+		out center;
+	`;
+
+	const res = await fetch("https://overpass-api.de/api/interpreter", {
+		method: "POST",
+		body: query
+	});
+
+	if (!res.ok) throw new Error("Overpass error");
+	return res.json();
+}
+
+// Функция для получения списка доступных типов
+function getAvailableBusinessTypes() {
+	return Object.keys(BUSINESS_TYPES).sort();
+}
+
+async function addMarkers(markers) {
+	markers.forEach(marker => {
+		const el = document.createElement('div');
+		el.className = 'custom-marker';
+		console.log(marker)
+		const tags = marker.tags;
+		const filtered = {
+			...tags,
+			tags: Object.fromEntries(Object.entries(marker.tags).filter(([_, v]) => v !== ""))
+		}.tags;
+
+		// Create popup HTML with Tailwind classes
+		let html = '<div class="min-w-[250px] max-w-[350px] font-sans">';
+
+		// Add title if available
+		const title = filtered.name || filtered.title || filtered.business_name || 'Business';
+		if (title && title !== 'Business') {
+			html += `
+				<div class="pb-3 mb-3 border-b-2 border-slate-200">
+					<h3 class="m-0 text-base font-bold text-slate-900 leading-tight">${title}</h3>
+				</div>
+			`;
+		}
+
+		// Add other fields
+		html += '<div class="flex flex-col gap-2.5">';
+
+		for (const [key, value] of Object.entries(filtered)) {
+			if (!value || !key) continue;
+			if (value.length < 10) continue;
+			if (key === 'name' || key === 'title' || key === 'business_name') continue; // Skip title fields as they're already shown
+
+			// Check if value is a URL
+			if (value.includes('http')) {
+				html += `
+					<div class="flex items-start gap-2">
+						<div class="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-blue-600 to-green-500 mt-1.5 flex-shrink-0"></div>
+						<div class="flex-1 min-w-0">
+							<span class="text-slate-500 text-xs font-medium capitalize">${key.replace(/_/g, ' ')}:</span>
+							<a href="${value}" 
+								target="_blank" 
+								class="text-blue-600 text-sm no-underline block mt-0.5 break-all hover:text-blue-700 hover:underline transition-colors duration-200"
+							>${value}</a>
+						</div>
+					</div>
+				`;
+			} else {
+				html += `
+					<div class="flex items-start gap-2">
+						<div class="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-blue-600 to-green-500 mt-1.5 flex-shrink-0"></div>
+						<div class="flex-1 min-w-0">
+							<span class="text-slate-500 text-xs font-medium capitalize">${key.replace(/_/g, ' ')}:</span>
+							<span class="text-slate-900 text-sm block mt-0.5 leading-relaxed">${value}</span>
+						</div>
+					</div>
+				`;
+			}
+		}
+
+		html += '</div></div>';
+
+		// Create popup with custom styling
+		const popup = new mapboxgl.Popup({
+			offset: 25,
+			className: 'custom-mapbox-popup',
+			maxWidth: '350px'
+		}).setHTML(html);
+
+		new mapboxgl.Marker(el)
+			.setLngLat([marker.lon, marker.lat])
+			.setPopup(popup)
+			.addTo(map);
+	});
+}
+
+const searchSelect = document.getElementById('business-types');
+if (searchSelect) {
+	// Заполняем селект доступными типами
+	const types = getAvailableBusinessTypes();
+	types.forEach(type => {
+		const option = document.createElement('option');
+		option.value = type;
+		option.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+		searchSelect.appendChild(option);
+	});
+}
+
+// remove mapbox identity
+// document.querySelector(".mapboxgl-ctrl-logo").remove()
+// document.querySelector(".mapboxgl-ctrl-attrib-inner").remove()
+
+
+const searchForm = document.querySelector('.search-form');
+searchForm.addEventListener('submit', async (e) => {
+	e.preventDefault();
+	const business = document.getElementById('business-types').value;
+	const location = document.querySelector('.search-form input[aria-label="location"]').value;
+	try {
+		const data = await searchBusiness(location, business);
+		console.log(data)
+		if (data.elements.length > 0) {
+			map.flyTo({
+				center: [data.elements[0].lon, data.elements[0].lat],
+				zoom: 12
+			});
+		}
+		addMarkers(data.elements);
+
+		console.log(`Found ${data.elements.length} businesses for ${business} in ${location}`);
+		// Clear existing markers
+	} catch (e) { console.error(e); }
+});

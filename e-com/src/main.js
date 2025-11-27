@@ -380,19 +380,19 @@ function renderSQLBlock(sql) {
 async function injectProductData() {
   // CSV
   try {
-    const csv = await fetchText('/public/products.csv');
+    const csv = await fetchText('/products.csv');
     const tab1 = document.getElementById('tab-content1');
     if (tab1) tab1.innerHTML = renderCSVBlock(csv);
   } catch (e) { }
   // JSON
   try {
-    const json = await fetchJSON('/public/products.json');
+    const json = await fetchJSON('/products.json');
     const tab2 = document.getElementById('tab-content2');
     if (tab2) tab2.innerHTML = renderJSONPretty(json);
   } catch (e) { }
   // SQL
   try {
-    const sql = await fetchText('/public/products.sql');
+    const sql = await fetchText('/products.sql');
     const tab3 = document.getElementById('tab-content3');
     if (tab3) tab3.innerHTML = renderSQLBlock(sql);
   } catch (e) { }

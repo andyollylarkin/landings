@@ -4,11 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MRI Data — Yellow Pages Landing</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta
       name="description"
       content="MRI Data — powerful data parsing and insights for businesses."
     />
     <link rel="stylesheet" href="/src/style.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="site-header" id="siteHeader">
@@ -55,24 +62,26 @@
               >
             </div>
             <form class="search-form" aria-label="Find businesses">
-              <input
+              <select
+                id="business-types"
                 class="input"
-                type="search"
-                placeholder="What service are you looking for? e.g. Plumber"
-                aria-label="search"
-              />
+                type="text"
+                aria-placeholder="Select business type"
+                required
+              ></select>
               <input
                 class="input"
                 type="text"
                 placeholder="City or ZIP"
                 aria-label="location"
+                required
               />
               <button class="btn btn-primary">Search</button>
             </form>
           </div>
           <div class="hero-visual">
-            <div class="card card-visual">
-              <img src="/assets/hero-sample.svg" alt="Search results preview" />
+            <div class="hero-map">
+              <div id="map"></div>
             </div>
             <div class="trust-strip">
               <span class="trust-badge">
