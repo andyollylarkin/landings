@@ -1,4 +1,6 @@
 // === CONFIGURATION ===
+const alreadyInit = false;
+
 const CONFIG = {
 	scrollPoints: [10, 25, 50, 75, 90, 100],
 	timePoints: [15, 30, 60, 120, 180, 300],
@@ -203,6 +205,8 @@ function trackPerformance() {
 
 // === INITIALIZATION ===
 export function initAnalytics() {
+	if (alreadyInit) return;
+	alreadyInit = true;
 	// Initial page view
 	gtag('event', 'page_view', {
 		'page_title': document.title,
