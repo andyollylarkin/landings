@@ -8,3 +8,13 @@ export default function handleKeydown(elementId, removeClass) {
 		}
 	});
 }
+
+export function handleKeydownCallback(elementId, cb) {
+	window.addEventListener('keydown', function (e) {
+		var modal = document.getElementById(elementId);
+		if (!modal || modal.style.display !== 'flex') return;
+		if (e.key === 'Escape') {
+			cb(modal)
+		}
+	});
+}

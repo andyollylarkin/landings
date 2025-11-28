@@ -1,9 +1,20 @@
+import { handleKeydownCallback } from "../../libs/keydown_handler"
+import { handleMouseOut } from "../../libs/handle_mouse_out"
+import { clearSavedField, getSavedField, saveField } from "../../libs/save-field"
+import handleMouseDrag from "../../libs/handle_mouse_drag"
+import downloadFile from "./download.js"
+import {initAnalytics} from "../../ga/tmp.js"
+
 const header = document.getElementById('siteHeader');
 const mobileBtn = document.getElementById('mobileMenuBtn');
 const mainNav = document.getElementById('mainNav');
 const yearSpan = document.getElementById('year');
 
+let modalShown = false;
+
 const form = document.querySelector('.contact-grid');
+
+window.onload = () => initAnalytics();
 
 form.addEventListener('submit', async (e) => {
 	e.preventDefault();
@@ -16,6 +27,7 @@ form.addEventListener('submit', async (e) => {
 			body: data,
 		});
 
+
 		if (response.ok) {
 			alert('Message sent successfully!');
 			form.reset();
@@ -25,6 +37,12 @@ form.addEventListener('submit', async (e) => {
 	} catch (error) {
 		console.error('Error sending form:', error);
 	}
+	clearSavedField('form-field-name');
+	clearSavedField('form-field-email');
+	clearSavedField('form-field-jobtitle');
+	clearSavedField('form-field-message');
+	saveField('form-field-already_submitted', 'true');
+	form.reset();
 	alert("Thank you! Our manager will contact you shortly.")
 });
 
@@ -61,6 +79,52 @@ if (mobileBtn && mainNav) {
 		}
 	});
 }
+
+// Modal logic for contact form
+const contactModal = document.getElementById('contactModal');
+const closeContactModal = document.getElementById('closeContactModal');
+
+
+handleKeydownCallback('contactModal', (modal) => {
+	modal.style.display = 'none';
+	document.body.style.overflow = '';
+});
+
+handleMouseOut('', () => {
+	let alreadySubmitted = getSavedField('form-field-already_submitted') === 'true';
+
+	console.log(alreadySubmitted, modalShown)
+	if (alreadySubmitted || modalShown) return;
+	modalShown = true;
+	contactModal.style.display = 'flex';
+	document.body.style.overflow = 'hidden';
+})
+
+// Close modal on close button
+if (closeContactModal) {
+	closeContactModal.addEventListener('click', () => {
+		contactModal.style.display = 'none';
+		document.body.style.overflow = '';
+	});
+}
+
+// Close modal on backdrop click (not modal content)
+if (contactModal) {
+	contactModal.addEventListener('click', e => {
+		if (e.target === contactModal) {
+			contactModal.style.display = 'none';
+			document.body.style.overflow = '';
+		}
+	});
+}
+
+handleMouseDrag(() => {
+	let alreadySubmitted = getSavedField('form-field-already_submitted') === 'true';
+	if (modalShown || alreadySubmitted) return;
+	modalShown = true;
+	contactModal.style.display = 'flex';
+	document.body.style.overflow = 'hidden';
+});
 
 // Testimonial carousel
 const testimonials = [...document.querySelectorAll('.testimonial-card')];
@@ -351,12 +415,12 @@ async function addMarkers(markers) {
 	markers.forEach(marker => {
 		const el = document.createElement('div');
 		el.className = 'custom-marker';
-		console.log(marker)
 		const tags = marker.tags;
 		const filtered = {
 			...tags,
 			tags: Object.fromEntries(Object.entries(marker.tags).filter(([_, v]) => v !== ""))
 		}.tags;
+
 
 		// Create popup HTML with Tailwind classes
 		let html = '<div class="min-w-[250px] max-w-[350px] font-sans">';
@@ -406,7 +470,8 @@ async function addMarkers(markers) {
 			}
 		}
 
-		html += '</div></div>';
+
+		html += '</div>';
 
 		// Create popup with custom styling
 		const popup = new mapboxgl.Popup({
@@ -435,27 +500,78 @@ if (searchSelect) {
 }
 
 // remove mapbox identity
-// document.querySelector(".mapboxgl-ctrl-logo").remove()
-// document.querySelector(".mapboxgl-ctrl-attrib-inner").remove()
+document.querySelector(".mapboxgl-ctrl-logo").remove()
+document.querySelector(".mapboxgl-ctrl-attrib-inner").remove()
 
 
 const searchForm = document.querySelector('.search-form');
 searchForm.addEventListener('submit', async (e) => {
 	e.preventDefault();
+
+	const mapBlockscreen = document.getElementById('map-block')
+	mapBlockscreen.classList.remove('map-block-hide')
+	mapBlockscreen.classList.add('map-block-show')
+
 	const business = document.getElementById('business-types').value;
 	const location = document.querySelector('.search-form input[aria-label="location"]').value;
 	try {
 		const data = await searchBusiness(location, business);
-		console.log(data)
 		if (data.elements.length > 0) {
 			map.flyTo({
 				center: [data.elements[0].lon, data.elements[0].lat],
 				zoom: 12
 			});
+			mapBlockscreen.classList.remove('map-block-show')
+			mapBlockscreen.classList.add('map-block-hide')
 		}
+
+		const dp = new DOMParser();
+		const parsedIcon = dp.parseFromString(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"/></svg>`, "image/svg+xml")
+
+		const link = document.createElement('a');
+		const filename = `${business}_${location}_business_tags.json`;
+		const allTags = data.elements.map(el => el.tags);
+		const url = downloadFile(allTags);
+		link.href = url;
+		link.download = filename;
+		link.innerText = 'Download results';
+		link.style.position = 'absolute';
+		link.style.top = '10px';
+		link.style.left = '10px';
+		link.style.zIndex = '7';
+		link.style.padding = '8px 12px';
+		link.style.backgroundColor = '#2563eb';
+		link.style.color = '#ffffff';
+		link.style.borderRadius = '4px';
+		link.style.textDecoration = 'none';
+		link.style.fontSize = '14px';
+		link.style.display = 'flex';
+		link.style.alignItems = 'center';
+		link.style.gap = '6px';
+		link.style.flexDirection = 'row';
+		link.appendChild(parsedIcon.documentElement);
+
+		document.querySelector('.hero-map').appendChild(link)
+
 		addMarkers(data.elements);
 
 		console.log(`Found ${data.elements.length} businesses for ${business} in ${location}`);
 		// Clear existing markers
 	} catch (e) { console.error(e); }
+
+});
+
+// handle inputs
+document.querySelectorAll('input[name="name"], input[name="email"], input[name="jobtitle"], textarea[name="message"]').forEach(input => {
+	input.addEventListener('input', (e) => {
+		saveField(`form-field-${input.name}`, input.value);
+	});
+	input.addEventListener('focus', (e) => {
+		input.classList.remove('input-error');
+	});
+	// Load saved value
+	const saved = getSavedField(`form-field-${input.name}`);
+	if (saved) {
+		input.value = saved;
+	}
 });

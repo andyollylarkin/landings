@@ -1,6 +1,6 @@
 let alreadyCalled = false;
 
-export default function handleNoPageAction(callback) {
+export default function handleNoPageAction(callback, timeout = 60000) {
 	let timer = null;
 	function resetTimer() {
 		if (timer) clearTimeout(timer);
@@ -8,7 +8,7 @@ export default function handleNoPageAction(callback) {
 			if (alreadyCalled) return;
 			alreadyCalled = true;
 			callback();
-		}, 60000);
+		}, timeout);
 	}
 	window.addEventListener('mousemove', resetTimer);
 	window.addEventListener('touchstart', resetTimer);

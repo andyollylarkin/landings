@@ -4,10 +4,15 @@ const CONFIG = {
 	timePoints: [15, 30, 60, 120, 180, 300],
 	sections: {
 		'hero': '.hero-section',
+		'usecases': '.use-cases-section',
 		'problem': '.problem-section',
 		'solution': '.solution-section',
 		'results': '.results-section',
-		'cta': '.cta-section'
+		'cta': '.cta-section',
+		'benefits': '.benefits-section',
+		'testimonials': '.testimonials-section',
+		'pricing': '.pricing-section',
+		'faq': '.faq-section',
 	}
 };
 
@@ -57,7 +62,7 @@ function throttle(func, wait) {
 // === TRACKING FUNCTIONS ===
 
 // 1. Scroll Depth
-function trackScrollDepth() {
+export function trackScrollDepth() {
 	const scrollPercent = getCurrentScrollPercent();
 
 	CONFIG.scrollPoints.forEach(point => {
@@ -72,7 +77,7 @@ function trackScrollDepth() {
 }
 
 // 2. Time on Page
-function initTimeTracking() {
+export function initTimeTracking() {
 	CONFIG.timePoints.forEach(seconds => {
 		setTimeout(() => {
 			if (!timeTracked[seconds] && document.visibilityState === 'visible') {
@@ -87,7 +92,7 @@ function initTimeTracking() {
 }
 
 // 3. Section Views
-function trackSectionViews() {
+export function trackSectionViews() {
 	Object.entries(CONFIG.sections).forEach(([name, selector]) => {
 		const element = document.querySelector(selector);
 		if (!element) return;
@@ -112,7 +117,7 @@ function trackSectionViews() {
 }
 
 // 4. CTA Clicks
-function trackCTAClicks() {
+export function trackCTAClicks() {
 	document.querySelectorAll('[data-cta], .cta-button, .cta-link').forEach(button => {
 		button.addEventListener('click', (e) => {
 			ctaClicked = true;
@@ -197,7 +202,7 @@ function trackPerformance() {
 }
 
 // === INITIALIZATION ===
-function initAnalytics() {
+export function initAnalytics() {
 	// Initial page view
 	gtag('event', 'page_view', {
 		'page_title': document.title,

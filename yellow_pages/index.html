@@ -16,12 +16,31 @@
       href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css"
       rel="stylesheet"
     />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BKFM9FX70J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BKFM9FX70J");
+    </script>
   </head>
   <body>
     <header class="site-header" id="siteHeader">
       <div class="container header-inner">
         <a href="#" class="brand">
-          <img src="/assets/logo.svg" alt="MRI Data" width="40" height="40" />
+          <img
+            src="/assets/company-logo.svg"
+            alt="MRI Data"
+            width="40"
+            height="40"
+          />
           <span class="brand-name">MRI Data</span>
         </a>
         <nav class="nav" id="mainNav">
@@ -33,7 +52,7 @@
           </ul>
         </nav>
         <div class="header-ctas">
-          <a class="btn btn-ghost" href="#pricing">Get pricing</a>
+          <a class="btn btn-ghost" href="#contact">Get pricing</a>
           <button class="btn btn-primary" id="primaryCTA">Start free</button>
           <button class="mobile-menu" id="mobileMenuBtn" aria-label="Open menu">
             ☰
@@ -43,7 +62,7 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero hero-section">
         <div class="container hero-inner">
           <div class="hero-content">
             <h1 class="hero-title">
@@ -56,9 +75,6 @@
             <div class="hero-ctas">
               <a href="#use-cases" class="btn btn-primary btn-large"
                 >Search now</a
-              >
-              <a href="#features" class="btn btn-secondary btn-large"
-                >How it works</a
               >
             </div>
             <form class="search-form" aria-label="Find businesses">
@@ -79,7 +95,8 @@
               <button class="btn btn-primary">Search</button>
             </form>
           </div>
-          <div class="hero-visual">
+          <div class="hero-visual relative">
+            <div id="map-block" class="map-block"></div>
             <div class="hero-map">
               <div id="map"></div>
             </div>
@@ -136,6 +153,33 @@
         </div>
       </section>
 
+      <section id="use-cases" class="section container use-cases-section">
+        <h2 class="section-title">Use cases</h2>
+        <div class="grid-3-col">
+          <div class="feature-block card">
+            <div class="feature-icon">🏪</div>
+            <h4 class="feature-title">Consumers</h4>
+            <p class="feature-description">
+              Quickly find vetted services nearby with real reviews.
+            </p>
+          </div>
+          <div class="feature-block card">
+            <div class="feature-icon">📈</div>
+            <h4 class="feature-title">Businesses</h4>
+            <p class="feature-description">
+              Claim your listing, manage leads, and grow visibility.
+            </p>
+          </div>
+          <div class="feature-block card">
+            <div class="feature-icon">⚙️</div>
+            <h4 class="feature-title">Platforms</h4>
+            <p class="feature-description">
+              Integrate our API to power local discovery in your product.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="clients container" aria-label="Clients">
         <div class="client-logos">
           <div class="logo-pill">Logo</div>
@@ -145,7 +189,7 @@
         </div>
       </section>
 
-      <section id="problem" class="section container">
+      <section id="problem" class="section container problem-section">
         <h2 class="section-title">
           Common problems when searching for local services
         </h2>
@@ -172,10 +216,10 @@
         </div>
       </section>
 
-      <section id="features" class="section section-dark">
+      <section id="features" class="section section-dark solution-section">
+        <h2 class="section-title section-title-white">Solution overview</h2>
         <div class="container grid-feature">
           <div>
-            <h2 class="section-title section-title-white">Solution overview</h2>
             <p class="lead-light">
               MRI Data Yellow Pages combines fresh data, AI-driven matching, and
               verified reviews to connect users with trusted local businesses.
@@ -205,34 +249,7 @@
         </div>
       </section>
 
-      <section id="use-cases" class="section container">
-        <h2 class="section-title">Use cases</h2>
-        <div class="grid-3-col">
-          <div class="feature-block card">
-            <div class="feature-icon">🏪</div>
-            <h4 class="feature-title">Consumers</h4>
-            <p class="feature-description">
-              Quickly find vetted services nearby with real reviews.
-            </p>
-          </div>
-          <div class="feature-block card">
-            <div class="feature-icon">📈</div>
-            <h4 class="feature-title">Businesses</h4>
-            <p class="feature-description">
-              Claim your listing, manage leads, and grow visibility.
-            </p>
-          </div>
-          <div class="feature-block card">
-            <div class="feature-icon">⚙️</div>
-            <h4 class="feature-title">Platforms</h4>
-            <p class="feature-description">
-              Integrate our API to power local discovery in your product.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="benefits" class="section container">
+      <section id="benefits" class="section container benefits-section">
         <h2 class="section-title">Benefits & ROI</h2>
         <div class="stats-grid">
           <div class="stat card">
@@ -250,7 +267,7 @@
         </div>
       </section>
 
-      <section id="testimonials" class="section section-testimonials">
+      <section id="testimonials" class="section testimonials-section">
         <div class="container">
           <h2 class="section-title">What people say</h2>
           <p class="section-subtitle">Real feedback from satisfied customers</p>
@@ -261,21 +278,17 @@
               aria-label="Previous testimonial"
             >
               <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
               >
-                <polyline points="15 18 9 12 15 6"></polyline>
+                <path fill="currentColor" d="m14 17l-5-5l5-5z" />
               </svg>
             </button>
             <div class="testimonial-view">
               <div class="testimonial-card active">
                 <div class="testimonial-content">
-                  <div class="quote-icon">"</div>
                   <p class="testimonial-text">
                     MRI Data helped us get more quality leads in one month than
                     months before. The accuracy is outstanding.
@@ -291,7 +304,6 @@
               </div>
               <div class="testimonial-card">
                 <div class="testimonial-content">
-                  <div class="quote-icon">"</div>
                   <p class="testimonial-text">
                     Our listings have never been this accurate. Highly recommend
                     to any business looking to expand their reach.
@@ -307,7 +319,6 @@
               </div>
               <div class="testimonial-card">
                 <div class="testimonial-content">
-                  <div class="quote-icon">"</div>
                   <p class="testimonial-text">
                     Integration was seamless and the search experience is
                     lightning fast. Our customers love the new functionality.
@@ -328,15 +339,12 @@
               aria-label="Next testimonial"
             >
               <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
               >
-                <polyline points="9 18 15 12 9 6"></polyline>
+                <path fill="currentColor" d="M10 17V7l5 5z" />
               </svg>
             </button>
           </div>
@@ -347,33 +355,76 @@
           </div>
         </div>
       </section>
-
-      <section id="pricing" class="section container">
-        <div class="grid-2-col">
-          <div>
-            <h2 class="section-title">Pricing & plans</h2>
-            <p class="lead">
-              Simple transparent pricing for teams and platforms.
-            </p>
-            <ul class="pricing-list">
-              <li>Starter — Free, limited searches</li>
-              <li>Pro — $49/mo, full search & verification</li>
-              <li>Enterprise — Contact us for SLAs & API access</li>
-            </ul>
+      <section class="section pricing pricing-section" id="pricing">
+        <div class="container">
+          <h2 class="section-title" style="margin-bottom: 8px">
+            Pricing & Plans
+          </h2>
+          <p class="section-subtitle" style="margin-bottom: 32px">
+            Transparent, flexible, and tailored to your needs
+          </p>
+          <div class="pricing-cards">
+            <div class="pricing-card">
+              <div class="pricing-card__top">
+                <h2 class="price_plan__head">Price plan #1</h2>
+              </div>
+              <div class="pricing-card__desc">
+                One-time deep data extraction for research, validation, or a
+                major decision.
+              </div>
+              <ul class="pricing-card__features">
+                <li>Up to 1 million pages</li>
+                <li>Email support</li>
+                <li>Best for single, well-defined projects</li>
+              </ul>
+              <a class="btn btn-ghost" href="#contact">Get quote</a>
+            </div>
+            <div class="pricing-card relative pricing-card--highlight">
+              <div
+                class="absolute top-[-18px] left-[30%] bg-white rounded-[20px] font-bold px-2 py-1 most_popular__badge"
+              >
+                <span class="flex flex-row justify-center items-center gap-2">
+                  <img src="/assets/marker.png" class="w-[19px] h-[22px]" />
+                  <p>Most popular</p>
+                </span>
+              </div>
+              <div class="pricing-card__top">
+                <h2 class="price_plan__head">Price plan #2</h2>
+              </div>
+              <div class="pricing-card__desc">
+                Continuous data delivery to track your market, competitors, and
+                customers.
+              </div>
+              <ul class="pricing-card__features">
+                <li>Unlimited pages</li>
+                <li>24/7 monitoring & support</li>
+                <li>Best for ongoing data needs</li>
+              </ul>
+              <a class="btn btn-primary" href="#contact">Consultation</a>
+            </div>
+            <div class="pricing-card">
+              <div class="pricing-card__top">
+                <h2 class="price_plan__head">Price plan #3</h2>
+              </div>
+              <div class="pricing-card__desc">
+                Fully tailored solutions for large-scale, complex, or ongoing
+                data needs.
+              </div>
+              <ul class="pricing-card__features">
+                <li>Unlimited pages</li>
+                <li>Priority support</li>
+                <li>Custom integrations</li>
+              </ul>
+              <a class="btn btn-ghost" href="#contact">Enterprise request</a>
+            </div>
           </div>
-          <div class="card">
-            <h3 class="card-title">Ready to get started?</h3>
-            <p class="card-desc">
-              Start a free trial and see local discovery in action.
-            </p>
-            <a class="btn btn-primary btn-large" href="#contact"
-              >Start free trial</a
-            >
-          </div>
+          <p class="lead" style="text-align: center; margin-top: 32px">
+            All plans include free setup and onboarding support. No hidden fees.
+          </p>
         </div>
       </section>
 
-      <section id="contact" class="section section-dark">
+      <section id="contact" class="section section-dark cta-section">
         <div class="container">
           <h2 class="section-title section-title-white">Get in touch</h2>
           <form class="contact-grid card" aria-label="Contact form">
@@ -385,6 +436,13 @@
               required
             />
             <input
+              type="text"
+              name="website"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+            <input
               class="input"
               type="email"
               name="email"
@@ -394,8 +452,9 @@
             <input
               class="input"
               type="text"
-              name="company"
-              placeholder="Company"
+              name="jobtitle"
+              placeholder="Job Title"
+              required
             />
             <textarea
               class="input"
@@ -403,12 +462,63 @@
               rows="4"
               placeholder="How can we help?"
             ></textarea>
-            <button class="btn btn-primary" type="submit">Send message</button>
+            <button class="btn btn-primary cta-button" type="submit">Send message</button>
           </form>
         </div>
       </section>
     </main>
 
+    <!-- Contact Modal (move outside footer, fix closing div) -->
+    <div id="contactModal" class="modal-backdrop" style="display: none">
+      <div class="modal-content">
+        <form class="contact-grid card" aria-label="Contact form (modal)">
+          <button
+            class="modal-close"
+            id="closeContactModal"
+            aria-label="Close modal"
+          >
+            &times;
+          </button>
+          <h2 class="font-bold text-[20px]">Contact Us</h2>
+          <input
+            class="input"
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="text"
+            name="website"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <input
+            class="input"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            class="input"
+            type="text"
+            name="jobtitle"
+            placeholder="Job Title"
+            required
+          />
+          <textarea
+            class="input"
+            name="message"
+            rows="4"
+            placeholder="How can we help?"
+            required
+          ></textarea>
+          <button class="btn btn-primary cta-button" type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-left">
@@ -425,5 +535,6 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/download.js"></script>
   </body>
 </html>
