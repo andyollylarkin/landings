@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MRI Data — Yellow Pages Landing</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <meta
       name="description"
       content="MRI Data — powerful data parsing and insights for businesses."
@@ -47,6 +47,7 @@
           <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#use-cases">Use Cases</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -72,10 +73,9 @@
               Yellow Pages powered by MRI Data — searchable listings, verified
               reviews, and instant contact. Save time, find quality.
             </p>
-            <div class="hero-ctas">
-              <a href="#use-cases" class="btn btn-primary btn-large"
-                >Search now</a
-              >
+            <div class="hero-ctas relative">
+              <a href="#contact" class="btn btn-glass z-2">Search now</a>
+              <a href="#contact" class="btn btn-glass absolute animate-pulse w-full h-full z-1">Search now</a>
             </div>
             <form class="search-form" aria-label="Find businesses">
               <select
@@ -182,70 +182,281 @@
 
       <section class="clients container" aria-label="Clients">
         <div class="client-logos">
-          <div class="logo-pill">Logo</div>
-          <div class="logo-pill">Logo</div>
-          <div class="logo-pill">Logo</div>
-          <div class="logo-pill">Logo</div>
+          <div class="logo-pill flex flex-row items-center gap-[5px]">
+            <div
+              class="w-[10px] h-[10px] bg-linear-to-r from-red-500 to-green-500 rounded-full animate-pulse"
+            ></div>
+            <p>Placeholder</p>
+          </div>
+          <div class="logo-pill flex flex-row items-center gap-[5px]">
+            <div
+              class="w-[10px] h-[10px] bg-linear-to-r from-red-500 to-green-500 rounded-full animate-pulse"
+            ></div>
+            <p>Placeholder</p>
+          </div>
+          <div class="logo-pill flex flex-row items-center gap-[5px]">
+            <div
+              class="w-[10px] h-[10px] bg-linear-to-r from-red-500 to-green-500 rounded-full animate-pulse"
+            ></div>
+            <p>Placeholder</p>
+          </div>
+          <div class="logo-pill flex flex-row items-center gap-[5px]">
+            <div
+              class="w-[10px] h-[10px] bg-linear-to-r from-red-500 to-green-500 rounded-full animate-pulse"
+            ></div>
+            <p>Placeholder</p>
+          </div>
         </div>
       </section>
 
       <section id="problem" class="section container problem-section">
-        <h2 class="section-title">
-          Common problems when searching for local services
-        </h2>
-        <div class="grid-3-col problems">
-          <article class="card">
-            <h3 class="card-title">Outdated listings</h3>
-            <p class="card-desc">
-              Contact info often stale — we verify and refresh listings
-              frequently.
-            </p>
-          </article>
-          <article class="card">
-            <h3 class="card-title">Too many poor matches</h3>
-            <p class="card-desc">
-              Powerful filters deliver relevant results fast.
-            </p>
-          </article>
-          <article class="card">
-            <h3 class="card-title">No trust signals</h3>
-            <p class="card-desc">
-              We surface verified reviews and badges to help you choose.
-            </p>
-          </article>
+        <div class="flex flex-col gap-[20px] justify-center items-center">
+          <div>
+            <h2 class="section-title">
+              Common problems when searching for local services
+            </h2>
+            <div class="grid-3-col problems">
+              <article class="card">
+                <h3 class="card-title">Outdated listings</h3>
+                <p class="card-desc">
+                  Contact info often stale — we verify and refresh listings
+                  frequently.
+                </p>
+              </article>
+              <article class="card">
+                <h3 class="card-title">Too many poor matches</h3>
+                <p class="card-desc">
+                  Powerful filters deliver relevant results fast.
+                </p>
+              </article>
+              <article class="card">
+                <h3 class="card-title">No trust signals</h3>
+                <p class="card-desc">
+                  We surface verified reviews and badges to help you choose.
+                </p>
+              </article>
+            </div>
+          </div>
+          <a
+            class="btn btn-ghost self-center max-w-[300px] self-center my-auto mt-[20px]"
+            href="#contact"
+            >What is your problem? We can help!</a
+          >
         </div>
+      </section>
+
+      <section id="faq" class="section container faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <details
+          class="bg-white rounded-lg shadow-[0_2px_8px_rgba(2,6,23,0.1)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] w-full border-l-4 border-l-transparent relative overflow-hidden mb-4 hover:translate-y-[-6px] hover:shadow-[0_12px_32px_rgba(26,115,232,0.15)] hover:border-l-blue-600 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[radial-gradient(circle_at_top_right,rgba(26,115,232,0.05),transparent_60%)] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+        >
+          <summary
+            class="px-6 py-4 cursor-pointer hover:bg-gray-50/50 font-medium flex justify-between items-center relative z-10"
+          >
+            Как сделать заказ?
+            <svg
+              class="w-5 h-5 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <div
+            class="px-6 py-4 text-gray-600 border-t border-gray-100 relative z-10"
+          >
+            Здесь подробный ответ на вопрос. Можно добавить несколько параграфов
+            текста.
+          </div>
+        </details>
+        <details
+          class="bg-white rounded-lg shadow-[0_2px_8px_rgba(2,6,23,0.1)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] w-full border-l-4 border-l-transparent relative overflow-hidden mb-4 hover:translate-y-[-6px] hover:shadow-[0_12px_32px_rgba(26,115,232,0.15)] hover:border-l-blue-600 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[radial-gradient(circle_at_top_right,rgba(26,115,232,0.05),transparent_60%)] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+        >
+          <summary
+            class="px-6 py-4 cursor-pointer hover:bg-gray-50/50 font-medium flex justify-between items-center relative z-10"
+          >
+            Как сделать заказ?
+            <svg
+              class="w-5 h-5 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <div
+            class="px-6 py-4 text-gray-600 border-t border-gray-100 relative z-10"
+          >
+            Здесь подробный ответ на вопрос. Можно добавить несколько параграфов
+            текста.
+          </div>
+        </details>
+        <details
+          class="bg-white rounded-lg shadow-[0_2px_8px_rgba(2,6,23,0.1)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] w-full border-l-4 border-l-transparent relative overflow-hidden mb-4 hover:translate-y-[-6px] hover:shadow-[0_12px_32px_rgba(26,115,232,0.15)] hover:border-l-blue-600 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[radial-gradient(circle_at_top_right,rgba(26,115,232,0.05),transparent_60%)] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+        >
+          <summary
+            class="px-6 py-4 cursor-pointer hover:bg-gray-50/50 font-medium flex justify-between items-center relative z-10"
+          >
+            Как сделать заказ?
+            <svg
+              class="w-5 h-5 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <div
+            class="px-6 py-4 text-gray-600 border-t border-gray-100 relative z-10"
+          >
+            Здесь подробный ответ на вопрос. Можно добавить несколько параграфов
+            текста.
+          </div>
+        </details>
+        <details
+          class="bg-white rounded-lg shadow-[0_2px_8px_rgba(2,6,23,0.1)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] w-full border-l-4 border-l-transparent relative overflow-hidden mb-4 hover:translate-y-[-6px] hover:shadow-[0_12px_32px_rgba(26,115,232,0.15)] hover:border-l-blue-600 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[radial-gradient(circle_at_top_right,rgba(26,115,232,0.05),transparent_60%)] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+        >
+          <summary
+            class="px-6 py-4 cursor-pointer hover:bg-gray-50/50 font-medium flex justify-between items-center relative z-10"
+          >
+            Как сделать заказ?
+            <svg
+              class="w-5 h-5 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <div
+            class="px-6 py-4 text-gray-600 border-t border-gray-100 relative z-10"
+          >
+            Здесь подробный ответ на вопрос. Можно добавить несколько параграфов
+            текста.
+          </div>
+        </details>
+        <details
+          class="bg-white rounded-lg shadow-[0_2px_8px_rgba(2,6,23,0.1)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] w-full border-l-4 border-l-transparent relative overflow-hidden mb-4 hover:translate-y-[-6px] hover:shadow-[0_12px_32px_rgba(26,115,232,0.15)] hover:border-l-blue-600 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[radial-gradient(circle_at_top_right,rgba(26,115,232,0.05),transparent_60%)] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+        >
+          <summary
+            class="px-6 py-4 cursor-pointer hover:bg-gray-50/50 font-medium flex justify-between items-center relative z-10"
+          >
+            Как сделать заказ?
+            <svg
+              class="w-5 h-5 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <div
+            class="px-6 py-4 text-gray-600 border-t border-gray-100 relative z-10"
+          >
+            Здесь подробный ответ на вопрос. Можно добавить несколько параграфов
+            текста.
+          </div>
+        </details>
+        <details
+          class="bg-white rounded-lg shadow-[0_2px_8px_rgba(2,6,23,0.1)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] w-full border-l-4 border-l-transparent relative overflow-hidden mb-4 hover:translate-y-[-6px] hover:shadow-[0_12px_32px_rgba(26,115,232,0.15)] hover:border-l-blue-600 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[radial-gradient(circle_at_top_right,rgba(26,115,232,0.05),transparent_60%)] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
+        >
+          <summary
+            class="px-6 py-4 cursor-pointer hover:bg-gray-50/50 font-medium flex justify-between items-center relative z-10"
+          >
+            Как сделать заказ?
+            <svg
+              class="w-5 h-5 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </summary>
+          <div
+            class="px-6 py-4 text-gray-600 border-t border-gray-100 relative z-10"
+          >
+            Здесь подробный ответ на вопрос. Можно добавить несколько параграфов
+            текста.
+          </div>
+        </details>
       </section>
 
       <section id="features" class="section section-dark solution-section">
         <h2 class="section-title section-title-white">Solution overview</h2>
-        <div class="container grid-feature">
-          <div>
-            <p class="lead-light">
-              MRI Data Yellow Pages combines fresh data, AI-driven matching, and
-              verified reviews to connect users with trusted local businesses.
-            </p>
-            <ul class="feature-list">
-              <li>
-                <strong>Fresh data</strong> — automated scraping + manual
-                verification.
-              </li>
-              <li>
-                <strong>Smart matching</strong> — relevance tuned to your query
-                and location.
-              </li>
-              <li>
-                <strong>Trust signals</strong> — verified reviews and badges.
-              </li>
-            </ul>
+        <div
+          class="flex flex-col justify-between items-center gap-[30px] md:gap-[50px]"
+        >
+          <div
+            class="container flex flex-col md:flex-row items-center justify-around gap-[20px] md:gap-[40px]"
+          >
+            <div class="flex flex-col justify-between gap-[20px]">
+              <p class="lead-light">
+                MRI Data Yellow Pages combines fresh data, AI-driven matching,
+                and verified reviews to connect users with trusted local
+                businesses.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <strong>Fresh data</strong> — automated scraping + manual
+                  verification.
+                </li>
+                <li>
+                  <strong>Smart matching</strong> — relevance tuned to your
+                  query and location.
+                </li>
+                <li>
+                  <strong>Trust signals</strong> — verified reviews and badges.
+                </li>
+              </ul>
+            </div>
+            <div class="card card-dark">
+              <h4 class="card-title">Feature snapshot</h4>
+              <ul class="feature-list">
+                <li>Advanced search filters</li>
+                <li>Map & contact integration</li>
+                <li>SaaS dashboard for businesses</li>
+              </ul>
+            </div>
           </div>
-          <div class="card card-dark">
-            <h4 class="card-title">Feature snapshot</h4>
-            <ul class="feature-list">
-              <li>Advanced search filters</li>
-              <li>Map & contact integration</li>
-              <li>SaaS dashboard for businesses</li>
-            </ul>
-          </div>
+          <a class="btn btn-ghost self-center max-w-[300px]" href="#contact"
+            >What is your problem? We can help!</a
+          >
         </div>
       </section>
 
@@ -294,7 +505,15 @@
                     months before. The accuracy is outstanding.
                   </p>
                   <div class="testimonial-author">
-                    <div class="author-avatar">J</div>
+                    <div class="author-avatar">
+                      <img
+                        src="/assets/jane_roberts.png"
+                        alt="Jane Roberts"
+                        width="44"
+                        height="44"
+                        style="border-radius: 50%; object-fit: cover"
+                      />
+                    </div>
                     <div class="author-info">
                       <div class="author-name">Jane Roberts</div>
                       <div class="author-role">Plumber, Local Services</div>
@@ -309,7 +528,15 @@
                     to any business looking to expand their reach.
                   </p>
                   <div class="testimonial-author">
-                    <div class="author-avatar">M</div>
+                    <div class="author-avatar">
+                      <img
+                        src="/assets/mike_thompson.png"
+                        alt="Mike Thompson"
+                        width="44"
+                        height="44"
+                        style="border-radius: 50%; object-fit: cover"
+                      />
+                    </div>
                     <div class="author-info">
                       <div class="author-name">Mike Thompson</div>
                       <div class="author-role">Owner, Downtown Cafe</div>
@@ -324,7 +551,15 @@
                     lightning fast. Our customers love the new functionality.
                   </p>
                   <div class="testimonial-author">
-                    <div class="author-avatar">S</div>
+                    <div class="author-avatar">
+                      <img
+                        src="/assets/sarah_chen.png"
+                        alt="Sara Chen"
+                        width="44"
+                        height="44"
+                        style="border-radius: 50%; object-fit: cover"
+                      />
+                    </div>
                     <div class="author-info">
                       <div class="author-name">Sara Chen</div>
                       <div class="author-role">Product Manager, TechCorp</div>
@@ -462,7 +697,9 @@
               rows="4"
               placeholder="How can we help?"
             ></textarea>
-            <button class="btn btn-primary cta-button" type="submit">Send message</button>
+            <button class="btn btn-primary cta-button" type="submit">
+              Send message
+            </button>
           </form>
         </div>
       </section>
@@ -515,7 +752,9 @@
             placeholder="How can we help?"
             required
           ></textarea>
-          <button class="btn btn-primary cta-button" type="submit">Send message</button>
+          <button class="btn btn-primary cta-button" type="submit">
+            Send message
+          </button>
         </form>
       </div>
     </div>
