@@ -5,6 +5,8 @@ export function trackFieldInteraction(fieldName, interactionType) {
 	});
 }
 
+
+
 export function trackScrollDepth(depthPercentage) {
 	gtag('event', 'scroll_depth', {
 		'depth_percentage': depthPercentage,

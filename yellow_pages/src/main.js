@@ -4,10 +4,19 @@ import { clearSavedField, getSavedField, saveField } from "../../libs/save-field
 import handleMouseDrag from "../../libs/handle_mouse_drag"
 import downloadFile from "./download.js"
 import { initAnalytics } from "../../ga/tmp.js"
-import { buttonClick } from "../../ga/useful_ga.js"
+import { buttonClick, trackFieldInteraction } from "../../ga/useful_ga.js"
 
-buttonClick("")
+const inputs = document.querySelectorAll("input, textarea, select");
+inputs.forEach((input) => {
+	input.addEventListener("focus", () => {
+		trackFieldInteraction(input.name || input.id || "unknown", "focus");
+	})
+})
 
+document.getElementById('map-search').addEventListener('click', () => {
+	console.log("Map search clicked");
+	buttonClick("map-search");
+});
 
 const header = document.getElementById('siteHeader');
 const mobileBtn = document.getElementById('mobileMenuBtn');
