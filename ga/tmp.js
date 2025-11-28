@@ -1,5 +1,5 @@
 // === CONFIGURATION ===
-const alreadyInit = false;
+let alreadyInit = false;
 
 const CONFIG = {
 	scrollPoints: [10, 25, 50, 75, 90, 100],

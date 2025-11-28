@@ -3,7 +3,7 @@ import { handleMouseOut } from "../../libs/handle_mouse_out"
 import { clearSavedField, getSavedField, saveField } from "../../libs/save-field"
 import handleMouseDrag from "../../libs/handle_mouse_drag"
 import downloadFile from "./download.js"
-import {initAnalytics} from "../../ga/tmp.js"
+import { initAnalytics } from "../../ga/tmp.js"
 
 const header = document.getElementById('siteHeader');
 const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -523,41 +523,86 @@ searchForm.addEventListener('submit', async (e) => {
 			});
 			mapBlockscreen.classList.remove('map-block-show')
 			mapBlockscreen.classList.add('map-block-hide')
+
+			const dp = new DOMParser();
+			const parsedIcon = dp.parseFromString(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"/></svg>`, "image/svg+xml")
+
+			const link = document.createElement('a');
+			const filename = `${business}_${location}_business_tags.json`;
+			const allTags = data.elements.map(el => el.tags);
+			const url = downloadFile(allTags);
+			link.href = url;
+			link.download = filename;
+			link.innerText = 'Download results';
+			link.style.position = 'absolute';
+			link.style.top = '10px';
+			link.style.left = '10px';
+			link.style.zIndex = '7';
+			link.style.padding = '8px 12px';
+			link.style.backgroundColor = '#2563eb';
+			link.style.color = '#ffffff';
+			link.style.borderRadius = '4px';
+			link.style.textDecoration = 'none';
+			link.style.fontSize = '14px';
+			link.style.display = 'flex';
+			link.style.alignItems = 'center';
+			link.style.gap = '6px';
+			link.style.flexDirection = 'row';
+			link.appendChild(parsedIcon.documentElement);
+
+			document.querySelector('.hero-map').appendChild(link)
+
+			addMarkers(data.elements);
+
+			console.log(`Found ${data.elements.length} businesses for ${business} in ${location}`);
+			return;
 		}
+		const noContent = document.createElement('div');
+		noContent.textContent = 'No businesses found.';
+		noContent.style.position = 'absolute';
+		noContent.style.top = '10px';
+		noContent.style.left = '10px';
+		noContent.style.zIndex = '7';
+		noContent.style.padding = '8px 12px';
+		noContent.style.backgroundColor = '#ef4444';
+		noContent.style.color = '#ffffff';
+		noContent.style.borderRadius = '4px';
+		noContent.style.fontSize = '14px';
 
-		const dp = new DOMParser();
-		const parsedIcon = dp.parseFromString(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"/></svg>`, "image/svg+xml")
+		document.querySelector('.hero-map').appendChild(noContent)
 
-		const link = document.createElement('a');
-		const filename = `${business}_${location}_business_tags.json`;
-		const allTags = data.elements.map(el => el.tags);
-		const url = downloadFile(allTags);
-		link.href = url;
-		link.download = filename;
-		link.innerText = 'Download results';
-		link.style.position = 'absolute';
-		link.style.top = '10px';
-		link.style.left = '10px';
-		link.style.zIndex = '7';
-		link.style.padding = '8px 12px';
-		link.style.backgroundColor = '#2563eb';
-		link.style.color = '#ffffff';
-		link.style.borderRadius = '4px';
-		link.style.textDecoration = 'none';
-		link.style.fontSize = '14px';
-		link.style.display = 'flex';
-		link.style.alignItems = 'center';
-		link.style.gap = '6px';
-		link.style.flexDirection = 'row';
-		link.appendChild(parsedIcon.documentElement);
+		setTimeout(() => {
+			noContent.remove();
+		}, 5000);
 
-		document.querySelector('.hero-map').appendChild(link)
-
-		addMarkers(data.elements);
-
-		console.log(`Found ${data.elements.length} businesses for ${business} in ${location}`);
+		console.log(`No businesses found for ${business} in ${location}`);
+		mapBlockscreen.classList.remove('map-block-show')
+		mapBlockscreen.classList.add('map-block-hide')
 		// Clear existing markers
-	} catch (e) { console.error(e); }
+	} catch (e) {
+		console.error(e);
+		const noContent = document.createElement('div');
+		noContent.textContent = 'No businesses found.';
+		noContent.style.position = 'absolute';
+		noContent.style.top = '10px';
+		noContent.style.left = '10px';
+		noContent.style.zIndex = '7';
+		noContent.style.padding = '8px 12px';
+		noContent.style.backgroundColor = '#ef4444';
+		noContent.style.color = '#ffffff';
+		noContent.style.borderRadius = '4px';
+		noContent.style.fontSize = '14px';
+
+		document.querySelector('.hero-map').appendChild(noContent)
+
+		setTimeout(() => {
+			noContent.remove();
+		}, 5000);
+
+		console.log(`No businesses found for ${business} in ${location}`);
+		mapBlockscreen.classList.remove('map-block-show')
+		mapBlockscreen.classList.add('map-block-hide')
+	}
 
 });
 
