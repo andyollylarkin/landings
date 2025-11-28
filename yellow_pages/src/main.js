@@ -4,6 +4,10 @@ import { clearSavedField, getSavedField, saveField } from "../../libs/save-field
 import handleMouseDrag from "../../libs/handle_mouse_drag"
 import downloadFile from "./download.js"
 import { initAnalytics } from "../../ga/tmp.js"
+import { buttonClick } from "../../ga/useful_ga.js"
+
+buttonClick("")
+
 
 const header = document.getElementById('siteHeader');
 const mobileBtn = document.getElementById('mobileMenuBtn');

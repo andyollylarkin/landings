@@ -49,11 +49,11 @@
             <li><a href="#use-cases">Use Cases</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="cta-button">Contact</a></li>
           </ul>
         </nav>
         <div class="header-ctas">
-          <a class="btn btn-ghost" href="#contact">Get pricing</a>
+          <a class="btn btn-ghost cta-button" href="#contact">Get pricing</a>
           <button class="btn btn-primary" id="primaryCTA">Start free</button>
           <button class="mobile-menu" id="mobileMenuBtn" aria-label="Open menu">
             ☰
@@ -74,8 +74,14 @@
               reviews, and instant contact. Save time, find quality.
             </p>
             <div class="hero-ctas relative">
-              <a href="#contact" class="btn btn-glass z-2">Search now</a>
-              <a href="#contact" class="btn btn-glass absolute animate-pulse w-full h-full z-1">Search now</a>
+              <a href="#contact" class="btn btn-glass z-2 cta-button"
+                >Search now</a
+              >
+              <a
+                href="#contact"
+                class="btn btn-glass cta-button absolute animate-pulse w-full h-full z-1"
+                >Search now</a
+              >
             </div>
             <form class="search-form" aria-label="Find businesses">
               <select
@@ -238,7 +244,7 @@
             </div>
           </div>
           <a
-            class="btn btn-ghost self-center max-w-[300px] self-center my-auto mt-[20px]"
+            class="btn btn-ghost cta-button self-center max-w-[300px] self-center my-auto mt-[20px]"
             href="#contact"
             >What is your problem? We can help!</a
           >
@@ -454,7 +460,9 @@
               </ul>
             </div>
           </div>
-          <a class="btn btn-ghost self-center max-w-[300px]" href="#contact"
+          <a
+            class="btn btn-ghost cta-button self-center max-w-[300px]"
+            href="#contact"
             >What is your problem? We can help!</a
           >
         </div>
@@ -612,7 +620,7 @@
                 <li>Email support</li>
                 <li>Best for single, well-defined projects</li>
               </ul>
-              <a class="btn btn-ghost" href="#contact">Get quote</a>
+              <a class="btn btn-ghost cta-button" href="#contact">Get quote</a>
             </div>
             <div class="pricing-card relative pricing-card--highlight">
               <div
@@ -635,7 +643,9 @@
                 <li>24/7 monitoring & support</li>
                 <li>Best for ongoing data needs</li>
               </ul>
-              <a class="btn btn-primary" href="#contact">Consultation</a>
+              <a class="btn btn-primary cta-button" href="#contact"
+                >Consultation</a
+              >
             </div>
             <div class="pricing-card">
               <div class="pricing-card__top">
@@ -650,7 +660,9 @@
                 <li>Priority support</li>
                 <li>Custom integrations</li>
               </ul>
-              <a class="btn btn-ghost" href="#contact">Enterprise request</a>
+              <a class="btn btn-ghost cta-button" href="#contact"
+                >Enterprise request</a
+              >
             </div>
           </div>
           <p class="lead" style="text-align: center; margin-top: 32px">
@@ -697,9 +709,7 @@
               rows="4"
               placeholder="How can we help?"
             ></textarea>
-            <button class="btn btn-primary cta-button" type="submit">
-              Send message
-            </button>
+            <button class="btn btn-primary" type="submit">Send message</button>
           </form>
         </div>
       </section>
@@ -752,9 +762,7 @@
             placeholder="How can we help?"
             required
           ></textarea>
-          <button class="btn btn-primary cta-button" type="submit">
-            Send message
-          </button>
+          <button class="btn btn-primary" type="submit">Send message</button>
         </form>
       </div>
     </div>
@@ -763,13 +771,7 @@
         <div class="footer-left">
           <p>&copy; <span id="year"></span> MRI Data. All rights reserved.</p>
         </div>
-        <div class="footer-right">
-          <nav>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Support</a>
-          </nav>
-        </div>
+        <div class="footer-right"></div>
       </div>
     </footer>
 

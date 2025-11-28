@@ -259,6 +259,11 @@ body {
   background: var(--white);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 body {
   width: 100%;
@@ -364,9 +369,11 @@ img {
   transition: all 0.25s ease;
   width: 100%;
 }
+
 .site-header.scrolled {
   box-shadow: 0 6px 20px rgba(2, 6, 23, 0.1);
 }
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -562,8 +569,13 @@ img {
 }
 .btn-primary:hover {
   background: var(--primary-hover);
+  color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(26, 115, 232, 0.35);
+}
+
+.faq-section {
+  border-top: 1px solid var(--border);
 }
 
 .btn-glass {
@@ -586,7 +598,6 @@ img {
   transform: translateY(-2px);
   box-shadow: 0 6px 40px rgba(0, 0, 0, 0.25);
 }
-
 
 .btn-secondary {
   background: transparent;
@@ -635,9 +646,7 @@ img {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(26, 115, 232, 0.35);
 }
-.btn-ghost:hover {
-  color: var(--primary-dark);
-}
+
 .btn-large {
   padding: 14px 24px;
   font-size: 16px;
