@@ -398,7 +398,26 @@ async function injectProductData() {
   } catch (e) { }
 }
 
-document.addEventListener('DOMContentLoaded', injectProductData);
+document.getElementById('extract-btn')?.addEventListener('click', () => {
+  document.querySelectorAll('#tab1,#tab2,#tab3').forEach(tab => {
+    tab.classList.remove('hidden');
+  })
+  injectProductData();
+});
+
+function preventScroll(e) {
+  e.preventDefault();
+}
+
+// document.querySelectorAll('#tab-content1, #tab-content2, #tab-content3').forEach(elem => {
+//   elem.addEventListener('wheel', preventScroll, { passive: false });
+//   elem.addEventListener('touchmove', preventScroll, { passive: false });
+
+//   elem.addEventListener('click', (e) => {
+//     elem.removeEventListener('wheel', preventScroll);
+//     elem.removeEventListener('touchmove', preventScroll);
+//   });
+// });
 
 
 const dataFetchBtn = document.getElementById('extract-btn')
@@ -421,6 +440,6 @@ dataFetchBtn?.addEventListener('click', () => {
     setTimeout(() => {
       if (intervalId) clearInterval(intervalId);
       overlay.classList.add('hidden');
-    }, 3000);
+    }, Math.random() * 2000 + 2000);
   }
 })

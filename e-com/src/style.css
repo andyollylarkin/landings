@@ -399,7 +399,7 @@ h3 {
   width: 100%;
   background-color: rgba(19, 25, 33, 0.98);
   backdrop-filter: blur(8px);
-  z-index: 999;
+  z-index: 10000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: box-shadow var(--transition-base),
     transform var(--transition-base);
@@ -545,7 +545,7 @@ h3 {
 
 .hero {
   padding-top: clamp(1.5rem, 5vw, 3.5rem);
-  padding-bottom: clamp(2rem, 5vw, 4.5rem) !important;
+  padding-bottom: 0;
 }
 
 .hero__layout {
