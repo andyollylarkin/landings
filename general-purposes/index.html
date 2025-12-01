@@ -8,6 +8,7 @@
       name="description"
       content="MRI Data ™ delivers accurate, compliant, and scalable web data extraction and analytics solutions for teams that need clean datasets in record time."
     />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Google tag (gtag.js) -->
     <script
@@ -61,18 +62,19 @@
         </div>
       </header>
 
-      <main id="hero">
-        <section class="hero-section" aria-labelledby="hero-heading">
-          <div class="hero-content">
-            <p class="section-kicker">
-              From all data collection methods<br>there is only one working
-            </p>
-            <h1 id="hero-heading">
-              WEB SCRAPING<br>ANY KIND OF DATA FROM ANY SOURCE<br>FOR YOU!
-            </h1>
-            <p class="hero-subheadline">
-              Accomplish your market analysis goal now.<br />
-              We deliver market intelligence you can trust.<br />
+      <main id="hero relative">
+        <section class="hero-section overflow-hidden relative" aria-labelledby="hero-heading">
+      <canvas id="scene" class="absolute z-9 top-0 left-0 w-full h-full opacity-20"></canvas>
+        <div class="hero-content z-10">
+          <p class="section-kicker">
+            From all data collection methods<br>there is only one working
+          </p>
+          <h1 id="hero-heading text-white opacity-100" style="border-left: 2px solid white; padding-left: 10px;">
+            WEB SCRAPING<br>ANY KIND OF DATA FROM ANY SOURCE<br>FOR YOU!
+          </h1>
+          <p class="hero-subheadline">
+            Accomplish your market analysis goal now.<br />
+            We deliver market intelligence you can trust.<br />
 			  We perform data collection and market research.<br />
 			  Leave web scraping and data analytics to us. It's that easy!<br /><br />
 			  You get business intelligence to make informed decisions.<br />              
@@ -91,7 +93,7 @@
               Leave your message - response guaranteed.
             </div>
           </div>
-          <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual z-10" aria-hidden="true">
             <div class="visual-glow"></div>
             <div class="visual-card">
               <div class="visual-chart">
@@ -1606,6 +1608,7 @@
       </footer>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/app.js"></script>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
