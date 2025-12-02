@@ -19,6 +19,9 @@
       href="https://fonts.googleapis.com/css2?family=Delius&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Delius+Unicase:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <meta
       name="description"
       content="MRI Data delivers accurate, compliant, and scalable e-commerce data and analytics solutions for teams that need clean datasets in record time."
@@ -344,81 +347,27 @@
                     </button>
                   </div>
                   <div
-                    id="tab-content1"
-                    class="tab-content bg-white font-mono text-sm overflow-x-auto overflow-y-auto flex-1 min-h-0"
+                    id="data-placeholder"
+                    class="text-center text-gray-500 text-sm py-6"
                   >
-                    <div class="text-gray-800">
-                      <div class="product-data" style="display:none;">
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">1</div>
-                        <span class="text-gray-900">Store_name,Store_ID,Title,Item_no,Item_ID,UPC,Price,Online_price,Stock,Availability,Item_url,Image,Store_lo</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">2</div>
-                        <span class="text-gray-700">Costco of austin,187,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stock,"</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">3</div>
-                        <span class="text-gray-700">Costco of madison,1712,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stock,"</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">4</div>
-                        <span class="text-gray-700">Costco of cumming,1175,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stock,"</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">5</div>
-                        <span class="text-gray-700">Costco of woodstock,1295,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stock</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">6</div>
-                        <span class="text-gray-700">Costco of alpharetta,743,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stock</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">7</div>
-                        <span class="text-gray-700">Costco of stockbridge,1675,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stc</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">8</div>
-                        <span class="text-gray-700">Costco of fort oglethorpe,1083,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">9</div>
-                        <span class="text-gray-700">Costco of perimeter,188,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stock,"</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">10</div>
-                        <span class="text-gray-700">Costco of brookhaven,1084,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stoc</span><br />
-                        <div class="text-gray-400 select-none inline-block w-8 text-right mr-4">11</div>
-                        <span class="text-gray-700">Costco of brookhaven,1084,"32 Degrees Men's Heat Tee, 2-pack",100507954,1367150,,10.99,10.99,10,out of stoc</span><br />
-                      </div>
-                    </div>
+                    Press "Extract data" to load live CSV, JSON, and SQL samples.
                   </div>
+                  <div
+                    id="tab-content1"
+                    class="tab-content bg-white font-mono text-sm overflow-x-auto overflow-y-auto flex-1 min-h-0 hidden"
+                  ></div>
 
                   <div
                     id="tab-content2"
                     class="tab-content bg-white font-mono text-sm overflow-x-auto overflow-y-auto flex-1 min-h-0 hidden"
                     style="position: relative; z-index: 1"
-                  >
-                    <div class="text-gray-800">
-                      <span class="text-blue-600">{</span><br />
-                      <span class="ml-4 text-purple-600">"events"</span
-                      ><span class="text-gray-600">:</span>
-                      <span class="text-blue-600">[</span><br />
-                      <span class="ml-8 text-blue-600">{</span><br />
-                      <span class="ml-12 text-purple-600">"id"</span
-                      ><span class="text-gray-600">:</span>
-                      <span class="text-green-600">"12345"</span
-                      ><span class="text-gray-600">,</span><br />
-                      <span class="ml-12 text-purple-600">"team"</span
-                      ><span class="text-gray-600">:</span>
-                      <span class="text-green-600">"Team A"</span><br />
-                      <span class="ml-8 text-blue-600">}</span><br />
-                      <span class="ml-4 text-blue-600">]</span><br />
-                      <span class="text-blue-600">}</span>
-                    </div>
-                  </div>
+                  ></div>
 
                   <div
                     id="tab-content3"
                     class="tab-content bg-white font-mono text-sm overflow-x-auto overflow-y-auto flex-1 min-h-0 hidden"
                     style="position: relative; z-index: 1"
-                  >
-                    <div class="text-gray-800">
-                      <span class="text-blue-600"
-                        >INSERT INTO stores (name, address) VALUES</span
-                      ><br />
-                      <span class="ml-4 text-gray-700"
-                        >('Lowes #1234', '123 Main St'),</span
-                      ><br />
-                      <span class="ml-4 text-gray-700"
-                        >('Lowes #5678', '456 Elm St'),</span
-                      ><br />
-                      <span class="ml-4 text-gray-700"
-                        >('Lowes #9101', '789 Oak Ave');</span
-                      ><br />
-                    </div>
-                  </div>
+                  ></div>
                 </div>
                 <div id="demo-overlay" class="rounded-[8px] hidden flex items-center justify-center" style="position:absolute;top:0;left:0;width:100%;height:100%;background:var(--color-blue);z-index:9999;pointer-events:auto;">
                   <div id="fetch-load-text" class="text-white font-bold text-lg">
@@ -428,7 +377,7 @@
 
               </div>
                 <p
-                  class="text-center text-gray-500 text-sm mt-[20px] py-[10px]"
+                  class="text-center text-gray-500 text-sm !mb-0 py-[10px]"
                 >
                   Click on file tabs above to view different data formats
                 </p>
@@ -450,7 +399,6 @@
                   activeTab.classList.remove("text-gray-600", "bg-gray-50");
                   activeTab.classList.add("text-blue-600", "bg-white");
                 }
-                showTab(1);
               </script>
             </div>
           </div>
@@ -469,25 +417,7 @@
             <div class="benefits__grid" data-animate>
               <article class="feature-card">
                 <div class="feature-card__icon feature-card__icon--cyan">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <g
-                      fill="none"
-                      stroke="#1477D9"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="4"
-                    >
-                      <path
-                        d="M8.00042 25.9999C10.3186 26.1968 18.0008 27.9999 18.0004 30.9999C18 34 13.8646 32.9889 12.0004 32.9999C10.3989 32.864 5.9996 33 5.99994 36C6.00027 39 13 41 20 42C27 43 38.0001 42.9999 38.0001 42.9999"
-                      />
-                      <path d="M8 20L14 14" />
-                      <path d="M28 6L38 6L42 10" />
-                      <path fill="#1477D9" d="M30 14L36 20H20L14 14H30Z" />
-                      <path d="M42 22V16" />
-                      <path d="M26 30V26" />
-                      <path d="M32 34V26" />
-                    </g>
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="m16.137 4.728l1.83 1.83C20.656 9.248 22 10.592 22 12.262c0 1.671-1.344 3.015-4.033 5.704c-2.69 2.69-4.034 4.034-5.705 4.034c-1.67 0-3.015-1.344-5.704-4.033l-1.83-1.83c-1.545-1.546-2.318-2.318-2.605-3.321c-.288-1.003-.042-2.068.45-4.197l.283-1.228c.413-1.792.62-2.688 1.233-3.302s1.51-.82 3.302-1.233l1.228-.284c2.13-.491 3.194-.737 4.197-.45c1.003.288 1.775 1.061 3.32 2.606m-4.99 9.6c-.673-.672-.668-1.638-.265-2.403a.75.75 0 0 1 1.04-1.046c.34-.18.713-.276 1.085-.272a.75.75 0 0 1-.014 1.5a.88.88 0 0 0-.609.277c-.387.387-.286.775-.177.884c.11.109.497.21.884-.177c.784-.784 2.138-1.044 3.005-.177c.673.673.668 1.639.265 2.404a.75.75 0 0 1-1.04 1.045a2.2 2.2 0 0 1-1.472.232a.75.75 0 1 1 .302-1.47c.177.037.463-.021.708-.266c.387-.388.286-.775.177-.884c-.11-.109-.497-.21-.884.177c-.784.784-2.138 1.044-3.005.176m-1.126-4.035a2 2 0 1 0-2.829-2.828a2 2 0 0 0 2.829 2.828" clip-rule="evenodd"/></svg>
                 </div>
                 <h3>COMPETITOR PRICING</h3>
                 <p>
@@ -498,12 +428,7 @@
               </article>
               <article class="feature-card">
 				<div class="feature-card__icon feature-card__icon--blue">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill="#232F3E"
-                      d="M12 10a4 4 0 1 0 0-8a4 4 0 0 0 0 8Zm-6.5 3a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5ZM21 10.5a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0Zm-9 .5a5 5 0 0 1 5 5v6H7v-6a5 5 0 0 1 5-5Zm-7 5c0-.693.1-1.362.288-1.994l-.17.014A3.5 3.5 0 0 0 2 17.5V22h3v-6Zm17 6v-4.5a3.5 3.5 0 0 0-3.288-3.494c.187.632.288 1.301.288 1.994v6h3Z"
-                    />
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v4H4zm4 2V3h1v2z" clip-rule="evenodd"/><path fill="currentColor" d="M2 8v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8h-3v2h-1V8H6v2H5V8z"/></svg>
                 </div>
                 <h3>PRODUCT ASSORTMENT</h3>
                 <p>
@@ -512,12 +437,7 @@
               </article>
               <article class="feature-card">
                 <div class="feature-card__icon feature-card__icon--blue">
-                  <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill="#232F3E"
-                      d="M119.76 217.94A8 8 0 0 1 112 224a8.13 8.13 0 0 1-2-.24l-32-8a8 8 0 0 1-2.5-1.11l-24-16a8 8 0 1 1 8.88-13.31l22.84 15.23l30.66 7.67a8 8 0 0 1 5.88 9.7Zm132.69-96.46a15.89 15.89 0 0 1-8 9.25l-23.68 11.84l-55.08 55.09a8 8 0 0 1-7.6 2.1l-64-16a8.06 8.06 0 0 1-2.71-1.25l-55.52-39.64l-24.28-12.14a16 16 0 0 1-7.16-21.46l24.85-49.69a16 16 0 0 1 21.46-7.16l22.06 11l53-15.14a8 8 0 0 1 4.4 0l53 15.14l22.06-11a16 16 0 0 1 21.46 7.16l24.85 49.69a15.9 15.9 0 0 1 .89 12.21Zm-46.18 12.94L179.06 80h-31.82L104 122c12.66 8.09 32.51 10.32 50.32-7.63a8 8 0 0 1 10.68-.61l34.41 27.57Zm-187.54-18l17.69 8.85l24.85-49.69l-17.69-8.85ZM188 152.66l-27.71-22.19c-19.54 16-44.35 18.11-64.91 5a16 16 0 0 1-2.72-24.82a.6.6 0 0 1 .08-.08l44.86-43.51l-9.6-2.74l-50.42 14.41l-27.37 54.73l49.2 35.15l58.14 14.53Zm49.24-36.24l-24.82-49.69l-17.69 8.85l24.85 49.69Z"
-                    />
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9 2a8 8 0 0 1 7.934 6.965l2.25 3.539c.148.233.118.58-.225.728L17 14.07V17a2 2 0 0 1-2 2h-1.999L13 22H4v-3.694c0-1.18-.436-2.297-1.244-3.305A8 8 0 0 1 9 2m12.154 16.102l-1.665-1.11A8.96 8.96 0 0 0 21 12a8.96 8.96 0 0 0-1.51-4.993l1.664-1.11A10.95 10.95 0 0 1 23 12c0 2.258-.68 4.356-1.846 6.102"/></svg>
                 </div>
                 <h3>PROMOTIONS & CAMPAIGNS</h3>
                 <p>
@@ -526,12 +446,7 @@
               </article>
               <article class="feature-card">
                 <div class="feature-card__icon feature-card__icon--cyan">
-                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill="#1477D9"
-                      d="M16 1.466C7.973 1.466 1.466 7.973 1.466 16c0 8.027 6.507 14.534 14.534 14.534c8.027 0 14.534-6.507 14.534-14.534c0-8.027-6.507-14.534-14.534-14.534zm1.255 22.414v2.047h-1.958v-2.024c-3.213-.44-4.62-3.08-4.62-3.08l2-1.673s1.277 2.223 3.587 2.223c1.276 0 2.244-.683 2.244-1.85c0-2.728-7.35-2.397-7.35-7.458c0-2.2 1.74-3.785 4.138-4.16V5.86h1.958v2.045c1.672.22 3.652 1.1 3.652 2.993v1.452H18.31v-.704c0-.726-.925-1.21-1.96-1.21c-1.32 0-2.287.66-2.287 1.584c0 2.794 7.35 2.112 7.35 7.415c0 2.18-1.628 4.07-4.158 4.445z"
-                    />
-                  </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M23.93 5.55a1 1 0 0 0-.93-.61h-1.49a.24.24 0 0 1-.23-.16l-.85-2.23a1.06 1.06 0 0 0-1.86 0L18 4v.07a2.51 2.51 0 0 1-1.24 2.06a.25.25 0 0 0-.09.3l.23.53a2.5 2.5 0 0 1-.62 2.86A2 2 0 0 1 16 10a.27.27 0 0 0-.09.3a1 1 0 0 0 .27.37a1 1 0 0 0 1.19.14l2-1.1a.23.23 0 0 1 .25 0l1.95 1.1a1 1 0 0 0 .51.13a1 1 0 0 0 .69-.27A1 1 0 0 0 23 9.52l-.7-1.65a.27.27 0 0 1 .09-.31l1.3-.91a1 1 0 0 0 .24-1.1M7.72 9.81A2.5 2.5 0 0 1 7.1 7l.22-.52a.26.26 0 0 0-.08-.31A2.59 2.59 0 0 1 6 4l-.56-1.45a1 1 0 0 0-1.85 0l-.87 2.23a.25.25 0 0 1-.23.16H1a1 1 0 0 0-.93.61a1 1 0 0 0 .3 1.16l1.24.86a.24.24 0 0 1 .08.3L1 9.52a1 1 0 0 0 .25 1.15a1 1 0 0 0 1.2.14l1.95-1.1a.23.23 0 0 1 .25 0l2 1.1a1.1 1.1 0 0 0 .52.13a1 1 0 0 0 .68-.27a.9.9 0 0 0 .15-.36a.24.24 0 0 0 0-.31a1.6 1.6 0 0 1-.28-.19m7.09-3.91a.25.25 0 0 1 .09-.31l1.3-.91a1 1 0 0 0 .23-1.1A1 1 0 0 0 15.5 3H14a.25.25 0 0 1-.24-.16L12.94.58A1 1 0 0 0 12 0a1 1 0 0 0-.95.58l-.84 2.23A.25.25 0 0 1 10 3H8.5a1 1 0 0 0-.93.61a1 1 0 0 0 .3 1.16l1.23.85a.25.25 0 0 1 .09.31l-.72 1.61A1 1 0 0 0 9.41 9a1 1 0 0 0 .51-.13l2-1.11a.26.26 0 0 1 .24 0l2 1.11a1 1 0 0 0 .51.13a1 1 0 0 0 .69-.27a1 1 0 0 0 .25-1.16Zm2.12 10.29a4.52 4.52 0 0 0-9 0c0 1.84-.43 2.48-.76 2.81a1 1 0 1 0 1.4 1.42a3.7 3.7 0 0 0 .58-.73a.25.25 0 0 1 .18-.11a.3.3 0 0 1 .2.05a4 4 0 0 0 .76.53a.24.24 0 0 1 .13.24a.23.23 0 0 1-.15.21a5.92 5.92 0 0 0-3 2.65a.48.48 0 0 0 0 .49a.48.48 0 0 0 .43.25h9.48a.48.48 0 0 0 .43-.25a.48.48 0 0 0 0-.49a5.92 5.92 0 0 0-3-2.65a.23.23 0 0 1-.15-.21a.24.24 0 0 1 .13-.24a4.5 4.5 0 0 0 .76-.53a.3.3 0 0 1 .2-.05a.25.25 0 0 1 .18.11a3.7 3.7 0 0 0 .58.73a1 1 0 0 0 .7.29a1 1 0 0 0 .71-.3a1 1 0 0 0 0-1.41c-.36-.33-.79-1-.79-2.81m-4.52 2.52a2.52 2.52 0 0 1-2.48-2.1a.26.26 0 0 1 .2-.29a4 4 0 0 0 1-.31a2.67 2.67 0 0 0 1.07-.9a.3.3 0 0 1 .2-.11a.23.23 0 0 1 .2.1a4.8 4.8 0 0 0 1 .91a3.2 3.2 0 0 0 1 .46a.25.25 0 0 1 .19.3a2.52 2.52 0 0 1-2.38 1.94"/></svg>
                 </div>
                 <h3>CUSTOMER REVIEWS & RATINGS</h3>
                 <p>
@@ -540,14 +455,7 @@
               </article>
               <article class="feature-card">
                 <div class="feature-card__icon feature-card__icon--green">
-                  <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill="#0F9D58"
-                      fill-rule="evenodd"
-                      d="m3.096.577l5.91-.003v2.303l-5.91.003a1.25 1.25 0 0 1-.742-.243l-.958-.707a.25.25 0 0 1 0-.402L2.355.82a1.25 1.25 0 0 1 .74-.244Zm8.343 2.298l-1.183.001V.573h1.187c.634.01 1.119.573 1.119 1.15c0 .578-.485 1.142-1.119 1.152zm-5.931 2.31c.335.134.62.281.867.427V14a5.47 5.47 0 0 0-1.24-.7c-.735-.294-1.795-.537-3.412-.537a.5.5 0 0 1-.5-.5V5.075a.5.5 0 0 1 .5-.5c1.72 0 2.91.259 3.785.61M8.864 13.3c-.54.217-.919.466-1.24.699V5.612c.247-.146.533-.293.868-.427c.875-.351 2.065-.61 3.785-.61a.5.5 0 0 1 .5.5v7.188a.5.5 0 0 1-.5.5c-1.617 0-2.677.243-3.413.538Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M.82 9.35a2.85 2.85 0 1 0 5.7 0a2.85 2.85 0 1 0-5.7 0"/><path fill="currentColor" d="M.53 14.75h6.28a.51.51 0 0 0 .45-.28a.49.49 0 0 0-.07-.53a4.46 4.46 0 0 0-3.52-1.69a4.5 4.5 0 0 0-3.52 1.69a.49.49 0 0 0-.07.53a.51.51 0 0 0 .45.28M12.12 7a2.85 2.85 0 1 0-2.85-2.9A2.86 2.86 0 0 0 12.12 7M8.47 9.75h7.29a.5.5 0 0 0 .45-.28a.49.49 0 0 0-.06-.53a5.15 5.15 0 0 0-4-1.93a5.15 5.15 0 0 0-4 1.93a.51.51 0 0 0-.15.53a.5.5 0 0 0 .47.28m9.01-.4a2.85 2.85 0 1 0 5.7 0a2.85 2.85 0 1 0-5.7 0"/><path fill="currentColor" d="M17.2 14.75h6.27a.5.5 0 0 0 .45-.28a.51.51 0 0 0-.06-.53a4.5 4.5 0 0 0-3.53-1.69a4.51 4.51 0 0 0-3.52 1.69a.49.49 0 0 0-.06.53a.5.5 0 0 0 .45.28"/><path fill="currentColor" d="M23 16.25h-6.5a.5.5 0 0 1-.5-.5v-3.5a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3.5a.5.5 0 0 1-.5.5H1a1 1 0 0 0-1 1v4.5a1 1 0 0 0 1 1h22a1 1 0 0 0 1-1v-4.5a1 1 0 0 0-1-1"/></svg>
                 </div>
                 <h3>SEARCH RANKINGS & VISIBILITY</h3>
                 <p>
@@ -774,19 +682,26 @@
 				  We can monitor all major platforms, including Amazon, Walmart, Target, eBay, and Best Buy, as well as any other online retailer with a publicly accessible website. Just tell us who your competitors are, and we'll handle the rest.
                   We can collect publicly available data from almost any online
                   source, including:<br />
-                  <span class="faq-list-category"><strong>E-commerce & Retail:</strong></span>
-                  product details, pricing, reviews, and inventory levels from
-                  competitors<br />
-                  <span class="faq-list-category"><strong>Business Intelligence:</strong></span>
-                  company profiles, executive details, and firmographic data
-                  from directories like LinkedIn and Crunchbase<br />
-                  <span class="faq-list-category"><strong>Market Research:</strong></span>
-                  customer sentiments, trends, and brand mentions from social
-                  media platforms, forums, and news sites<br />
-                  <span class="faq-list-category"><strong>Real Estate:</strong></span>
-                  property listings, rental prices, and market trends<br />
-                  <span class="faq-list-category"><strong>Travel & Hospitality:</strong></span>
-                  hotel and flight prices, availability, and customer reviews<br /><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"><strong>E-commerce & Retail:</strong></span>
+                    <span class="faq-list-detail">product details, pricing, reviews, and inventory levels from competitors</span>
+                  </span><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"><strong>Business Intelligence:</strong></span>
+                    <span class="faq-list-detail">company profiles, executive details, and firmographic data from directories like LinkedIn and Crunchbase</span>
+                  </span><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"><strong>Market Research:</strong></span>
+                    <span class="faq-list-detail">customer sentiments, trends, and brand mentions from social media platforms, forums, and news sites</span>
+                  </span><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"><strong>Real Estate:</strong></span>
+                    <span class="faq-list-detail">property listings, rental prices, and market trends</span>
+                  </span><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"><strong>Travel & Hospitality:</strong></span>
+                    <span class="faq-list-detail">hotel and flight prices, availability, and customer reviews</span>
+                  </span><br /><br />
                   If you have a specific source in mind - just ask!<br />
                 </p>
               </details>
@@ -824,14 +739,20 @@
                   You will receive clean, structured, and analysis-ready data in
                   your preferred format.<br />
                   We routinely deliver data as:<br />
-                  <span class="faq-list-category">CSV/Excel files</span><br />
-                  <span class="faq-list-category"
-                    >JSON or XML for API integration</span
-                  ><br />
-                  <span class="faq-list-category"
-                    >Direct feeds to your database or cloud storage (e.g., AWS
-                    S3, Google Cloud)</span
-                  ><br /><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category">CSV/Excel files</span>
+                  </span><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"
+                      >JSON or XML for API integration</span
+                    >
+                  </span><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"
+                      >Direct feeds to your database or cloud storage (e.g., AWS
+                      S3, Google Cloud)</span
+                    >
+                  </span><br /><br />
                   We strive to deliver data in the format that works best for your team. We also offer custom dashboards for at-a-glance insights. 
                 </p>
               </details>
@@ -878,21 +799,33 @@
                   from a complex, global source.<br />
                   Our pricing is transparent and is based on three core
                   factors:<br />
-                  <span class="faq-list-category"
-                    ><strong>Complexity:</strong></span
-                  >
-                  how difficult is it to access and structure the data? (e.g., a
-                  simple blog vs. a JavaScript-heavy web app)<br />
-                  <span class="faq-list-category"
-                    ><strong>Volume:</strong></span
-                  >
-                  How much data do you need? (e.g., 5000 product pages vs. 10
-                  million)<br />
-                  <span class="faq-list-category"
-                    ><strong>Frequency:</strong></span
-                  >
-                  Do you need a one-time snapshot or an ongoing monitoring
-                  service?
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"
+                      ><strong>Complexity:</strong></span
+                    >
+                    <span class="faq-list-detail"
+                      >How difficult is it to access and structure the data? (e.g., a
+                      simple blog vs. a JavaScript-heavy web app)</span
+                    >
+                  </span><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"
+                      ><strong>Volume:</strong></span
+                    >
+                    <span class="faq-list-detail"
+                      >How much data do you need? (e.g., 5000 product pages vs. 10
+                      million)</span
+                    >
+                  </span><br />
+                  <span class="faq-list-line">
+                    <span class="faq-list-category"
+                      ><strong>Frequency:</strong></span
+                    >
+                    <span class="faq-list-detail"
+                      >Do you need a one-time snapshot or an ongoing monitoring
+                      service?</span
+                    >
+                  </span>
                 </p>
               </details>
               <details class="faq__item">
@@ -1054,7 +987,13 @@
             </p>
             <div class="testimonials__grid" data-animate>
               <article class="testimonial">
-                <span class="testimonial__circle"></span>
+                <div class="testimonial__stars" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
                 <p>
                   “MRI Data replaced three internal tools and gave us near
                   real-time prospect data. Our outbound team doubled qualified
@@ -1080,7 +1019,13 @@
                 </p>
               </article>
               <article class="testimonial">
-                <span class="testimonial__circle"></span>
+                <div class="testimonial__stars" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
                 <p>
                   “Pricing monitoring used to take our category managers hours.
                   MRI Data feeds power dashboards that alert us instantly.”
@@ -1105,7 +1050,13 @@
                 </p>
               </article>
               <article class="testimonial">
-                <span class="testimonial__circle"></span>
+                <div class="testimonial__stars" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                </div>
                 <p>
                   “We rely on MRI Data to pull alternative data for our
                   investment models. The team is proactive and
@@ -1158,146 +1109,192 @@
           </div>
         </section>
 
-        <section class="section pricing" id="pricing">
-          <div class="price-container">
-            <div class="pricing__heading">
-              <h2 data-animate>
+        <section class="section pricing" aria-labelledby="pricing-heading" id="pricing">
+          <div class="container pricing-container">
+            <div class="pricing-header">
+              <h2 id="pricing-heading">
                 CHOOSE YOUR PLAN<br />
                 <span class="text-accent">ACHIEVE YOUR GOAL</span>
               </h2>
-              <p class="section-intro" data-animate>
+              <p class="pricing-subtitle">
                 Web scraping is a custom service, not a commodity.<br />
-                The cost depends entirely on the project's complexity, scale,
-                and frequency.
+                The cost depends entirely on the project's complexity, scale, and frequency.
               </p>
             </div>
-            <div class="pricing__grid" data-animate>
-              <article class="pricing-card">
-                <div class="pricing-card__header">
-                  <span class="pricing-card__tag">Diagnostic Scan</span>
-                  <p class="pricing-card__price">PROJECT</p>
-                </div>
-                <p class="pricing-card__lede">
-                  A single, in-depth snapshot of data to validate a hypothesis,
-                  conduct a one-time study, or inform a major decision.
-                </p>
-                <dl class="pricing-card__details">
-                  <div>
-                    <dt>FEATURES:</dt>
-                    <dd>
-                      Single well-defined project<br />
-					  Perfect calibration to your goal<br />
-                      Pay after you recieve data<br />
-					  Scraping specific resources once<br />
-                      Scrape up to 1 million pages<br />
-					  Only data extraction, no analysis<br />
-					  Your chosen format (CSV, JSON, etc.)<br />
-					  Standard support via e-mail<br />
-                    </dd>
-                  </div>
-				  
-				  <!--
-                  <div>
-                    <dt>Pages Included</dt>
-                    <dd>Up to 1 million</dd>
-                  </div>
 
-                  <div>
-                    <dt>Support</dt>
-                    <dd>Standard any-time via e-mail</dd>
+            <div class="pricing-grid">
+              <div class="pricing-card">
+                <div class="pricing-header-card">
+                  <h3>Diagnostic Scan</h3>
+				  <div class="pricing-price">
+                    <span class="price">PROJECT</span>
                   </div>
-				  -->
-                </dl>
-                <a class="btn btn--ghost" href="#final-cta"
-                  >Get Your Custom Project Quote</a
-                >
-              </article>
-              <article class="pricing-card pricing-card--highlight">
-                <div class="pricing-card__header">
-                  <span class="pricing-card__badge pricing-card__badge--border"
-                    >Most Popular</span
-                  >
-                  <span class="pricing-card__tag">Monitoring</span>
-                  <p class="pricing-card__price">BUSINESS</p>
+				  <p class="pricing-description">
+                    A single, in-depth snapshot of data to validate a hypothesis, conduct a one-time study, or inform a major decision.
+                  </p>
                 </div>
-                <p class="pricing-card__lede">
-                  Continuous data delivery to track your market, competitors,
-                  and customers, giving you the agility to make smarter
-                  decisions faster.
-                </p>
-                <dl class="pricing-card__details">
-                  <div>
-                    <dt>FEATURES:</dt>
-                    <dd>
-					  Multiple projects, multiple sources<br />
-					  Scheduled regular data delivery<br />
-					  Regular payments cost less<br />
-					  Build historical datasets<br />
-					  Scrape up to 5 million pages per source<br />
-					  Add MRI Scan - analyze the data<br />
-                      Dedicated account manager<br />                   
-                    </dd>
-                  </div>
-				  <!--
-                  <div>
-                    <dt>Pages Included</dt>
-                    <dd>Unlimited</dd>
-                  </div>
 
-                  <div>
-                    <dt>Support</dt>
-                    <dd>Dedicated team - <br />24/7 monitoring</dd>
-                  </div>
-				  -->
-                </dl>
-                <a class="btn btn--primary" href="#final-cta"
-                  >Schedule a Strategic Consultation</a
-                >
-              </article>
-              <article class="pricing-card">
-                <div class="pricing-card__header">
-                  <span class="pricing-card__tag">Enterprise</span>
-                  <p class="pricing-card__price">ENTERPRISE</p>
+                <div class="pricing-features">
+                  <ul>
+					<li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Single well-defined project
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Pay after recieving your data
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Focused data extraction
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Target the specific sources you need
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Your chosen format (CSV, JSON, etc.)
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Perfectly calibrated to your goal
+                    </li>
+                  </ul>
                 </div>
-                <p class="pricing-card__lede">
-                  Fully tailored solutions for large-scale, complex, or ongoing
-                  data needs. Integrate with your systems, automate workflows,
-                  and scale as you grow.
-                </p>
-                <dl class="pricing-card__details">
-                  <div>
-                    <dt>FEATURES:</dt>
-                    <dd>
-                      Unlimited number of projects/sources<br />
-					  Real-time data feeds (APIs)<br />
-                      Payments based on subscription<br />
-					  Custom SLAs & Guarantees<br />
-                      Scrape unlimited number of pages<br />
-					  Scalable, high-volume architecture<br />
-					  Partnership & co-development<br />
-					  Dedicated 24/7 support<br />
-                    </dd>
+
+                <a href="#final-cta" class="pricing-cta">Get Your Custom Project Quote</a>
+              </div>
+
+              <div class="pricing-card pricing-card-popular">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header-card">
+                  <h3>Monitoring</h3>
+				  <div class="pricing-price">
+                    <span class="price">BUSINESS</span>
                   </div>
-				  <!--
-                  <div>
-                    <dt>Pages Included</dt>
-                    <dd>Unlimited</dd>
+				  <p class="pricing-description">
+                    Continuous data delivery to track your market, competitors, and customers, giving you the agility to make smarter decisions faster.
+                  </p>
+                </div>
+
+                <div class="pricing-features">
+                  <ul>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Scheduled data delivery
+                    </li>
+					 <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Regular data updates are automatic and cost less
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Proactive monitoring & maintenance
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Dedicated account manager -<br />a single point of contact for support
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      The data flows to you automatically
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Build historical dataset<br />to spot long-term trends (optional)
+                    </li>
+                  </ul>
+                </div>
+
+                <a href="#final-cta" class="pricing-cta pricing-cta-primary">
+                  Start Your Ongoing Monitoring
+                </a>
+              </div>
+
+              <div class="pricing-card">
+                <div class="pricing-header-card">
+                  <h3>Intelligence Platform</h3>
+				  <div class="pricing-price">
+                    <span class="price">ENTERPRISE</span>
                   </div>
-                  <div>
-                    <dt>Support</dt>
-                    <dd>Dedicated account manager<br />Priority support</dd>
-                  </div>
-				  -->
-                </dl>
-                <a class="btn btn--ghost" href="#final-cta"
-                  >Request Enterprise Solution</a
-                >
-              </article>
+				  <p class="pricing-description">
+                    A fully customized, scalable data infrastructure that feeds real-time insights directly into your internal systems, dashboards, and AI models.
+                  </p>
+                </div>
+
+                <div class="pricing-features">
+                  <ul>
+					<li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Real-time data feeds (API):<br />access data the moment it changes online, integrated directly into your platform
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Custom SLAs & Guarantees:<br />Guaranteed uptime, support response times, and data freshness
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Multi-source data: combine data from multiple, complex online sources into a single, unified stream
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Scalable, high-volume architecture:<br />built to handle millions of data points
+                    </li>
+                    <li>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#10b981" />
+                      </svg>
+                      Partnership & co-development:<br />our engineers can work as an extension of your team (optional)
+                    </li>
+                  </ul>
+                </div>
+
+                <a href="#final-cta" class="pricing-cta">Schedule a Strategic Consultation</a>
+              </div>
             </div>
-            <p class="pricing__footnote" data-animate>
-              All plans include free setup and onboarding support. No hidden
-              fees.
-            </p>
+
+            <div class="pricing-footer">
+              <p>
+                All plans include free setup and onboarding support. No hidden fees.
+              </p>
+              <p style="white-space: wrap; max-width: 600px; margin: 0 auto;">
+                <strong>Still Unsure?</strong>
+                Let our experts <a href="#final-cta">recommend the right model</a> for you.
+              </p>
+            </div>
           </div>
         </section>
 

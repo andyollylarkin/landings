@@ -397,13 +397,79 @@ async function injectProductData() {
     if (tab3) tab3.innerHTML = renderSQLBlock(sql);
   } catch (e) { }
 }
+const tabButtons = document.querySelectorAll('#tab1,#tab2,#tab3');
+const tabContents = document.querySelectorAll('#tab-content1, #tab-content2, #tab-content3');
+const dataPlaceholder = document.getElementById('data-placeholder');
+const dataFetchBtn = document.getElementById('extract-btn');
+const overlay = document.getElementById('demo-overlay');
+const fetchLoadText = document.getElementById('fetch-load-text');
 
-document.getElementById('extract-btn')?.addEventListener('click', () => {
-  document.querySelectorAll('#tab1,#tab2,#tab3').forEach(tab => {
-    tab.classList.remove('hidden');
-  })
-  injectProductData();
-});
+let overlayIntervalId = null;
+let dataLoaderActive = false;
+const MIN_LOADING_TIME = 2200;
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const resetTabContents = () => {
+  tabContents.forEach((content) => content.classList.add('hidden'));
+};
+
+const showOverlay = () => {
+  if (!overlay) return;
+  overlay.classList.remove('hidden');
+  if (fetchLoadText) {
+    fetchLoadText.textContent = 'Fetching data';
+    overlayIntervalId = setInterval(() => {
+      if (fetchLoadText.textContent.endsWith('...')) {
+        fetchLoadText.textContent = 'Fetching data';
+      } else {
+        fetchLoadText.textContent += '.';
+      }
+    }, 500);
+  }
+};
+
+const hideOverlay = () => {
+  if (!overlay) return;
+  overlay.classList.add('hidden');
+  if (overlayIntervalId) {
+    clearInterval(overlayIntervalId);
+    overlayIntervalId = null;
+  }
+  if (fetchLoadText) {
+    fetchLoadText.textContent = 'Fetching data';
+  }
+};
+
+const revealTabs = () => {
+  tabButtons.forEach((tab) => tab.classList.remove('hidden'));
+};
+
+const hidePlaceholder = () => {
+  if (!dataPlaceholder) return;
+  dataPlaceholder.classList.add('is-hidden');
+  dataPlaceholder.setAttribute('aria-hidden', 'true');
+};
+
+const handleDataExtraction = async () => {
+  dataFetchBtn.style.display = 'none';
+  if (dataLoaderActive) return;
+  dataLoaderActive = true;
+  resetTabContents();
+  showOverlay();
+  await Promise.all([injectProductData(), wait(MIN_LOADING_TIME)]);
+  hidePlaceholder();
+  revealTabs();
+  if (typeof window.showTab === 'function') {
+    window.showTab(1);
+  } else {
+    tabContents[0]?.classList.remove('hidden');
+  }
+  hideOverlay();
+  dataLoaderActive = false;
+};
+
+dataFetchBtn?.addEventListener('click', handleDataExtraction);
 
 function preventScroll(e) {
   e.preventDefault();
@@ -418,28 +484,3 @@ function preventScroll(e) {
 //     elem.removeEventListener('touchmove', preventScroll);
 //   });
 // });
-
-
-const dataFetchBtn = document.getElementById('extract-btn')
-const overlay = document.getElementById('demo-overlay')
-const fetchLoadText = document.getElementById('fetch-load-text')
-
-dataFetchBtn?.addEventListener('click', () => {
-  if (overlay) {
-    overlay.classList.remove('hidden');
-    let intervalId;
-    if (fetchLoadText) {
-      intervalId = setInterval(() => {
-        if (fetchLoadText.textContent.endsWith('...')) {
-          fetchLoadText.textContent = 'Fetching data';
-        } else {
-          fetchLoadText.textContent += '.';
-        }
-      }, 500);
-    }
-    setTimeout(() => {
-      if (intervalId) clearInterval(intervalId);
-      overlay.classList.add('hidden');
-    }, Math.random() * 2000 + 2000);
-  }
-})
