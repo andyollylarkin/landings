@@ -324,6 +324,7 @@ h3 {
   padding: 0.875rem 1.75rem;
   box-shadow: var(--shadow-sm);
   border-radius: 8px;
+  text-align: center;
 }
 
 .btn--primary:hover,
