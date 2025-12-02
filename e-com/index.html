@@ -8,6 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Delius+Unicase:wght@400;700&family=Finger+Paint&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Delius&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
       rel="stylesheet"
@@ -20,8 +23,8 @@
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Delius&family=Delius+Unicase:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Delius+Unicase:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <meta
       name="description"
       content="MRI Data delivers accurate, compliant, and scalable e-commerce data and analytics solutions for teams that need clean datasets in record time."
@@ -29,14 +32,14 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CBRCYP0ZH4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CBRCYP0ZH4');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBRCYP0ZH4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-CBRCYP0ZH4');
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -94,7 +97,7 @@
           <div class="container hero__layout">
             <!-- HERO BLOCK -->
             <div class="hero__copy hero-left" data-animate>
-              <p class="eyebrow">
+              <p class="eyebrow !font-[InterVariable,Inter]">
                 Start Growing Now<br />With Our Business Intelligence Platform
               </p>
               <h1>
@@ -118,11 +121,11 @@
               </div>
             </div>
             <div
-              class="hero__visual hero-right-top"
+              class="hero__visual relative hero-right-top"
               data-animate
               aria-hidden="true"
             >
-              <div class="flex flex-col">
+              <div class="flex flex-col z-1">
                 <div class="data-flow">
                   <div class="data-flow__stage data-flow__stage--sources">
                     <p class="stage-label">Data Sources</p>
@@ -236,12 +239,13 @@
                   </div>
                 </div>
                 <div
-                  class="justify-center items-start animate-pulse flex-col gap-[0px] hidden md:flex"
+                  class="justify-center demo-text-block items-start absolute bottom-[-20%] right-[-30%] z-3 animate-pulse flex-col gap-[0px] hidden md:flex"
                 >
                   <h3
                     class="show-demo w-full text-center !text-(--color-charcoal)"
                   >
-                    Check out our LIVE Amazon data scraping demo!
+                    Check out our LIVE Amazon<br/>
+                     DATA scraping demo!
                   </h3>
                   <img class="max-h-[100px] self-center" src="/arrow.svg" />
                 </div>
@@ -410,7 +414,7 @@
               WE TRACK EVERYTHING<br />
               <span class="text-accent">THAT MATTERS</span>
             </h2>
-            <p class="section-intro" data-animate>
+            <p class="pricing-subtitle" data-animate>
               We track every price, product, and promotion from your competitors on Amazon, Walmart, Etsys and beyond -<br />
 			  delivering the insights you need to win.<br />
             </p>
@@ -496,7 +500,7 @@
               REAL USE CASES<br />
               <span class="text-accent">ACROSS INDUSTRIES</span>
             </h2>
-            <p class="section-intro" data-animate>
+            <p class="pricing-subtitle" data-animate>
               Maybe your task is just the same or very alike. Maybe your task is
               different.<br />
               We can help you anyway. Check out what we're capable of!
@@ -669,14 +673,39 @@
             </div>
           </div>
         </section>
-
-        <section class="section faq" id="faq">
+		    <section class="section social-proof" id="social-proof">
           <div class="container">
+            <!-- PROOF BLOCK -->
+            <div class="proof-block">
+              <div class="social-proof__grid" data-animate>
+                <article class="social-proof__card">
+                  <span class="social-proof__metric">1,250+</span>
+                  <p class="social-proof__label">Happy Clients</p>
+                </article>
+                <article class="social-proof__card">
+                  <span class="social-proof__metric">99.9%</span>
+                  <p class="social-proof__label">Data Accuracy</p>
+                </article>
+                <article class="social-proof__card">
+                  <span class="social-proof__metric">48 hrs</span>
+                  <p class="social-proof__label">Average Deployment</p>
+                </article>
+                <article class="social-proof__card">
+                  <span class="social-proof__metric">24/7</span>
+                  <p class="social-proof__label">Dedicated Support</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section faq overflow-hidden" id="faq">
+          <div class="container z-1">
             <h2 data-animate>
               FREQUENTLY ASKED QUESTIONS<br />
               <span class="text-accent">GET TO KNOW US BETTER</span>
             </h2>
-            <p class="section-intro" data-animate>
+            <p class="pricing-subtitle" data-animate>
               We know you have questions about data, compliance, and how our
               service works. Here are answers to the most common ones.<br>
 			  If you need more details, just ask!
@@ -852,6 +881,9 @@
               <a class="btn btn--primary" href="#final-cta">Contact Us Now!</a>
             </div>
           </div>
+          <div class="hidden [@media(min-width:1440px)]:block">
+            <img class="absolute bottom-0 z-0 right-[-10%]" src="/public/faq-team.png"/>
+          </div>
         </section>
 
         <section class="section problem" id="problem">
@@ -860,7 +892,7 @@
               CHALLENGES WORKING WITH<br />
               <span class="text-accent">E-COMMERCE DATA</span>
             </h2>
-            <p class="section-intro" data-animate>
+            <p class="pricing-subtitle" data-animate>
               Business moves fast, prices change hourly, inventory shifts
               constantly. Without automated data extraction,<br />
               you're making million-dollar decisions based on outdated
@@ -933,13 +965,13 @@
           </div>
         </section>        
 
-        <section class="section process" id="how-it-works">
+        <section class="section process overflow-hidden" id="how-it-works">
           <div class="container">
             <h2 data-animate>
               YOU MAKE THE FIRST STEP<br />
               <span class="text-accent">WE EARN YOUR TRUST</span>
             </h2>
-            <p class="section-intro" data-animate>
+            <p class="pricing-subtitle" data-animate>
               We have streamlined data extraction into three straightforward
               steps. No complicated tools to learn, no platforms to manage.
             </p>
@@ -980,6 +1012,9 @@
               >Tell Us What You Need Now!</a
             >
           </div>
+          <div class="hidden [@media(min-width:1440px)]:block">
+            <img class="absolute bottom-0 z-0 right-[-10%]" src="/public/ecom-team-2.png"/>
+          </div>
         </section>
 
         <section class="section testimonials" id="testimonials">
@@ -990,11 +1025,12 @@
                 >TO REVEAL THE TRUTH BEHIND RAW DATA</span
               >
             </h2>
-            <p class="section-intro" data-animate>
+            <p class="pricing-subtitle" data-animate>
               Just leave web scraping to us. It's that easy.
             </p>
-            <div class="testimonials__grid" data-animate>
-              <article class="testimonial">
+            <div class="testimonials__carousel" data-animate>
+              <div class="testimonials__grid" id="testimonials-grid">
+                <article class="testimonial">
                 <div class="testimonial__stars" aria-label="5 out of 5 stars">
                   <span aria-hidden="true">★</span>
                   <span aria-hidden="true">★</span>
@@ -1025,93 +1061,86 @@
                 <p class="process-step__meta__trust">
                   Real impact for sales teams
                 </p>
-              </article>
-              <article class="testimonial">
-                <div class="testimonial__stars" aria-label="5 out of 5 stars">
-                  <span aria-hidden="true">★</span>
-                  <span aria-hidden="true">★</span>
-                  <span aria-hidden="true">★</span>
-                  <span aria-hidden="true">★</span>
-                  <span aria-hidden="true">★</span>
-                </div>
-                <p>
-                  “Pricing monitoring used to take our category managers hours.
-                  MRI Data feeds power dashboards that alert us instantly.”
-                </p>
-                <div class="testimonial__meta">
-                  <span class="testimonial__avatar" aria-hidden="true">
-                    <img
-                      src="/michael_rodriguez.png"
-                      alt="Michael Rodriguez"
-                      class="testimonial__photo"
-                      width="56"
-                      height="56"
-                    />
-                  </span>
-                  <span class="testimonial__meta-text">
-                    <span class="testimonial__name">Miguel</span>
-                    <span class="testimonial__role">Director of Pricing</span>
-                  </span>
-                </div>
-                <p class="process-step__meta__trust">
-                  Instant actionable insights
-                </p>
-              </article>
-              <article class="testimonial">
-                <div class="testimonial__stars" aria-label="5 out of 5 stars">
-                  <span aria-hidden="true">★</span>
-                  <span aria-hidden="true">★</span>
-                  <span aria-hidden="true">★</span>
-                  <span aria-hidden="true">★</span>
-                  <span aria-hidden="true">★</span>
-                </div>
-                <p>
-                  “We rely on MRI Data to pull alternative data for our
-                  investment models. The team is proactive and
-                  compliance-first.”
-                </p>
-                <div class="testimonial__meta">
-                  <span class="testimonial__avatar" aria-hidden="true">
-                    <img
-                      src="/jennifer_kim.png"
-                      alt="Jennifer Kim"
-                      class="testimonial__photo"
-                      width="56"
-                      height="56"
-                    />
-                  </span>
-                  <span class="testimonial__meta-text">
-                    <span class="testimonial__name">Priya</span>
-                    <span class="testimonial__role">Principal Analyst</span>
-                  </span>
-                </div>
-                <p class="process-step__meta__trust">Trusted by analysts</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-		<section class="section social-proof" id="social-proof">
-          <div class="container">
-            <!-- PROOF BLOCK -->
-            <div class="proof-block">
-              <div class="social-proof__grid" data-animate>
-                <article class="social-proof__card">
-                  <span class="social-proof__metric">1,250+</span>
-                  <p class="social-proof__label">Happy Clients</p>
                 </article>
-                <article class="social-proof__card">
-                  <span class="social-proof__metric">99.9%</span>
-                  <p class="social-proof__label">Data Accuracy</p>
+                <article class="testimonial">
+                  <div class="testimonial__stars" aria-label="5 out of 5 stars">
+                    <span aria-hidden="true">★</span>
+                    <span aria-hidden="true">★</span>
+                    <span aria-hidden="true">★</span>
+                    <span aria-hidden="true">★</span>
+                    <span aria-hidden="true">★</span>
+                  </div>
+                  <p>
+                    “Pricing monitoring used to take our category managers hours.
+                    MRI Data feeds power dashboards that alert us instantly.”
+                  </p>
+                  <div class="testimonial__meta">
+                    <span class="testimonial__avatar" aria-hidden="true">
+                      <img
+                        src="/michael_rodriguez.png"
+                        alt="Michael Rodriguez"
+                        class="testimonial__photo"
+                        width="56"
+                        height="56"
+                      />
+                    </span>
+                    <span class="testimonial__meta-text">
+                      <span class="testimonial__name">Miguel</span>
+                      <span class="testimonial__role">Director of Pricing</span>
+                    </span>
+                  </div>
+                  <p class="process-step__meta__trust">
+                    Instant actionable insights
+                  </p>
                 </article>
-                <article class="social-proof__card">
-                  <span class="social-proof__metric">48 hrs</span>
-                  <p class="social-proof__label">Average Deployment</p>
+                <article class="testimonial">
+                  <div class="testimonial__stars" aria-label="5 out of 5 stars">
+                    <span aria-hidden="true">★</span>
+                    <span aria-hidden="true">★</span>
+                    <span aria-hidden="true">★</span>
+                    <span aria-hidden="true">★</span>
+                    <span aria-hidden="true">★</span>
+                  </div>
+                  <p>
+                    “We rely on MRI Data to pull alternative data for our
+                    investment models. The team is proactive and
+                    compliance-first.”
+                  </p>
+                  <div class="testimonial__meta">
+                    <span class="testimonial__avatar" aria-hidden="true">
+                      <img
+                        src="/jennifer_kim.png"
+                        alt="Jennifer Kim"
+                        class="testimonial__photo"
+                        width="56"
+                        height="56"
+                      />
+                    </span>
+                    <span class="testimonial__meta-text">
+                      <span class="testimonial__name">Priya</span>
+                      <span class="testimonial__role">Principal Analyst</span>
+                    </span>
+                  </div>
+                  <p class="process-step__meta__trust">Trusted by analysts</p>
                 </article>
-                <article class="social-proof__card">
-                  <span class="social-proof__metric">24/7</span>
-                  <p class="social-proof__label">Dedicated Support</p>
-                </article>
+              </div>
+              <div class="testimonials__controls" aria-label="Testimonials navigation">
+                <button
+                  class="testimonials__control testimonials__control--prev"
+                  type="button"
+                  aria-label="Scroll testimonials left"
+                  data-testimonials-prev
+                >
+                  <span aria-hidden="true">&#10094;</span>
+                </button>
+                <button
+                  class="testimonials__control testimonials__control--next"
+                  type="button"
+                  aria-label="Scroll testimonials right"
+                  data-testimonials-next
+                >
+                  <span aria-hidden="true">&#10095;</span>
+                </button>
               </div>
             </div>
           </div>

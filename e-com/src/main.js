@@ -1,6 +1,10 @@
 import handleKeydown from "../../libs/keydown_handler.js";
 import handleNoPageAction from "../../libs/handle_mouse_drag.js";
 import { saveField, getSavedField, clearSavedField } from "../../libs/save-field.js";
+import { buttonClick } from "../../ga/useful_ga.js"
+import { handleBackscroll } from "../../libs/handle_backscroll.js"
+
+let loadTime = Date.now();
 
 document.addEventListener('click', function (e) {
   var modal = document.getElementById('modal-cta');
@@ -20,6 +24,19 @@ handleNoPageAction(() => {
   if (modal) modal.style.display = 'flex';
   document.body.classList.add('modal-open');
 })
+
+
+
+// show modal on backscroll if not already submitted and after 2 minutes
+handleBackscroll(() => {
+  if (loadTime + 120000 > Date.now()) return;
+  var modal = document.getElementById('modal-cta');
+  alreadySubmitted = getSavedField('form-field-already_submitted') === 'true';
+  if (alreadySubmitted) return;
+  if (modal) modal.style.display = 'flex';
+  document.body.classList.add('modal-open');
+})
+
 
 let modalShown = false;
 
@@ -54,6 +71,7 @@ const detailsItems = document.querySelectorAll('.faq__item')
 const yearTarget = document.querySelector('[data-year]')
 const ctaForms = document.querySelectorAll('.final-cta__form');
 const formStatus = document.querySelector('.final-cta__form-status');
+
 
 const openNavigation = () => {
   if (!navTrigger || !navMenu) return
@@ -426,6 +444,11 @@ const MIN_LOADING_TIME = 2200;
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+
+dataFetchBtn.addEventListener('click', () => {
+  buttonClick('Data Extraction Demo Button');
+});
+
 const resetTabContents = () => {
   tabContents.forEach((content) => content.classList.add('hidden'));
 };
@@ -468,7 +491,9 @@ const hidePlaceholder = () => {
 };
 
 const handleDataExtraction = async () => {
-  dataFetchBtn.style.display = 'none';
+  dataFetchBtn.disabled = true;
+  dataFetchBtn.style.background = "rgba(255, 153, 0, 0.2)";
+  document.querySelector('.demo-text-block').style.display = 'none';
   if (dataLoaderActive) return;
   dataLoaderActive = true;
   resetTabContents();
@@ -506,11 +531,49 @@ const initTestimonialsCarousel = () => {
   if (!container) return;
 
   const cards = Array.from(container.querySelectorAll('.testimonial'));
-  if (cards.length <= 3) return;
+  if (cards.length > 3) {
+    cards.slice(3).forEach((card) => {
+      card.parentElement?.removeChild(card);
+    });
+  }
 
-  cards.slice(3).forEach((card) => {
-    card.parentElement?.removeChild(card);
-  });
+  if (container.dataset.carouselReady === 'true') return;
+  container.dataset.carouselReady = 'true';
+
+  const prevButton = document.querySelector('[data-testimonials-prev]');
+  const nextButton = document.querySelector('[data-testimonials-next]');
+  if (!prevButton && !nextButton) return;
+
+  const getStepWidth = () => {
+    const firstCard = container.querySelector('.testimonial');
+    if (!firstCard) return 0;
+    const styles = window.getComputedStyle(container);
+    const gapValue = parseFloat(styles.getPropertyValue('gap') || '0');
+    return firstCard.getBoundingClientRect().width + (Number.isNaN(gapValue) ? 0 : gapValue);
+  };
+
+  const scrollByStep = (direction) => {
+    const step = getStepWidth();
+    if (!step) return;
+    container.scrollBy({ left: step * direction, behavior: 'smooth' });
+  };
+
+  prevButton?.addEventListener('click', () => scrollByStep(-1));
+  nextButton?.addEventListener('click', () => scrollByStep(1));
+
+  const syncControls = () => {
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (prevButton) {
+      prevButton.disabled = container.scrollLeft <= 2;
+    }
+    if (nextButton) {
+      nextButton.disabled = container.scrollLeft >= maxScroll - 2;
+    }
+  };
+
+  container.addEventListener('scroll', syncControls, { passive: true });
+  window.addEventListener('resize', syncControls);
+  syncControls();
 };
 
 initTestimonialsCarousel();
