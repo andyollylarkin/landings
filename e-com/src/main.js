@@ -353,12 +353,28 @@ function renderCSVBlock(csv) {
 function renderJSONPretty(json) {
   // Pretty print JSON with syntax highlighting and line numbers
   const jsonString = JSON.stringify(json, null, 2);
-  const escaped = jsonString.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  let html = escaped.replace(/("[^"]*")(?=:)/g, '<span class="json-key">$1</span>')
-    .replace(/("[^"]*")/g, '<span class="json-string">$1</span>')
-    .replace(/\b(true|false|null)\b/g, '<span class="json-boolean">$1</span>')
-    .replace(/(\d+\.?\d*)/g, '<span class="json-number">$1</span>');
-  html = addLineNumbers(html);
+  const escaped = jsonString
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  const tokenPattern = /(\"(?:\\.|[^"\\])*\"\s*:)|(\"(?:\\.|[^"\\])*\")|\b(true|false|null)\b|-?\d+(?:\.\d+)?/g;
+
+  const highlighted = escaped.replace(tokenPattern, (match, keyCandidate) => {
+    if (keyCandidate) {
+      const key = match.replace(/\s*:\s*$/, '');
+      return `<span class="json-key">${key}</span>:`;
+    }
+    if (match.startsWith('"')) {
+      return `<span class="json-string">${match}</span>`;
+    }
+    if (/true|false|null/.test(match)) {
+      return `<span class="json-boolean">${match}</span>`;
+    }
+    return `<span class="json-number">${match}</span>`;
+  });
+
+  const html = addLineNumbers(highlighted);
   return `<pre class="product-json">${html}</pre>`;
 }
 
@@ -484,3 +500,17 @@ function preventScroll(e) {
 //     elem.removeEventListener('touchmove', preventScroll);
 //   });
 // });
+
+const initTestimonialsCarousel = () => {
+  const container = document.querySelector('.testimonials__grid');
+  if (!container) return;
+
+  const cards = Array.from(container.querySelectorAll('.testimonial'));
+  if (cards.length <= 3) return;
+
+  cards.slice(3).forEach((card) => {
+    card.parentElement?.removeChild(card);
+  });
+};
+
+initTestimonialsCarousel();
