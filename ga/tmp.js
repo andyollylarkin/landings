@@ -207,7 +207,6 @@ function trackPerformance() {
 export function initAnalytics() {
 	if (alreadyInit) return;
 	alreadyInit = true;
-	console.log("GA Analytics Initialized");
 	// Initial page view
 	gtag('event', 'page_view', {
 		'page_title': document.title,

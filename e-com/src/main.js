@@ -3,8 +3,11 @@ import handleNoPageAction from "../../libs/handle_mouse_drag.js";
 import { saveField, getSavedField, clearSavedField } from "../../libs/save-field.js";
 import { buttonClick } from "../../ga/useful_ga.js"
 import { handleBackscroll } from "../../libs/handle_backscroll.js"
+import { initAnalytics } from "../../ga/tmp.js"
 
 let loadTime = Date.now();
+
+initAnalytics();
 
 document.addEventListener('click', function (e) {
   var modal = document.getElementById('modal-cta');
