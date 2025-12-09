@@ -208,6 +208,19 @@ window.addEventListener('keydown', (event) => {
   }
 })
 
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof (url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-17706142842/hnWDCOjV2c4bEPqY-fpB',
+    'event_callback': callback
+  });
+  return false;
+}
+
 if (ctaForms) {
   ctaForms.forEach(form => {
     form.addEventListener('submit', async (event) => {
@@ -239,14 +252,15 @@ if (ctaForms) {
           method: 'POST',
           body: formData,
         });
-        if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
+        if (!response.ok) throw new Error(`Request failed with status ${response.status}`); // ИСПРАВЛЕНО: добавлены ()
+
+        gtag_report_conversion();
+
         if (formStatus) {
           formStatus.textContent = 'Thank you! A MRI Data specialist will reach out within one business day.';
           formStatus.classList.add('is-success');
         }
         form.reset();
-        // Explicitly clear all input and textarea fields with matching names across the document
-        // Clear saved fields and set already_submitted
         clearSavedField('email');
         clearSavedField('jobtitle');
         clearSavedField('name');
@@ -269,7 +283,6 @@ if (ctaForms) {
       }
     });
   })
-
 }
 
 const emailInput = document.querySelectorAll('input[name="email"]');
